@@ -1,0 +1,46 @@
+project:
+  name: edu-tutor-local
+  locale: ko-KR
+  timezone: Asia/Seoul
+budgets:
+  disk_free_floor_gib: 20
+  education_optimizer_steps: 600
+  education_wall_seconds: 7200
+  authority_note: Experiment bounds only. Active scope ledger controls total time/counts/download12GB/project50GB/C
+    free50GB; disk_free_floor_gib below is an additional floor on the training output
+    volume.
+models:
+  text:
+    id: Qwen/Qwen3-1.7B
+    revision: 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+    local_path: .local/models/text
+    quantization: nf4
+    enable_thinking: false
+training:
+  profile: demo
+  load_in_4bit: true
+  bnb_4bit_quant_type: nf4
+  bnb_4bit_use_double_quant: true
+  compute_dtype: auto_verified
+  lora_r: 8
+  lora_alpha: 16
+  lora_dropout: 0.05
+  target_modules:
+  - q_proj
+  - v_proj
+  batch_size: 1
+  gradient_accumulation_steps: 8
+  learning_rate: 0.0001
+  max_sequence_length: 512
+  gradient_checkpointing: true
+  use_cache: false
+  packing: false
+  train_last_assistant_only: true
+  auto_promote_adapter: false
+  dataset_paths:
+  - runs/finish-v2/20261029/education/candidate-diverse-v2/train.jsonl
+  - runs/finish-v2/20261028/education/development/validation.jsonl
+  max_epochs: 3
+  purpose: 'Experiment2 candidate: same training SQL families;40 plain explanations
+    with nonempty row-subset/duplicate diversity. Fresh adapter from pinned base;
+    no automatic promotion or final use.'

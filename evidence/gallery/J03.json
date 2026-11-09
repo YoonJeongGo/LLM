@@ -1,0 +1,423 @@
+{
+  "id": "J03",
+  "title": "WHERE·GROUP BY·HAVING·정렬",
+  "human_status": "H_PENDING",
+  "source_classification": "과거 개발 수업 + final05 저장 재생",
+  "source_collector_status": "COMPLETED_WITH_EVIDENCE_FAILURES",
+  "question": "출력: region, SUM(units), COUNT(*); 행 조건: active = 1 AND units >= 0; 그룹 기준: region; 그룹 조건: SUM(units) >= 3; 정렬 기준: SUM(units) DESC, region ASC.",
+  "followup_question": null,
+  "original_test_tables": [
+    {
+      "name": "load_log",
+      "columns": [
+        {
+          "name": "region",
+          "type": "TEXT"
+        },
+        {
+          "name": "units",
+          "type": "INTEGER"
+        },
+        {
+          "name": "active",
+          "type": "INTEGER"
+        }
+      ],
+      "rows": [
+        [
+          "north",
+          4,
+          1
+        ],
+        [
+          "north",
+          null,
+          1
+        ],
+        [
+          "east",
+          0,
+          1
+        ],
+        [
+          "east",
+          9,
+          1
+        ],
+        [
+          "west",
+          -2,
+          1
+        ],
+        [
+          "west",
+          10,
+          0
+        ],
+        [
+          "south",
+          3,
+          1
+        ]
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "role": "원래 수업",
+      "raw_model_response": "{\"sql\":\"SELECT region, SUM(units), COUNT(*) FROM load_log WHERE active = 1 AND units >= 0 GROUP BY region HAVING SUM(units) >= 3 ORDER BY SUM(units) DESC, region ASC\",\"explanation\":\"SELECT region, SUM(units), COUNT(*) 선택; WHERE active=1 AND units>=0 필터; GROUP BY region 그룹화; HAVING SUM(units)>=3 조건; ORDER BY SUM(units) DESC, region ASC 정렬\"}",
+      "app_display_response": "확정한 원본 문제를 기준으로 도구가 계산한 결과입니다. 모델 초안과 구분합니다.\n```sql\nSELECT region, SUM(units), COUNT(*) FROM load_log WHERE active = 1 AND units >= 0 GROUP BY region HAVING SUM(units) >= 3 ORDER BY SUM(units) DESC, region ASC\n```\nregion | SUM(units) | COUNT(*)\neast | 9 | 2\nnorth | 4 | 1\nsouth | 3 | 1",
+      "steps": [
+        {
+          "id": "s1",
+          "title": "원본에서 WHERE 적용",
+          "speech": "각 행이 주어진 조건에 맞는지 먼저 확인합니다. 원본 7행 중 4행이 집계에 남습니다. 조건값 표에서 TRUE인 행만 남기고 FALSE와 UNKNOWN은 제외합니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "table",
+              "caption": "확정한 원본 표",
+              "table_name": "load_log",
+              "columns": [
+                "region",
+                "units",
+                "active"
+              ],
+              "rows": [
+                [
+                  "north",
+                  4,
+                  1
+                ],
+                [
+                  "north",
+                  null,
+                  1
+                ],
+                [
+                  "east",
+                  0,
+                  1
+                ],
+                [
+                  "east",
+                  9,
+                  1
+                ],
+                [
+                  "west",
+                  -2,
+                  1
+                ],
+                [
+                  "west",
+                  10,
+                  0
+                ],
+                [
+                  "south",
+                  3,
+                  1
+                ]
+              ],
+              "slot": "main",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "code",
+              "language": "sql",
+              "code": "SELECT region, SUM(units), COUNT(*) FROM load_log WHERE active = 1 AND units >= 0 GROUP BY region HAVING SUM(units) >= 3 ORDER BY SUM(units) DESC, region ASC",
+              "slot": "right",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "table",
+              "caption": "WHERE active = 1 AND units >= 0",
+              "columns": [
+                "원본 행",
+                "WHERE 결과",
+                "남는가"
+              ],
+              "rows": [
+                [
+                  1,
+                  "TRUE",
+                  "유지"
+                ],
+                [
+                  2,
+                  "UNKNOWN",
+                  "제외"
+                ],
+                [
+                  3,
+                  "TRUE",
+                  "유지"
+                ],
+                [
+                  4,
+                  "TRUE",
+                  "유지"
+                ],
+                [
+                  5,
+                  "FALSE",
+                  "제외"
+                ],
+                [
+                  6,
+                  "FALSE",
+                  "제외"
+                ],
+                [
+                  7,
+                  "TRUE",
+                  "유지"
+                ]
+              ],
+              "slot": "bottom",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "highlight",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            }
+          ],
+          "audio": "audio/J03-1-s1.wav"
+        },
+        {
+          "id": "s2",
+          "title": "그룹으로 묶기",
+          "speech": "원본 1열의 값이 같은 행끼리 묶습니다. 이렇게 만든 그룹은 3개입니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "clear"
+            },
+            {
+              "type": "table",
+              "caption": "WHERE 이후 남은 원본 행",
+              "columns": [
+                "region",
+                "units",
+                "active"
+              ],
+              "rows": [
+                [
+                  "north",
+                  4,
+                  1
+                ],
+                [
+                  "east",
+                  0,
+                  1
+                ],
+                [
+                  "east",
+                  9,
+                  1
+                ],
+                [
+                  "south",
+                  3,
+                  1
+                ]
+              ],
+              "slot": "right"
+            },
+            {
+              "type": "table",
+              "caption": "GROUP BY 묶음 · 원본 행 번호",
+              "columns": [
+                "region",
+                "포함 행"
+              ],
+              "rows": [
+                [
+                  "north",
+                  "1"
+                ],
+                [
+                  "east",
+                  "3, 4"
+                ],
+                [
+                  "south",
+                  "7"
+                ]
+              ],
+              "slot": "bottom"
+            },
+            {
+              "type": "arrow"
+            },
+            {
+              "type": "arrow"
+            }
+          ],
+          "audio": "audio/J03-1-s2.wav"
+        },
+        {
+          "id": "s3",
+          "title": "집계 계산",
+          "speech": "각 그룹에서 원본 2열의 NULL을 제외한 값을 더해 합계를 구합니다. 행을 하나씩 세어 전체 행 수를 구합니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "clear"
+            },
+            {
+              "type": "table",
+              "caption": "그룹별 집계 · HAVING 이전",
+              "columns": [
+                "region",
+                "SUM(units)",
+                "COUNT(*)"
+              ],
+              "rows": [
+                [
+                  "east",
+                  9,
+                  2
+                ],
+                [
+                  "north",
+                  4,
+                  1
+                ],
+                [
+                  "south",
+                  3,
+                  1
+                ]
+              ],
+              "slot": "right"
+            },
+            {
+              "type": "arrow"
+            }
+          ],
+          "audio": "audio/J03-1-s3.wav"
+        },
+        {
+          "id": "s4",
+          "title": "HAVING과 출력 열",
+          "speech": "각 그룹의 집계값이 주어진 조건에 맞는지 확인하고, 맞는 그룹만 남깁니다. 최종 결과는 3행입니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "clear"
+            },
+            {
+              "type": "table",
+              "caption": "HAVING 이후 · ORDER BY 전의 결과",
+              "columns": [
+                "region",
+                "SUM(units)",
+                "COUNT(*)"
+              ],
+              "rows": [
+                [
+                  "north",
+                  4,
+                  1
+                ],
+                [
+                  "east",
+                  9,
+                  2
+                ],
+                [
+                  "south",
+                  3,
+                  1
+                ]
+              ],
+              "slot": "bottom",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "arrow"
+            }
+          ],
+          "audio": "audio/J03-1-s4.wav"
+        },
+        {
+          "id": "s5",
+          "title": "그룹 결과의 정렬",
+          "speech": "1순위는 SUM(units)의 내림차순, NULL은 뒤에 둡니다. 2순위는 region의 오름차순, NULL은 앞에 둡니다. 앞 기준의 값이 같을 때만 다음 기준으로 비교합니다. 모든 정렬 기준이 같은 행끼리의 순서는 따로 정하지 않았습니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "clear"
+            },
+            {
+              "type": "clear"
+            },
+            {
+              "type": "table",
+              "caption": "최종 SELECT 실행 결과",
+              "columns": [
+                "region",
+                "SUM(units)",
+                "COUNT(*)"
+              ],
+              "rows": [
+                [
+                  "east",
+                  9,
+                  2
+                ],
+                [
+                  "north",
+                  4,
+                  1
+                ],
+                [
+                  "south",
+                  3,
+                  1
+                ]
+              ],
+              "slot": "bottom",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "text",
+              "text": "1순위는 SUM(units)의 내림차순, NULL은 뒤에 둡니다. 2순위는 region의 오름차순, NULL은 앞에 둡니다. 앞 기준의 값이 같을 때만 다음 기준으로 비교합니다. 모든 정렬 기준이 같은 행끼리의 순서는 따로 정하지 않았습니다.",
+              "slot": "right"
+            },
+            {
+              "type": "arrow"
+            }
+          ],
+          "audio": "audio/J03-1-s5.wav"
+        }
+      ]
+    }
+  ]
+}

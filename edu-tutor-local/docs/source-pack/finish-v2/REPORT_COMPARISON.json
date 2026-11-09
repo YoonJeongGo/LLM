@@ -1,0 +1,12 @@
+{
+  "method": "byte_equality_and_sha256",
+  "older_upload_name": "붙여넣은 마크다운(1)(4).md",
+  "current_upload_name": "붙여넣은 마크다운(1)(6).md",
+  "byte_identical": true,
+  "bytes": 66064,
+  "sha256_older": "1a39b70a21ee31819f856fd1c69960c23b08b6444020ec45b04d2b70df76be4a",
+  "sha256_current": "1a39b70a21ee31819f856fd1c69960c23b08b6444020ec45b04d2b70df76be4a",
+  "document_top_date": "2026-10-27",
+  "host_live_access": false,
+  "interpretation": "Same submitted report. This does not prove whether newer unreported work exists on the user PC."
+}

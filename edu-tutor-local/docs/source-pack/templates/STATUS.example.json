@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0",
+  "project": "edu-tutor-local",
+  "generated_at": null,
+  "note": "초기 상태 템플릿. 앱 구현 또는 테스트를 수행했다는 뜻이 아님.",
+  "project_state": "PARTIAL",
+  "actual_environment": null,
+  "phases": [
+    {
+      "id": "P0",
+      "implementation_status": "pending",
+      "validation": {
+        "cpu": "not_run",
+        "gpu": "not_run",
+        "browser": "not_run",
+        "human_quality": "not_run"
+      },
+      "evidence": [],
+      "blockers": []
+    },
+    {
+      "id": "P1",
+      "implementation_status": "pending",
+      "validation": {
+        "cpu": "not_run",
+        "gpu": "not_run",
+        "browser": "not_run",
+        "human_quality": "not_run"
+      },
+      "evidence": [],
+      "blockers": []
+    },
+    {
+      "id": "P2",
+      "implementation_status": "pending",
+      "validation": {
+        "cpu": "not_run",
+        "gpu": "not_run",
+        "browser": "not_run",
+        "human_quality": "not_run"
+      },
+      "evidence": [],
+      "blockers": []
+    },
+    {
+      "id": "P3",
+      "implementation_status": "pending",
+      "validation": {
+        "cpu": "not_run",
+        "gpu": "not_run",
+        "browser": "not_run",
+        "human_quality": "not_run"
+      },
+      "evidence": [],
+      "blockers": []
+    },
+    {
+      "id": "P4",
+      "implementation_status": "pending",
+      "validation": {
+        "cpu": "not_run",
+        "gpu": "not_run",
+        "browser": "not_run",
+        "human_quality": "not_run"
+      },
+      "evidence": [],
+      "blockers": []
+    },
+    {
+      "id": "P5",
+      "implementation_status": "pending",
+      "validation": {
+        "cpu": "not_run",
+        "gpu": "not_run",
+        "browser": "not_run",
+        "human_quality": "not_run"
+      },
+      "evidence": [],
+      "blockers": []
+    },
+    {
+      "id": "P6",
+      "implementation_status": "pending",
+      "validation": {
+        "cpu": "not_run",
+        "gpu": "not_run",
+        "browser": "not_run",
+        "human_quality": "not_run"
+      },
+      "evidence": [],
+      "blockers": []
+    },
+    {
+      "id": "P7",
+      "implementation_status": "pending",
+      "validation": {
+        "cpu": "not_run",
+        "gpu": "not_run",
+        "browser": "not_run",
+        "human_quality": "not_run"
+      },
+      "evidence": [],
+      "blockers": []
+    },
+    {
+      "id": "P8",
+      "implementation_status": "pending",
+      "validation": {
+        "cpu": "not_run",
+        "gpu": "not_run",
+        "browser": "not_run",
+        "human_quality": "not_run"
+      },
+      "evidence": [],
+      "blockers": []
+    },
+    {
+      "id": "P9",
+      "implementation_status": "pending",
+      "validation": {
+        "cpu": "not_run",
+        "gpu": "not_run",
+        "browser": "not_run",
+        "human_quality": "not_run"
+      },
+      "evidence": [],
+      "blockers": []
+    }
+  ]
+}

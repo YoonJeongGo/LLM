@@ -1,0 +1,309 @@
+{
+  "provenance": {
+    "purpose": "New v0.2.1 authored development journeys; NOT independent28 or reused final80",
+    "authoring": "Original clear questions, distinct SQL operation combinations; images original self-authored",
+    "human_review": "H_PENDING",
+    "model_calls": 0,
+    "tts_calls": 0,
+    "ocr_calls": 0,
+    "expected_answers_sent_to_model": false,
+    "planned_journeys": 8,
+    "planned_question_events": 10,
+    "timing_targets_seconds": {
+      "first_valid_warm": 10,
+      "supplement_warm": 10,
+      "step_gap": 2,
+      "local_stop": 0.5
+    },
+    "at": "2026-10-29T09:06:12.018468+00:00",
+    "cpu_input_adjustment": "Before any actual model call: strict supported clause input; original prefix/trailing explanatory request failed intent parsing and is preserved separately. No production parser change. Not independent evaluation."
+  },
+  "journeys": [
+    {
+      "id": "J01",
+      "kind": "concept",
+      "question": "DDL과 DML을 구별하는 법을 SQLite 예시로 설명해 줘. memo_board라는 작은 표를 만든 뒤 행 한 개를 등록하고, 어느 부분이 구조이고 어느 부분이 데이터인지 차례대로 보여 줘."
+    },
+    {
+      "id": "J02",
+      "kind": "table",
+      "task_kind": "write_sql",
+      "tables": [
+        {
+          "name": "work_queue",
+          "columns": [
+            {
+              "name": "ticket",
+              "type": "TEXT"
+            },
+            {
+              "name": "score",
+              "type": "INTEGER"
+            },
+            {
+              "name": "urgency",
+              "type": "INTEGER"
+            }
+          ],
+          "rows": [
+            [
+              "ash",
+              4,
+              2
+            ],
+            [
+              "birch",
+              null,
+              3
+            ],
+            [
+              "cedar",
+              0,
+              2
+            ],
+            [
+              "dune",
+              8,
+              1
+            ],
+            [
+              "elm",
+              4,
+              3
+            ],
+            [
+              "fern",
+              -5,
+              1
+            ],
+            [
+              "glow",
+              8,
+              1
+            ]
+          ]
+        }
+      ],
+      "question": "출력 열: ticket, score; 행 조건: score >= 0 AND urgency <= 2; 정렬 기준: score DESC, urgency ASC, ticket ASC.",
+      "authored_development_source": true
+    },
+    {
+      "id": "J03",
+      "kind": "group_diagram",
+      "task_kind": "write_sql",
+      "tables": [
+        {
+          "name": "load_log",
+          "columns": [
+            {
+              "name": "region",
+              "type": "TEXT"
+            },
+            {
+              "name": "units",
+              "type": "INTEGER"
+            },
+            {
+              "name": "active",
+              "type": "INTEGER"
+            }
+          ],
+          "rows": [
+            [
+              "north",
+              4,
+              1
+            ],
+            [
+              "north",
+              null,
+              1
+            ],
+            [
+              "east",
+              0,
+              1
+            ],
+            [
+              "east",
+              9,
+              1
+            ],
+            [
+              "west",
+              -2,
+              1
+            ],
+            [
+              "west",
+              10,
+              0
+            ],
+            [
+              "south",
+              3,
+              1
+            ]
+          ]
+        }
+      ],
+      "question": "출력: region, SUM(units), COUNT(*); 행 조건: active = 1 AND units >= 0; 그룹 기준: region; 그룹 조건: SUM(units) >= 3; 정렬 기준: SUM(units) DESC, region ASC.",
+      "requires_simple_diagram": true,
+      "authored_development_source": true
+    },
+    {
+      "id": "J04",
+      "kind": "table",
+      "task_kind": "write_sql",
+      "tables": [
+        {
+          "name": "calibration",
+          "columns": [
+            {
+              "name": "device",
+              "type": "TEXT"
+            },
+            {
+              "name": "reading",
+              "type": "INTEGER"
+            },
+            {
+              "name": "priority",
+              "type": "INTEGER"
+            }
+          ],
+          "rows": [
+            [
+              "A",
+              0,
+              2
+            ],
+            [
+              "B",
+              null,
+              2
+            ],
+            [
+              "C",
+              6,
+              1
+            ],
+            [
+              "D",
+              -2,
+              1
+            ],
+            [
+              "E",
+              6,
+              2
+            ],
+            [
+              "F",
+              0,
+              1
+            ]
+          ]
+        }
+      ],
+      "question": "출력 열: device, reading; 행 조건: reading >= 0; 정렬 기준: reading DESC, priority ASC, device ASC.",
+      "followup": {
+        "question": "왜 선택한 이 행이 포함돼? NULL인 행과 비교하고 지금 정렬 순서도 설명해 줘.",
+        "known_coverage_limit": "코드 검토상 선택한 0의 조건·포함·정렬 순위 설명은 제공하지만, NULL 행과의 명시적 대비 설명은 보충 대사에 포함하지 않는다. 실제 원문 요구의 이 부분은 별도 partial이며 수업 재생·복귀 성공과 구분한다.",
+        "column": "reading",
+        "row_index": 0,
+        "value": 0,
+        "step_title": "정렬 기준과 원본 행 연결"
+      },
+      "authored_development_source": true
+    },
+    {
+      "id": "J05",
+      "kind": "photo",
+      "photo": {
+        "path": "runs/v021-support/20261029/student/normal-projection.png",
+        "sha256": "ee70370fb10b779b86e3efc1f5ffb0e99331096a429989e639e976ed31eb12dd",
+        "rights": "Original authored development text/table; no student or textbook data",
+        "authoring": "PIL deterministic text/table",
+        "rotated_degrees": 0,
+        "blur_radius": 0,
+        "critical_condition_cropped": false,
+        "human_review": "H_PENDING"
+      },
+      "expected_condition": "normal"
+    },
+    {
+      "id": "J06",
+      "kind": "photo",
+      "photo": {
+        "path": "runs/v021-support/20261029/student/correction-aggregate.png",
+        "sha256": "d0ab8b7532adb7028ab9b1058b3c4a169e2040e7370e831bc83f855cf701cbac",
+        "rights": "Original authored development text/table; no student or textbook data",
+        "authoring": "PIL deterministic text/table",
+        "rotated_degrees": 3,
+        "blur_radius": 0.5,
+        "critical_condition_cropped": false,
+        "human_review": "H_PENDING",
+        "visible_source": "runs/v021-support/20261029/student/correction-visible-source.json"
+      },
+      "expected_condition": "rotated_correction_if_needed",
+      "allow_manual_correction": true
+    },
+    {
+      "id": "J07",
+      "kind": "photo",
+      "photo": {
+        "path": "runs/v021-support/20261029/student/cropped-critical-condition.png",
+        "sha256": "b1bc2850e12b1b01ed3522c0c0388cf2674d48e36298fd327d9214cbee973fee",
+        "rights": "Original authored development text/table; no student or textbook data",
+        "authoring": "PIL deterministic text/table",
+        "rotated_degrees": 0,
+        "blur_radius": 0,
+        "critical_condition_cropped": true,
+        "human_review": "H_PENDING"
+      },
+      "expected_condition": "missing",
+      "must_not_invent": true,
+      "missing_numeric_guard": "quantity\\s*>=\\s*[-+]?\\d",
+      "visible_sql_fragment": "SELECT code FROM supply WHERE quantity >="
+    },
+    {
+      "id": "J08",
+      "kind": "table",
+      "task_kind": "write_sql",
+      "tables": [
+        {
+          "name": "notes",
+          "columns": [
+            {
+              "name": "name",
+              "type": "TEXT"
+            },
+            {
+              "name": "points",
+              "type": "INTEGER"
+            }
+          ],
+          "rows": [
+            [
+              "u",
+              2
+            ],
+            [
+              "v",
+              0
+            ],
+            [
+              "w",
+              null
+            ]
+          ]
+        }
+      ],
+      "question": "출력 열: name, points; 행 조건: points IS NOT NULL; 정렬 기준: points ASC, name DESC.",
+      "cancel_before_lesson": true,
+      "cancel_question": "SQLite에서 트랜잭션과 동시성 제어를 여러 예시와 함께 길고 자세하게 설명해 주세요.",
+      "authored_development_source": true
+    }
+  ]
+}

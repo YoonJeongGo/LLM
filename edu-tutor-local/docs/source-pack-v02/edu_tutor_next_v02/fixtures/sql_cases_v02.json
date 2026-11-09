@@ -1,0 +1,1377 @@
+{
+  "schema_version": 1,
+  "purpose": "public_development_regression_not_holdout_or_training",
+  "training_use": "forbidden_for_this_iteration",
+  "model_input_policy": "Only student_prompt, tables and question_sql when present. Never expose oracle, ID-based expected answers or verifier outputs to baseline inference. Tool-assisted app may use actual computed results, reported separately.",
+  "cases": [
+    {
+      "id": "D01",
+      "problem_family_id": "count-null",
+      "split": "development_regression",
+      "dialect": "SQLite",
+      "task_type": "write_sql",
+      "student_prompt": "scores의 전체 행 수와 score가 NULL이 아닌 행 수를 차례대로 구하는 SQL을 작성해 줘.",
+      "tables": [
+        {
+          "name": "scores",
+          "columns": [
+            [
+              "name",
+              "TEXT"
+            ],
+            [
+              "score",
+              "INTEGER"
+            ],
+            [
+              "dept",
+              "TEXT"
+            ]
+          ],
+          "rows": [
+            [
+              "박강열",
+              80,
+              "A"
+            ],
+            [
+              "유성재",
+              null,
+              "A"
+            ],
+            [
+              "김현수",
+              100,
+              "B"
+            ],
+            [
+              "양지훈",
+              80,
+              "B"
+            ],
+            [
+              "이승현",
+              null,
+              "B"
+            ],
+            [
+              "박보성",
+              60,
+              "A"
+            ]
+          ]
+        }
+      ],
+      "oracle": {
+        "reference_sql": "SELECT COUNT(*) AS all_rows, COUNT(score) AS valued_rows FROM scores;",
+        "expected_columns": [
+          "all_rows",
+          "valued_rows"
+        ],
+        "expected_rows": [
+          [
+            6,
+            4
+          ]
+        ],
+        "ordered": false,
+        "numeric_tolerance": 1e-09
+      },
+      "review_status": "AI_authored_SQL_execution_checked_not_human_reviewed",
+      "notes": ""
+    },
+    {
+      "id": "D02",
+      "problem_family_id": "count-distinct-null",
+      "split": "development_regression",
+      "dialect": "SQLite",
+      "task_type": "write_sql",
+      "student_prompt": "score의 서로 다른 NULL 아닌 값 개수를 구해 줘.",
+      "tables": [
+        {
+          "name": "scores",
+          "columns": [
+            [
+              "name",
+              "TEXT"
+            ],
+            [
+              "score",
+              "INTEGER"
+            ],
+            [
+              "dept",
+              "TEXT"
+            ]
+          ],
+          "rows": [
+            [
+              "박강열",
+              80,
+              "A"
+            ],
+            [
+              "유성재",
+              null,
+              "A"
+            ],
+            [
+              "김현수",
+              100,
+              "B"
+            ],
+            [
+              "양지훈",
+              80,
+              "B"
+            ],
+            [
+              "이승현",
+              null,
+              "B"
+            ],
+            [
+              "박보성",
+              60,
+              "A"
+            ]
+          ]
+        }
+      ],
+      "oracle": {
+        "reference_sql": "SELECT COUNT(DISTINCT score) AS unique_scores FROM scores;",
+        "expected_columns": [
+          "unique_scores"
+        ],
+        "expected_rows": [
+          [
+            3
+          ]
+        ],
+        "ordered": false,
+        "numeric_tolerance": 1e-09
+      },
+      "review_status": "AI_authored_SQL_execution_checked_not_human_reviewed",
+      "notes": ""
+    },
+    {
+      "id": "D03",
+      "problem_family_id": "distinct-null",
+      "split": "development_regression",
+      "dialect": "SQLite",
+      "task_type": "write_sql",
+      "student_prompt": "score에서 중복을 제거해 보여 줘. 정렬 순서는 상관없어.",
+      "tables": [
+        {
+          "name": "scores",
+          "columns": [
+            [
+              "name",
+              "TEXT"
+            ],
+            [
+              "score",
+              "INTEGER"
+            ],
+            [
+              "dept",
+              "TEXT"
+            ]
+          ],
+          "rows": [
+            [
+              "박강열",
+              80,
+              "A"
+            ],
+            [
+              "유성재",
+              null,
+              "A"
+            ],
+            [
+              "김현수",
+              100,
+              "B"
+            ],
+            [
+              "양지훈",
+              80,
+              "B"
+            ],
+            [
+              "이승현",
+              null,
+              "B"
+            ],
+            [
+              "박보성",
+              60,
+              "A"
+            ]
+          ]
+        }
+      ],
+      "oracle": {
+        "reference_sql": "SELECT DISTINCT score FROM scores;",
+        "expected_columns": [
+          "score"
+        ],
+        "expected_rows": [
+          [
+            80
+          ],
+          [
+            null
+          ],
+          [
+            100
+          ],
+          [
+            60
+          ]
+        ],
+        "ordered": false,
+        "numeric_tolerance": 1e-09
+      },
+      "review_status": "AI_authored_SQL_execution_checked_not_human_reviewed",
+      "notes": ""
+    },
+    {
+      "id": "D04",
+      "problem_family_id": "avg-null",
+      "split": "development_regression",
+      "dialect": "SQLite",
+      "task_type": "write_sql",
+      "student_prompt": "score의 합계, 평균에 들어가는 값의 개수, 평균을 순서대로 구해 줘.",
+      "tables": [
+        {
+          "name": "scores",
+          "columns": [
+            [
+              "name",
+              "TEXT"
+            ],
+            [
+              "score",
+              "INTEGER"
+            ],
+            [
+              "dept",
+              "TEXT"
+            ]
+          ],
+          "rows": [
+            [
+              "박강열",
+              80,
+              "A"
+            ],
+            [
+              "유성재",
+              null,
+              "A"
+            ],
+            [
+              "김현수",
+              100,
+              "B"
+            ],
+            [
+              "양지훈",
+              80,
+              "B"
+            ],
+            [
+              "이승현",
+              null,
+              "B"
+            ],
+            [
+              "박보성",
+              60,
+              "A"
+            ]
+          ]
+        }
+      ],
+      "oracle": {
+        "reference_sql": "SELECT SUM(score) AS total, COUNT(score) AS n, AVG(score) AS mean FROM scores;",
+        "expected_columns": [
+          "total",
+          "n",
+          "mean"
+        ],
+        "expected_rows": [
+          [
+            320,
+            4,
+            80.0
+          ]
+        ],
+        "ordered": false,
+        "numeric_tolerance": 1e-09
+      },
+      "review_status": "AI_authored_SQL_execution_checked_not_human_reviewed",
+      "notes": ""
+    },
+    {
+      "id": "D05",
+      "problem_family_id": "group-count",
+      "split": "development_regression",
+      "dialect": "SQLite",
+      "task_type": "write_sql",
+      "student_prompt": "부서별 전체 인원과 점수가 있는 인원을 구하고 부서명으로 정렬해 줘.",
+      "tables": [
+        {
+          "name": "scores",
+          "columns": [
+            [
+              "name",
+              "TEXT"
+            ],
+            [
+              "score",
+              "INTEGER"
+            ],
+            [
+              "dept",
+              "TEXT"
+            ]
+          ],
+          "rows": [
+            [
+              "박강열",
+              80,
+              "A"
+            ],
+            [
+              "유성재",
+              null,
+              "A"
+            ],
+            [
+              "김현수",
+              100,
+              "B"
+            ],
+            [
+              "양지훈",
+              80,
+              "B"
+            ],
+            [
+              "이승현",
+              null,
+              "B"
+            ],
+            [
+              "박보성",
+              60,
+              "A"
+            ]
+          ]
+        }
+      ],
+      "oracle": {
+        "reference_sql": "SELECT dept, COUNT(*) AS n, COUNT(score) AS valued FROM scores GROUP BY dept ORDER BY dept;",
+        "expected_columns": [
+          "dept",
+          "n",
+          "valued"
+        ],
+        "expected_rows": [
+          [
+            "A",
+            3,
+            2
+          ],
+          [
+            "B",
+            3,
+            2
+          ]
+        ],
+        "ordered": true,
+        "numeric_tolerance": 1e-09
+      },
+      "review_status": "AI_authored_SQL_execution_checked_not_human_reviewed",
+      "notes": ""
+    },
+    {
+      "id": "D06",
+      "problem_family_id": "having-sum",
+      "split": "development_regression",
+      "dialect": "SQLite",
+      "task_type": "write_sql",
+      "student_prompt": "부서별 점수 합계가 170 이상인 부서와 그 합계를 보여 줘.",
+      "tables": [
+        {
+          "name": "scores",
+          "columns": [
+            [
+              "name",
+              "TEXT"
+            ],
+            [
+              "score",
+              "INTEGER"
+            ],
+            [
+              "dept",
+              "TEXT"
+            ]
+          ],
+          "rows": [
+            [
+              "박강열",
+              80,
+              "A"
+            ],
+            [
+              "유성재",
+              null,
+              "A"
+            ],
+            [
+              "김현수",
+              100,
+              "B"
+            ],
+            [
+              "양지훈",
+              80,
+              "B"
+            ],
+            [
+              "이승현",
+              null,
+              "B"
+            ],
+            [
+              "박보성",
+              60,
+              "A"
+            ]
+          ]
+        }
+      ],
+      "oracle": {
+        "reference_sql": "SELECT dept, SUM(score) AS total FROM scores GROUP BY dept HAVING SUM(score)>=170 ORDER BY dept;",
+        "expected_columns": [
+          "dept",
+          "total"
+        ],
+        "expected_rows": [
+          [
+            "B",
+            180
+          ]
+        ],
+        "ordered": true,
+        "numeric_tolerance": 1e-09
+      },
+      "review_status": "AI_authored_SQL_execution_checked_not_human_reviewed",
+      "notes": ""
+    },
+    {
+      "id": "D07",
+      "problem_family_id": "where-before-group",
+      "split": "development_regression",
+      "dialect": "SQLite",
+      "task_type": "write_sql",
+      "student_prompt": "먼저 점수가 80 이상인 행만 고르고 부서별 개수를 세어 줘. 부서명 순으로 보여 줘.",
+      "tables": [
+        {
+          "name": "scores",
+          "columns": [
+            [
+              "name",
+              "TEXT"
+            ],
+            [
+              "score",
+              "INTEGER"
+            ],
+            [
+              "dept",
+              "TEXT"
+            ]
+          ],
+          "rows": [
+            [
+              "박강열",
+              80,
+              "A"
+            ],
+            [
+              "유성재",
+              null,
+              "A"
+            ],
+            [
+              "김현수",
+              100,
+              "B"
+            ],
+            [
+              "양지훈",
+              80,
+              "B"
+            ],
+            [
+              "이승현",
+              null,
+              "B"
+            ],
+            [
+              "박보성",
+              60,
+              "A"
+            ]
+          ]
+        }
+      ],
+      "oracle": {
+        "reference_sql": "SELECT dept, COUNT(*) AS n FROM scores WHERE score>=80 GROUP BY dept ORDER BY dept;",
+        "expected_columns": [
+          "dept",
+          "n"
+        ],
+        "expected_rows": [
+          [
+            "A",
+            1
+          ],
+          [
+            "B",
+            2
+          ]
+        ],
+        "ordered": true,
+        "numeric_tolerance": 1e-09
+      },
+      "review_status": "AI_authored_SQL_execution_checked_not_human_reviewed",
+      "notes": ""
+    },
+    {
+      "id": "D08",
+      "problem_family_id": "where-and-having",
+      "split": "development_regression",
+      "dialect": "SQLite",
+      "task_type": "write_sql",
+      "student_prompt": "점수가 80 이상인 행을 먼저 고르고, 그 행이 2개 이상인 부서와 개수를 보여 줘.",
+      "tables": [
+        {
+          "name": "scores",
+          "columns": [
+            [
+              "name",
+              "TEXT"
+            ],
+            [
+              "score",
+              "INTEGER"
+            ],
+            [
+              "dept",
+              "TEXT"
+            ]
+          ],
+          "rows": [
+            [
+              "박강열",
+              80,
+              "A"
+            ],
+            [
+              "유성재",
+              null,
+              "A"
+            ],
+            [
+              "김현수",
+              100,
+              "B"
+            ],
+            [
+              "양지훈",
+              80,
+              "B"
+            ],
+            [
+              "이승현",
+              null,
+              "B"
+            ],
+            [
+              "박보성",
+              60,
+              "A"
+            ]
+          ]
+        }
+      ],
+      "oracle": {
+        "reference_sql": "SELECT dept, COUNT(*) AS n FROM scores WHERE score>=80 GROUP BY dept HAVING COUNT(*)>=2 ORDER BY dept;",
+        "expected_columns": [
+          "dept",
+          "n"
+        ],
+        "expected_rows": [
+          [
+            "B",
+            2
+          ]
+        ],
+        "ordered": true,
+        "numeric_tolerance": 1e-09
+      },
+      "review_status": "AI_authored_SQL_execution_checked_not_human_reviewed",
+      "notes": ""
+    },
+    {
+      "id": "D09",
+      "problem_family_id": "unknown-null",
+      "split": "development_regression",
+      "dialect": "SQLite",
+      "task_type": "explain_given_sql",
+      "student_prompt": "아래 SQL에서 score가 NULL인 행이 포함되는지와 결과를 설명해 줘.",
+      "tables": [
+        {
+          "name": "scores",
+          "columns": [
+            [
+              "name",
+              "TEXT"
+            ],
+            [
+              "score",
+              "INTEGER"
+            ],
+            [
+              "dept",
+              "TEXT"
+            ]
+          ],
+          "rows": [
+            [
+              "박강열",
+              80,
+              "A"
+            ],
+            [
+              "유성재",
+              null,
+              "A"
+            ],
+            [
+              "김현수",
+              100,
+              "B"
+            ],
+            [
+              "양지훈",
+              80,
+              "B"
+            ],
+            [
+              "이승현",
+              null,
+              "B"
+            ],
+            [
+              "박보성",
+              60,
+              "A"
+            ]
+          ]
+        }
+      ],
+      "oracle": {
+        "reference_sql": "SELECT name FROM scores WHERE score<>80;",
+        "expected_columns": [
+          "name"
+        ],
+        "expected_rows": [
+          [
+            "김현수"
+          ],
+          [
+            "박보성"
+          ]
+        ],
+        "ordered": false,
+        "numeric_tolerance": 1e-09
+      },
+      "review_status": "AI_authored_SQL_execution_checked_not_human_reviewed",
+      "notes": "NULL 비교의 UNKNOWN과 조건을 만족한 실제 행을 구분한다.",
+      "question_sql": "SELECT name FROM scores WHERE score<>80;"
+    },
+    {
+      "id": "D10",
+      "problem_family_id": "is-null",
+      "split": "development_regression",
+      "dialect": "SQLite",
+      "task_type": "write_sql",
+      "student_prompt": "점수가 NULL인 사람의 이름을 알려 줘. 순서는 상관없어.",
+      "tables": [
+        {
+          "name": "scores",
+          "columns": [
+            [
+              "name",
+              "TEXT"
+            ],
+            [
+              "score",
+              "INTEGER"
+            ],
+            [
+              "dept",
+              "TEXT"
+            ]
+          ],
+          "rows": [
+            [
+              "박강열",
+              80,
+              "A"
+            ],
+            [
+              "유성재",
+              null,
+              "A"
+            ],
+            [
+              "김현수",
+              100,
+              "B"
+            ],
+            [
+              "양지훈",
+              80,
+              "B"
+            ],
+            [
+              "이승현",
+              null,
+              "B"
+            ],
+            [
+              "박보성",
+              60,
+              "A"
+            ]
+          ]
+        }
+      ],
+      "oracle": {
+        "reference_sql": "SELECT name FROM scores WHERE score IS NULL;",
+        "expected_columns": [
+          "name"
+        ],
+        "expected_rows": [
+          [
+            "유성재"
+          ],
+          [
+            "이승현"
+          ]
+        ],
+        "ordered": false,
+        "numeric_tolerance": 1e-09
+      },
+      "review_status": "AI_authored_SQL_execution_checked_not_human_reviewed",
+      "notes": ""
+    },
+    {
+      "id": "D11",
+      "problem_family_id": "empty-aggregate",
+      "split": "development_regression",
+      "dialect": "SQLite",
+      "task_type": "write_sql",
+      "student_prompt": "dept가 Z인 행만 대상으로 COUNT(*), SUM(score), AVG(score)를 순서대로 계산해 줘.",
+      "tables": [
+        {
+          "name": "scores",
+          "columns": [
+            [
+              "name",
+              "TEXT"
+            ],
+            [
+              "score",
+              "INTEGER"
+            ],
+            [
+              "dept",
+              "TEXT"
+            ]
+          ],
+          "rows": [
+            [
+              "박강열",
+              80,
+              "A"
+            ],
+            [
+              "유성재",
+              null,
+              "A"
+            ],
+            [
+              "김현수",
+              100,
+              "B"
+            ],
+            [
+              "양지훈",
+              80,
+              "B"
+            ],
+            [
+              "이승현",
+              null,
+              "B"
+            ],
+            [
+              "박보성",
+              60,
+              "A"
+            ]
+          ]
+        }
+      ],
+      "oracle": {
+        "reference_sql": "SELECT COUNT(*) AS n, SUM(score) AS total, AVG(score) AS mean FROM scores WHERE dept='Z';",
+        "expected_columns": [
+          "n",
+          "total",
+          "mean"
+        ],
+        "expected_rows": [
+          [
+            0,
+            null,
+            null
+          ]
+        ],
+        "ordered": false,
+        "numeric_tolerance": 1e-09
+      },
+      "review_status": "AI_authored_SQL_execution_checked_not_human_reviewed",
+      "notes": ""
+    },
+    {
+      "id": "D12",
+      "problem_family_id": "all-null-aggregate",
+      "split": "development_regression",
+      "dialect": "SQLite",
+      "task_type": "write_sql",
+      "student_prompt": "모든 점수가 NULL인 아래 표에서 전체 행 수, 점수가 있는 행 수, 합계, 평균을 구해 줘.",
+      "tables": [
+        {
+          "name": "empty_scores",
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "score",
+              "INTEGER"
+            ]
+          ],
+          "rows": [
+            [
+              1,
+              null
+            ],
+            [
+              2,
+              null
+            ]
+          ]
+        }
+      ],
+      "oracle": {
+        "reference_sql": "SELECT COUNT(*) AS n, COUNT(score) AS valued, SUM(score) AS total, AVG(score) AS mean FROM empty_scores;",
+        "expected_columns": [
+          "n",
+          "valued",
+          "total",
+          "mean"
+        ],
+        "expected_rows": [
+          [
+            2,
+            0,
+            null,
+            null
+          ]
+        ],
+        "ordered": false,
+        "numeric_tolerance": 1e-09
+      },
+      "review_status": "AI_authored_SQL_execution_checked_not_human_reviewed",
+      "notes": ""
+    },
+    {
+      "id": "D13",
+      "problem_family_id": "conditional-count",
+      "split": "development_regression",
+      "dialect": "SQLite",
+      "task_type": "explain_given_sql",
+      "student_prompt": "아래 두 COUNT 표현식의 결과가 다른 이유를 원본 표에서 설명해 줘.",
+      "tables": [
+        {
+          "name": "scores",
+          "columns": [
+            [
+              "name",
+              "TEXT"
+            ],
+            [
+              "score",
+              "INTEGER"
+            ],
+            [
+              "dept",
+              "TEXT"
+            ]
+          ],
+          "rows": [
+            [
+              "박강열",
+              80,
+              "A"
+            ],
+            [
+              "유성재",
+              null,
+              "A"
+            ],
+            [
+              "김현수",
+              100,
+              "B"
+            ],
+            [
+              "양지훈",
+              80,
+              "B"
+            ],
+            [
+              "이승현",
+              null,
+              "B"
+            ],
+            [
+              "박보성",
+              60,
+              "A"
+            ]
+          ]
+        }
+      ],
+      "oracle": {
+        "reference_sql": "SELECT COUNT(CASE WHEN score>=80 THEN 1 END) AS a, COUNT(CASE WHEN score>=80 THEN 1 ELSE 0 END) AS b FROM scores;",
+        "expected_columns": [
+          "a",
+          "b"
+        ],
+        "expected_rows": [
+          [
+            3,
+            6
+          ]
+        ],
+        "ordered": false,
+        "numeric_tolerance": 1e-09
+      },
+      "review_status": "AI_authored_SQL_execution_checked_not_human_reviewed",
+      "notes": "",
+      "question_sql": "SELECT COUNT(CASE WHEN score>=80 THEN 1 END) AS a, COUNT(CASE WHEN score>=80 THEN 1 ELSE 0 END) AS b FROM scores;"
+    },
+    {
+      "id": "D14",
+      "problem_family_id": "outer-join-cardinality",
+      "split": "development_regression",
+      "dialect": "SQLite",
+      "task_type": "explain_given_sql",
+      "student_prompt": "아래 SQL에서 학생별 두 COUNT의 결과를 설명해 줘.",
+      "tables": [
+        {
+          "name": "students",
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "name",
+              "TEXT"
+            ]
+          ],
+          "rows": [
+            [
+              1,
+              "박강열"
+            ],
+            [
+              2,
+              "유성재"
+            ],
+            [
+              3,
+              "김현수"
+            ]
+          ]
+        },
+        {
+          "name": "attempts",
+          "columns": [
+            [
+              "student_id",
+              "INTEGER"
+            ],
+            [
+              "score",
+              "INTEGER"
+            ]
+          ],
+          "rows": [
+            [
+              1,
+              70
+            ],
+            [
+              1,
+              90
+            ],
+            [
+              2,
+              null
+            ]
+          ]
+        }
+      ],
+      "oracle": {
+        "reference_sql": "SELECT s.id, COUNT(*) AS joined_rows, COUNT(a.student_id) AS attempts FROM students s LEFT JOIN attempts a ON s.id=a.student_id GROUP BY s.id ORDER BY s.id;",
+        "expected_columns": [
+          "id",
+          "joined_rows",
+          "attempts"
+        ],
+        "expected_rows": [
+          [
+            1,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            3,
+            1,
+            0
+          ]
+        ],
+        "ordered": true,
+        "numeric_tolerance": 1e-09
+      },
+      "review_status": "AI_authored_SQL_execution_checked_not_human_reviewed",
+      "notes": "",
+      "question_sql": "SELECT s.id, COUNT(*) AS joined_rows, COUNT(a.student_id) AS attempts FROM students s LEFT JOIN attempts a ON s.id=a.student_id GROUP BY s.id ORDER BY s.id;"
+    },
+    {
+      "id": "D15",
+      "problem_family_id": "outer-join-where",
+      "split": "development_regression",
+      "dialect": "SQLite",
+      "task_type": "explain_given_sql",
+      "student_prompt": "아래 LEFT JOIN 뒤 WHERE 조건을 적용했을 때 남는 행을 구해 줘.",
+      "tables": [
+        {
+          "name": "students",
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "name",
+              "TEXT"
+            ]
+          ],
+          "rows": [
+            [
+              1,
+              "박강열"
+            ],
+            [
+              2,
+              "유성재"
+            ],
+            [
+              3,
+              "김현수"
+            ]
+          ]
+        },
+        {
+          "name": "attempts",
+          "columns": [
+            [
+              "student_id",
+              "INTEGER"
+            ],
+            [
+              "score",
+              "INTEGER"
+            ]
+          ],
+          "rows": [
+            [
+              1,
+              70
+            ],
+            [
+              1,
+              90
+            ],
+            [
+              2,
+              null
+            ]
+          ]
+        }
+      ],
+      "oracle": {
+        "reference_sql": "SELECT s.id, a.score FROM students s LEFT JOIN attempts a ON s.id=a.student_id WHERE a.score>=80 ORDER BY s.id, a.score;",
+        "expected_columns": [
+          "id",
+          "score"
+        ],
+        "expected_rows": [
+          [
+            1,
+            90
+          ]
+        ],
+        "ordered": true,
+        "numeric_tolerance": 1e-09
+      },
+      "review_status": "AI_authored_SQL_execution_checked_not_human_reviewed",
+      "notes": "",
+      "question_sql": "SELECT s.id, a.score FROM students s LEFT JOIN attempts a ON s.id=a.student_id WHERE a.score>=80 ORDER BY s.id, a.score;"
+    },
+    {
+      "id": "D16",
+      "problem_family_id": "outer-join-on",
+      "split": "development_regression",
+      "dialect": "SQLite",
+      "task_type": "explain_given_sql",
+      "student_prompt": "조건이 ON 안에 있을 때 남는 행을 구해 줘.",
+      "tables": [
+        {
+          "name": "students",
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "name",
+              "TEXT"
+            ]
+          ],
+          "rows": [
+            [
+              1,
+              "박강열"
+            ],
+            [
+              2,
+              "유성재"
+            ],
+            [
+              3,
+              "김현수"
+            ]
+          ]
+        },
+        {
+          "name": "attempts",
+          "columns": [
+            [
+              "student_id",
+              "INTEGER"
+            ],
+            [
+              "score",
+              "INTEGER"
+            ]
+          ],
+          "rows": [
+            [
+              1,
+              70
+            ],
+            [
+              1,
+              90
+            ],
+            [
+              2,
+              null
+            ]
+          ]
+        }
+      ],
+      "oracle": {
+        "reference_sql": "SELECT s.id, a.score FROM students s LEFT JOIN attempts a ON s.id=a.student_id AND a.score>=80 ORDER BY s.id, a.score;",
+        "expected_columns": [
+          "id",
+          "score"
+        ],
+        "expected_rows": [
+          [
+            1,
+            90
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ],
+        "ordered": true,
+        "numeric_tolerance": 1e-09
+      },
+      "review_status": "AI_authored_SQL_execution_checked_not_human_reviewed",
+      "notes": "",
+      "question_sql": "SELECT s.id, a.score FROM students s LEFT JOIN attempts a ON s.id=a.student_id AND a.score>=80 ORDER BY s.id, a.score;"
+    },
+    {
+      "id": "D17",
+      "problem_family_id": "three-row-live-count",
+      "split": "development_regression",
+      "dialect": "SQLite",
+      "task_type": "explain_given_sql",
+      "student_prompt": "COUNT(*)와 COUNT(score)가 왜 다른지 원본 표와 함께 설명해 줘.",
+      "tables": [
+        {
+          "name": "exam_result",
+          "columns": [
+            [
+              "name",
+              "TEXT"
+            ],
+            [
+              "score",
+              "INTEGER"
+            ]
+          ],
+          "rows": [
+            [
+              "박강열",
+              80
+            ],
+            [
+              "유성재",
+              null
+            ],
+            [
+              "김현수",
+              100
+            ]
+          ]
+        }
+      ],
+      "oracle": {
+        "reference_sql": "SELECT COUNT(*) AS n, COUNT(score) AS valued FROM exam_result;",
+        "expected_columns": [
+          "n",
+          "valued"
+        ],
+        "expected_rows": [
+          [
+            3,
+            2
+          ]
+        ],
+        "ordered": false,
+        "numeric_tolerance": 1e-09
+      },
+      "review_status": "AI_authored_SQL_execution_checked_not_human_reviewed",
+      "notes": "T02 실제 음성·판서 시나리오의 입력. 이 한 문항에 맞춘 답변 하드코딩 금지.",
+      "question_sql": "SELECT COUNT(*) AS n, COUNT(score) AS valued FROM exam_result;"
+    },
+    {
+      "id": "D18",
+      "problem_family_id": "group-null-key",
+      "split": "development_regression",
+      "dialect": "SQLite",
+      "task_type": "write_sql",
+      "student_prompt": "dept별 행 수를 구해 줘. NULL 부서도 포함하고 정렬 순서는 상관없어.",
+      "tables": [
+        {
+          "name": "people",
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "dept",
+              "TEXT"
+            ]
+          ],
+          "rows": [
+            [
+              1,
+              null
+            ],
+            [
+              2,
+              null
+            ],
+            [
+              3,
+              "A"
+            ]
+          ]
+        }
+      ],
+      "oracle": {
+        "reference_sql": "SELECT dept, COUNT(*) AS n FROM people GROUP BY dept;",
+        "expected_columns": [
+          "dept",
+          "n"
+        ],
+        "expected_rows": [
+          [
+            null,
+            2
+          ],
+          [
+            "A",
+            1
+          ]
+        ],
+        "ordered": false,
+        "numeric_tolerance": 1e-09
+      },
+      "review_status": "AI_authored_SQL_execution_checked_not_human_reviewed",
+      "notes": ""
+    }
+  ]
+}

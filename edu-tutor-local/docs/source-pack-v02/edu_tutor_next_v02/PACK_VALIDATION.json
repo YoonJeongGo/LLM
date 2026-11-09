@@ -1,0 +1,311 @@
+{
+  "scope": "Packaged fixture SQL oracle verification only; NOT user app or LLM evaluation",
+  "python": "3.13.5",
+  "sqlite": "3.46.1",
+  "total": 18,
+  "passed": 18,
+  "results": [
+    {
+      "id": "D01",
+      "passed": true,
+      "actual_rows": [
+        [
+          6,
+          4
+        ]
+      ],
+      "columns": [
+        "all_rows",
+        "valued_rows"
+      ]
+    },
+    {
+      "id": "D02",
+      "passed": true,
+      "actual_rows": [
+        [
+          3
+        ]
+      ],
+      "columns": [
+        "unique_scores"
+      ]
+    },
+    {
+      "id": "D03",
+      "passed": true,
+      "actual_rows": [
+        [
+          80
+        ],
+        [
+          null
+        ],
+        [
+          100
+        ],
+        [
+          60
+        ]
+      ],
+      "columns": [
+        "score"
+      ]
+    },
+    {
+      "id": "D04",
+      "passed": true,
+      "actual_rows": [
+        [
+          320,
+          4,
+          80.0
+        ]
+      ],
+      "columns": [
+        "total",
+        "n",
+        "mean"
+      ]
+    },
+    {
+      "id": "D05",
+      "passed": true,
+      "actual_rows": [
+        [
+          "A",
+          3,
+          2
+        ],
+        [
+          "B",
+          3,
+          2
+        ]
+      ],
+      "columns": [
+        "dept",
+        "n",
+        "valued"
+      ]
+    },
+    {
+      "id": "D06",
+      "passed": true,
+      "actual_rows": [
+        [
+          "B",
+          180
+        ]
+      ],
+      "columns": [
+        "dept",
+        "total"
+      ]
+    },
+    {
+      "id": "D07",
+      "passed": true,
+      "actual_rows": [
+        [
+          "A",
+          1
+        ],
+        [
+          "B",
+          2
+        ]
+      ],
+      "columns": [
+        "dept",
+        "n"
+      ]
+    },
+    {
+      "id": "D08",
+      "passed": true,
+      "actual_rows": [
+        [
+          "B",
+          2
+        ]
+      ],
+      "columns": [
+        "dept",
+        "n"
+      ]
+    },
+    {
+      "id": "D09",
+      "passed": true,
+      "actual_rows": [
+        [
+          "김현수"
+        ],
+        [
+          "박보성"
+        ]
+      ],
+      "columns": [
+        "name"
+      ]
+    },
+    {
+      "id": "D10",
+      "passed": true,
+      "actual_rows": [
+        [
+          "유성재"
+        ],
+        [
+          "이승현"
+        ]
+      ],
+      "columns": [
+        "name"
+      ]
+    },
+    {
+      "id": "D11",
+      "passed": true,
+      "actual_rows": [
+        [
+          0,
+          null,
+          null
+        ]
+      ],
+      "columns": [
+        "n",
+        "total",
+        "mean"
+      ]
+    },
+    {
+      "id": "D12",
+      "passed": true,
+      "actual_rows": [
+        [
+          2,
+          0,
+          null,
+          null
+        ]
+      ],
+      "columns": [
+        "n",
+        "valued",
+        "total",
+        "mean"
+      ]
+    },
+    {
+      "id": "D13",
+      "passed": true,
+      "actual_rows": [
+        [
+          3,
+          6
+        ]
+      ],
+      "columns": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "id": "D14",
+      "passed": true,
+      "actual_rows": [
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          0
+        ]
+      ],
+      "columns": [
+        "id",
+        "joined_rows",
+        "attempts"
+      ]
+    },
+    {
+      "id": "D15",
+      "passed": true,
+      "actual_rows": [
+        [
+          1,
+          90
+        ]
+      ],
+      "columns": [
+        "id",
+        "score"
+      ]
+    },
+    {
+      "id": "D16",
+      "passed": true,
+      "actual_rows": [
+        [
+          1,
+          90
+        ],
+        [
+          2,
+          null
+        ],
+        [
+          3,
+          null
+        ]
+      ],
+      "columns": [
+        "id",
+        "score"
+      ]
+    },
+    {
+      "id": "D17",
+      "passed": true,
+      "actual_rows": [
+        [
+          3,
+          2
+        ]
+      ],
+      "columns": [
+        "n",
+        "valued"
+      ]
+    },
+    {
+      "id": "D18",
+      "passed": true,
+      "actual_rows": [
+        [
+          null,
+          2
+        ],
+        [
+          "A",
+          1
+        ]
+      ],
+      "columns": [
+        "dept",
+        "n"
+      ]
+    }
+  ]
+}

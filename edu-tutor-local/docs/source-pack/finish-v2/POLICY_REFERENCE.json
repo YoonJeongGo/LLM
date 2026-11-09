@@ -1,0 +1,48 @@
+{
+  "reference_only": true,
+  "directive_revision": "finish-local-tutor-20261028-v2",
+  "authorization_id": "finish-local-tutor-20261028-v1",
+  "same_scope_as_previous_master": true,
+  "duplicate_grants_allowed": false,
+  "accounting": "Preserve historical ledger; deduct all already-used same-scope budget; never reset on resume.",
+  "caps": {
+    "model_wall_seconds": 28800,
+    "text_attempts": 800,
+    "audio_attempts": 120,
+    "vision_attempts": 30,
+    "training_experiments": 2,
+    "training_per_experiment": {
+      "max_seconds": 7200,
+      "max_optimizer_steps": 600,
+      "max_epochs": 3
+    },
+    "default_request_seconds": 300,
+    "additional_download_bytes": 12000000000,
+    "new_text_models": 1,
+    "new_tts_models": 1
+  },
+  "storage": {
+    "project_max_bytes": 50000000000,
+    "warning_bytes": 40000000000,
+    "c_free_min_bytes": 50000000000
+  },
+  "allowed": {
+    "project_code_changes": true,
+    "safe_owned_app_restart": true,
+    "local_inference": true,
+    "verified_data_finetuning": true,
+    "offline_tts_alternatives": true,
+    "official_readonly_docs": true,
+    "bounded_official_downloads": true
+  },
+  "not_allowed": {
+    "paid_apis": true,
+    "cloud_gpu": true,
+    "private_data_uploads": true,
+    "global_driver_os_changes_without_approval": true,
+    "bypass_tool_permissions": true,
+    "training_data_rights_assumed": true,
+    "fake_human_review": true
+  },
+  "note": "Use as reference. Do not overwrite current policy files or treat this JSON as an executable migration."
+}

@@ -1,0 +1,2 @@
+# Preserve byte-for-byte copies, including fixtures whose SHA-256 is recorded.
+* -text

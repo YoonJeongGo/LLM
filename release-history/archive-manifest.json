@@ -1,0 +1,60 @@
+{
+  "source": "Historical source releases, 2026-10-25 through 2026-10-29",
+  "verification": "CRC, exact member set, individual SHA-256, original release receipt, and privacy checks",
+  "archives": [
+    {
+      "original": {
+        "local_project_path": "release/edu-tutor-local-0.1.0-20261025T154846Z.zip",
+        "bytes": 1534473,
+        "sha256": "5d1cd42dd9017f0c4b9617b3cf8d68c11b9b13b113d4f9b2f7d53bc2cc28752d"
+      },
+      "publication_copy": {
+        "file": "edu-tutor-local-0.1.0-20261025T154846Z.zip",
+        "bytes": 1534473,
+        "sha256": "5d1cd42dd9017f0c4b9617b3cf8d68c11b9b13b113d4f9b2f7d53bc2cc28752d"
+      },
+      "archive_members": 224,
+      "changed_members": [],
+      "crc_and_member_digests_verified": true,
+      "source_release_sha_preserved_locally": true
+    },
+    {
+      "original": {
+        "local_project_path": "release/edu-tutor-local-0.2.0-20261026T015704Z.zip",
+        "bytes": 1760144,
+        "sha256": "419694b6dcc2ad0ae1ed148a6274e1b6de4344d52b800e0804918c25d8fc8163"
+      },
+      "publication_copy": {
+        "file": "edu-tutor-local-0.2.0-20261026T015704Z-portable.zip",
+        "bytes": 1760125,
+        "sha256": "5de7f0eb8162d13a0c76ee6a930ca5311706e72b6c3447aba811781020afa4c9"
+      },
+      "archive_members": 290,
+      "changed_members": [
+        "edu-tutor-local/scripts/phase2_finalize.py",
+        "edu-tutor-local/RELEASE_FILES.json"
+      ],
+      "crc_and_member_digests_verified": true,
+      "source_release_sha_preserved_locally": true
+    },
+    {
+      "original": {
+        "local_project_path": "release/edu-tutor-local-0.2.0-20261029T080207Z.zip",
+        "bytes": 2450440,
+        "sha256": "913593fe169f2c26d28ca2334a1a9a9d114682e958006de23ab1297c60e1eafd"
+      },
+      "publication_copy": {
+        "file": "edu-tutor-local-0.2.0-20261029T080207Z-portable.zip",
+        "bytes": 2450420,
+        "sha256": "64382c196f0bdf15a33a01e4b21f4aa271a59120bf94cb19a1d2f3c0023a6051"
+      },
+      "archive_members": 467,
+      "changed_members": [
+        "edu-tutor-local/scripts/phase2_finalize.py",
+        "edu-tutor-local/RELEASE_FILES.json"
+      ],
+      "crc_and_member_digests_verified": true,
+      "source_release_sha_preserved_locally": true
+    }
+  ]
+}

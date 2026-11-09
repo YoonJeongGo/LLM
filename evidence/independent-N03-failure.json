@@ -1,0 +1,39 @@
+{
+  "human_review": "H_PENDING",
+  "cohort": "independent-first-attempt",
+  "readiness": "NOT_READY",
+  "counts": {
+    "primary_frozen_requirements": 9,
+    "full_pass": 0,
+    "partial": 0,
+    "text_board_criteria": 8,
+    "text_board_full_pass": 0,
+    "primary_questions_all_requirements_pass": 0,
+    "primary_question_denominator": 2,
+    "repeat_cases_excluded": 0
+  },
+  "raw_failures": {
+    "submitted_student_questions": 1,
+    "internal_model_attempts": 2,
+    "format": "두 시도 모두 SQL 객체를 먼저 닫은 뒤 explanation 키를 객체 밖에 출력한 잘못된 JSON 구조",
+    "sql": [
+      "reading > 0으로 원문 reading >= 0 경계 변경",
+      "stage <> 'hold' 조건 누락"
+    ],
+    "explanation": [
+      "NULL인 mica를 포함한다고 씀",
+      "4 미만인데 reading=4인 wisp를 포함한다고 씀",
+      "reading=0인 nova 누락",
+      "SQL 결과/설명 결과/원문 의도가 서로 다름"
+    ],
+    "app_behavior": "명확한 후보 추출 실패로 stopped, plan 없음·음성 0; 잘못된 설명을 수업으로 읽지 않음",
+    "diagnostic_only_extraction": "독립 검사기는 완성된 첫 SQL 부분 객체를 사후 추출하여 틀린 의도/결과를 진단함. 이는 제품이 후보를 수락했다는 뜻이 아님.",
+    "planned_followup": "NOT_REACHED"
+  },
+  "scope_limits": [
+    "작은 목적 표본; 모집단 교육 정확도 또는 전체 완성도 비율이 아님",
+    "손동작·화살표의 전 재생 구간 정합성은 별도 실제 화면 검사; 이 대사/표 판정으로 통과시키지 않음",
+    "사람 교육·청취 검토 미실시",
+    "후속 코드 수정으로 final04 판정을 덮어쓰지 않음"
+  ]
+}

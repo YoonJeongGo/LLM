@@ -1,0 +1,125 @@
+{
+  "at": "2026-10-30T14:53:17.066794+00:00",
+  "build": "0.2.1-r3-repair-final07",
+  "overall_completion": "PARTIAL",
+  "student_ready": false,
+  "readiness": "NOT_READY",
+  "human_review": "H_PENDING",
+  "criteria_changed": false,
+  "metric": {
+    "name": "요구사항 검증 통과율",
+    "passed": 10,
+    "denominator": 16,
+    "percent": 62.5,
+    "partial_unverified_excluded": true,
+    "not_product_completion_percent": true,
+    "not_education_accuracy": true
+  },
+  "critical_unpassed": [
+    "G03",
+    "G04",
+    "G05",
+    "G06",
+    "G13",
+    "G16"
+  ],
+  "scope": "Bounded real/development and exact saved-record regression; historical evidence inheritance is explicit.",
+  "criteria": [
+    {
+      "id": "G01",
+      "criterion": "한국어 텍스트 접수→실제 모델 답변→저장/취소",
+      "result": "PASS",
+      "reason": "최종07 실제 텍스트·기록·취소 뒤 새 수업 완료. 의도적 취소1을 답변 성공으로 세지 않음."
+    },
+    {
+      "id": "G02",
+      "criterion": "사진 글자·표·조건 후보→원문 확인→풀이/보류",
+      "result": "PASS",
+      "reason": "기존 실제 OCR 증거와 동일 최종07 재시작 후 정상·수동교정·조건누락 저장사진 확인. 이번 새OCR0; 일반 인식 정확도 아님."
+    },
+    {
+      "id": "G03",
+      "criterion": "명시한 지원 범위의 정답·단계 설명·답변 coverage",
+      "result": "FAIL",
+      "reason": "개발회귀는 앱 교정으로 전달했으나 새 독립 N03는 형식·의미 오류로 실제 설명0/1, 보충 미도달. coverage 기준 미충족."
+    },
+    {
+      "id": "G04",
+      "criterion": "준비된 모델의 새 텍스트→첫 유효 설명 10초 이내",
+      "result": "FAIL",
+      "reason": "최종07 같은 모델 warm/첫WAV캐시17.8266초. 10초 기준 미달. 일반 새 합성 성능으로 확대하지 않음."
+    },
+    {
+      "id": "G05",
+      "criterion": "새 합성 수업의 불필요한 단계 공백 2초 이내",
+      "result": "FAIL",
+      "reason": "최종07 내부 단계공백은 최대1.362초이나 보충 종료→원수업 음성2.0881초. 복귀 공백도 제외하지 않아2초 기준 미달."
+    },
+    {
+      "id": "G06",
+      "criterion": "현재 칠판의 새 질문→새 보충 설명 10초 이내",
+      "result": "FAIL",
+      "reason": "최종07 보충 버튼→같은 모델의 실제 설명17.8638초, 첫WAV캐시. 10초 기준 미달."
+    },
+    {
+      "id": "G07",
+      "criterion": "기본 2D 캐릭터의 말하기·쓰기·가리키기 실제 수업",
+      "result": "PASS",
+      "reason": "기본2D 말하기·쓰기·가리키기 실제 재생. 원본 표 범위의 셀 검색과 기존 실패16단계 복구, 최종07 장면 연결 확인."
+    },
+    {
+      "id": "G08",
+      "criterion": "글·표·수식·간단한 도형을 설명에 맞춰 실제 판서",
+      "result": "PASS",
+      "reason": "같은 최종07의 실제/저장 수업에서 글·표·수식·그룹 도형 확인. 임의 과목 도해 범위는 아님."
+    },
+    {
+      "id": "G09",
+      "criterion": "같은 입력/수치/plan과 음성 파일의 기술적 연결",
+      "result": "PASS",
+      "reason": "원문·계산·대사·판서·음성 지문과 native 재생 연결 확인. final06 35고유단계, final07 N01 12단계 및 저장회귀. 중복 단계 합산 안함."
+    },
+    {
+      "id": "G10",
+      "criterion": "로컬 재생 정지 0.5초 이내와 늦은 결과 방어",
+      "result": "PASS",
+      "reason": "최종07 내용 있는 표의 기존 음성 정지0.0134초. 늦은 POST/재생/취소 세대 방어 CPU·웹 및 실제 취소→새 수업 확인."
+    },
+    {
+      "id": "G11",
+      "criterion": "지원 SQLite 표의 선택 행을 사용한 새 중간 질문 재설명",
+      "result": "PASS",
+      "reason": "final06 다른 두 표의 선택행·NULL/0·정렬·빈입력 내용16/16, 최종07 N01 내용8/8 실제 전달. 개발 회귀이며 일반 정확도 아님."
+    },
+    {
+      "id": "G12",
+      "criterion": "보충 설명 후 원래 단계·셀·진행/음성 위치 복귀",
+      "result": "PASS",
+      "reason": "final06 두 수업과 별도 반복, 최종07 N01에서 원래 단계·표·선택 셀·음성 위치 복귀. 복귀 속도는 G05에서 미달."
+    },
+    {
+      "id": "G13",
+      "criterion": "최종 버전에서 반복 수업·취소·재시작의 연속 안정성",
+      "result": "PARTIAL",
+      "reason": "최종07 취소→새 수업·완료 재진입·동일 소스 재시작은 성공. 과거 원인미상 API 종료/일부 native I/O 정지 원인과 장시간 연속 안정성은 미확정."
+    },
+    {
+      "id": "G14",
+      "criterion": "관리 화면·기록·인증·직렬 큐·예산 강제 및 보존",
+      "result": "PASS",
+      "reason": "인증·직렬큐·예산·취소 강제 유지. 기존 DB1347행/WAV138개/장부412항목 및 정책 보존, 최종207파일 동일, 활성작업0."
+    },
+    {
+      "id": "G15",
+      "criterion": "현재 허용 한도 안에서 새 음성·새 사진 수업을 실행",
+      "result": "PASS",
+      "reason": "동일 승인 내 이번 새음성29시도와 기존 실제사진 수업 증거 보존. 최종07은 새음성/OCR0의 캐시·저장 회귀이며 새로운 사진 품질시험 아님."
+    },
+    {
+      "id": "G16",
+      "criterion": "실제 사람의 교육·발음·청취·상호작용 검토",
+      "result": "H_PENDING",
+      "reason": "사람 검토0/5. 대표5수업37단계 링크 제공만 완료; AI/자동 검토로 사람 점수를 쓰지 않음."
+    }
+  ]
+}

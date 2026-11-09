@@ -1,0 +1,145 @@
+{
+  "source_snapshot": "2026-10-30T14:53:17.066794+00:00",
+  "historical_results": {
+    "phase2": {
+      "status": "BOUNDED_VERIFICATION_COMPLETE_WITH_LIMITS",
+      "version": "0.2.0",
+      "educational_readiness": "NOT_READY",
+      "human_review": "not_reviewed",
+      "default_model": "Qwen/Qwen3-1.7B",
+      "active_adapter": null,
+      "adapter_promoted": false
+    },
+    "neural_observation": {
+      "updated_at": "2026-10-26T02:55:15.621307+00:00",
+      "implementation_status": "implemented",
+      "validation_status": "VERIFIED_WITH_LIMITS",
+      "performance": {
+        "initial_all_step_overhead_percent": 13.985000851690543,
+        "final_four_step_overhead_percent": 7.121028102530302,
+        "fixed_input_output_token_ids_equal": true,
+        "final_peak_allocated_vram_delta_bytes": 0,
+        "comparison_scope": "one initial and one final cold pair; never averaged together; no universal 10% guarantee",
+        "gpu_kernel_time": "not_measured",
+        "warmup_only_time": "not_measured; first prefill/initial setup included in separately timed first-token host segment"
+      }
+    },
+    "student_experience": {
+      "date": "2026-10-27",
+      "status": "BOUNDED_VERIFICATION_COMPLETE_TARGET_NOT_READY",
+      "educational_readiness": "NOT_READY",
+      "human_review": "H_PENDING",
+      "short_preparation_goal": "NOT_MET",
+      "measurement_scope": "Native browser events, not human first phoneme. Text model loading included. B/D reuse valid speech cache; resident warm model and photo upload-to-voice end-to-end NOT_MEASURED.",
+      "neural_observation": "OFF in student tests; existing feature/evidence frozen"
+    },
+    "limited_new_lesson": {
+      "at": "2026-10-27T09:33:44.529770+00:00",
+      "result": "FAILED_AT_QUALITY_GATE_BEFORE_SPEECH",
+      "human_review": "H_PENDING",
+      "student_ready": false,
+      "actual_text_model_seconds": 90.29700000002049,
+      "browser_submission_to_block_seconds": 97.04890000009537,
+      "first_valid_audio_seconds": null,
+      "stage_gap_seconds": null,
+      "reason": "Boolean SUM operand unsupported for verified explanation; raw COUNT prose conflates semantics. SQL returns expected5/3 but lesson stopped."
+    },
+    "conditional_aggregate_recovery": {
+      "at": "2026-10-27T11:10:07.932940+00:00",
+      "result": "PASS_SAVED_E_RECOVERY_TWO_STEPS_NOT_GENERAL_READINESS",
+      "status_scope": "saved failed lesson recovery, not new model evaluation or product readiness",
+      "original_failure_preserved": true,
+      "raw_explanation_error_preserved": true,
+      "new_calls": {
+        "text": 0,
+        "tts": 2,
+        "vision": 0,
+        "training": 0,
+        "downloads": 0
+      },
+      "timing": {
+        "scope": "saved failed E reprocessing, NOT new-question end-to-end latency; browser performance clock",
+        "reprocess_click_to_plan_seconds": 1.0167999999523163,
+        "reprocess_click_to_first_explanation_audio_seconds": 162.45829999995232,
+        "s1_ended_to_s2_playing_seconds": 31.627899999976158,
+        "api_verification_and_plan_seconds": 0.9018052999163046,
+        "new_question_total": "NOT_RUN",
+        "warm_resident_worker": "NOT_IMPLEMENTED",
+        "generation_streaming": "NOT_IMPLEMENTED"
+      },
+      "human_review": "H_PENDING",
+      "student_ready": false,
+      "supported_scope": "SQLite single table SUM(column IS NOT NULL), optional COUNT(*), no WHERE/GROUP/HAVING in this two-step lesson path",
+      "conditional_row_followup": "unsupported",
+      "model_quality_improvement": "NOT_MEASURED"
+    },
+    "tts_worker_reuse": {
+      "status": "IMPLEMENTED_CPU_VALIDATION_ACTUAL_PAIR_FAILED",
+      "human_review": "H_PENDING"
+    },
+    "tts_startup_recovery": {
+      "status": "PREPARATION_FAILED_REAL_SYNTHESIS_NOT_STARTED",
+      "human_review": "H_PENDING",
+      "new_wavs": 0
+    },
+    "finish_v2": {
+      "status": "IMPLEMENTED_AND_EXECUTED_BOUNDED_REVIEW_NOT_READY",
+      "actual_student_journeys_completed": 5,
+      "actual_student_journeys_attempted": 8,
+      "final_holdout_read": true,
+      "validation_comparison": {
+        "base_sql_fixture_match": 20,
+        "adapter_sql_fixture_match": 14,
+        "sql_total": 35
+      },
+      "training2": {
+        "status": "interrupted_after_submission_not_completed",
+        "charged_seconds_reserved_upper_bound": 7200
+      },
+      "final160": {
+        "status": "COMPLETED_FROZEN_NOT_PROMOTED",
+        "raw_sql_fixture_matches": [
+          15,
+          27
+        ],
+        "sql_denominator_each": 60,
+        "concepts_each_human_pending": 20,
+        "saved_raw_cpu_app_plan_accepted_each": 0
+      },
+      "new_voice": {
+        "provider": "windows_sapi_local",
+        "voice": "Microsoft Heami Desktop",
+        "actual_new_wavs": 2
+      },
+      "text_residency": {
+        "actual_reuse_verified": true
+      }
+    },
+    "v021_support_accuracy": {
+      "at": "2026-10-29T20:23:59.491156+09:00",
+      "status": "IMPLEMENTED_AND_EXECUTED_WITH_RECORDED_REMAINING_FAILURES",
+      "version": "0.2.1",
+      "build": "v021-r3",
+      "readiness": "NOT_READY",
+      "human_review": "H_PENDING",
+      "text_streaming": "Existing TextIteratorStreamer and actual delta events; preserved",
+      "audio_chunk_streaming": "Not implemented",
+      "independent": {
+        "support": 20,
+        "boundary": 8,
+        "raw_correct": 18,
+        "app_substantive": 19,
+        "answered_correct": 19,
+        "answered_denominator": 19,
+        "free_prose_full_accuracy": null,
+        "observed_prose_counterexamples_at_least": 3,
+        "parsed_scalar_or_array_claims": 0
+      },
+      "disclosed_old60_development_only": {
+        "base_plans": 20,
+        "adapter1_plans": 35,
+        "denominator_each": 60
+      }
+    }
+  }
+}

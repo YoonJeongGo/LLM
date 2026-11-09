@@ -1,0 +1,114 @@
+{
+  "provenance": {
+    "purpose": "New N03 independent final-build execution input; one initial and one followup, not a success-filtered case",
+    "authoring": "Separate evaluation/runtime agent authored after prior failed cohort; product parser/candidate feasibility was not tested",
+    "authored_development_source": true,
+    "human_review": "H_PENDING",
+    "model_calls": 0,
+    "tts_calls": 0,
+    "ocr_calls": 0,
+    "expected_answers_sent_to_model": false,
+    "planned_journeys": 1,
+    "planned_question_events": 2,
+    "timing_targets_seconds": {
+      "first_valid_warm": 10,
+      "supplement_warm": 10,
+      "step_gap": 2,
+      "local_stop": 0.5
+    }
+  },
+  "journeys": [
+    {
+      "id": "N03",
+      "kind": "table",
+      "task_kind": "write_sql",
+      "tables": [
+        {
+          "name": "sensor_log",
+          "columns": [
+            {
+              "name": "tag",
+              "type": "TEXT"
+            },
+            {
+              "name": "reading",
+              "type": "INTEGER"
+            },
+            {
+              "name": "stage",
+              "type": "TEXT"
+            },
+            {
+              "name": "seq",
+              "type": "INTEGER"
+            }
+          ],
+          "rows": [
+            [
+              "nova",
+              0,
+              "live",
+              2
+            ],
+            [
+              "mica",
+              null,
+              "live",
+              1
+            ],
+            [
+              "opal",
+              -3,
+              "live",
+              1
+            ],
+            [
+              "reed",
+              2,
+              "hold",
+              2
+            ],
+            [
+              "sage",
+              3,
+              "live",
+              3
+            ],
+            [
+              "tide",
+              0,
+              "live",
+              2
+            ],
+            [
+              "vale",
+              3,
+              "live",
+              1
+            ],
+            [
+              "wisp",
+              4,
+              "live",
+              0
+            ]
+          ]
+        }
+      ],
+      "question": "sensor_log에서 reading이 0 이상 4 미만인 행 중 stage가 hold가 아닌 것만 찾아 줘. tag, reading, seq를 출력하고 reading 오름차순, 같으면 seq 내림차순, 둘 다 같으면 tag 내림차순으로 정렬하는 SQLite SQL을 알려 줘. 원본에서 행이 남거나 빠지는 과정과 최종 순서도 설명해 줘.",
+      "followup": {
+        "question": "선택한 nova는 왜 포함됐어? reading이 NULL인 mica, reading이 0인 tide와 비교해 줘. 지금 정렬에서 nova와 tide의 순서가 갈리는 이유도 설명하고 원래 수업으로 돌아가 줘.",
+        "column": "reading",
+        "row_index": 0,
+        "value": 0,
+        "source_row": [
+          "nova",
+          0,
+          "live",
+          2
+        ]
+      },
+      "authored_development_source": true
+    }
+  ]
+}

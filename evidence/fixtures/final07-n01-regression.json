@@ -1,0 +1,117 @@
+{
+  "provenance": {
+    "purpose": "Disclosed development regression of previously executed N01, one initial plus one followup after recorder/cache-path correction; not independent evaluation",
+    "authoring": "Authored by a separate runtime/test agent; no product explanation parser imported; no parser feasibility filtering or weakening",
+    "authored_development_source": true,
+    "human_review": "H_PENDING",
+    "model_calls": 0,
+    "tts_calls": 0,
+    "ocr_calls": 0,
+    "expected_answers_sent_to_model": false,
+    "planned_journeys": 1,
+    "planned_question_events": 2,
+    "timing_targets_seconds": {
+      "first_valid_warm": 10,
+      "supplement_warm": 10,
+      "step_gap": 2,
+      "local_stop": 0.5
+    },
+    "source_file": "runs/v021-r3-repair/20261030/evaluation/public.json",
+    "source_sha256": "b9ba6682291a58e091d6af10618b0e32e9f1a04450c5f7415a473bda9bf6313f",
+    "repeat_question_planned": false
+  },
+  "journeys": [
+    {
+      "id": "N01",
+      "kind": "table",
+      "task_kind": "write_sql",
+      "tables": [
+        {
+          "name": "parcel_watch",
+          "columns": [
+            {
+              "name": "parcel",
+              "type": "TEXT"
+            },
+            {
+              "name": "delta",
+              "type": "INTEGER"
+            },
+            {
+              "name": "rush",
+              "type": "INTEGER"
+            },
+            {
+              "name": "zone",
+              "type": "INTEGER"
+            }
+          ],
+          "rows": [
+            [
+              "P1",
+              null,
+              1,
+              1
+            ],
+            [
+              "P2",
+              0,
+              0,
+              2
+            ],
+            [
+              "P3",
+              -4,
+              0,
+              2
+            ],
+            [
+              "P4",
+              3,
+              1,
+              1
+            ],
+            [
+              "P5",
+              -4,
+              1,
+              1
+            ],
+            [
+              "P6",
+              0,
+              1,
+              2
+            ],
+            [
+              "P7",
+              2,
+              0,
+              1
+            ],
+            [
+              "P8",
+              null,
+              0,
+              2
+            ]
+          ]
+        }
+      ],
+      "question": "SQLite에서 parcel_watch를 조회해 줘. delta가 0보다 작거나 rush가 1인 행을 고르고, parcel, delta, zone 열을 이 순서로 보여 줘. zone은 오름차순, 같은 zone에서는 delta 내림차순, 둘 다 같으면 parcel 내림차순으로 정렬해 줘. 원본 행이 조건을 통과하는 과정과 최종 순서를 설명해 줘.",
+      "followup": {
+        "question": "선택한 P3은 왜 포함되고 P2는 왜 제외돼? 원본에서 delta가 NULL인 P1, delta가 0인 P6과도 같은 행 조건으로 비교해 줘. 지금 정렬의 우선순위와 동점 처리까지 설명하고 원래 수업으로 돌아가 줘.",
+        "column": "delta",
+        "row_index": 2,
+        "value": -4,
+        "source_row": [
+          "P3",
+          -4,
+          0,
+          2
+        ]
+      },
+      "authored_development_source": true
+    }
+  ]
+}

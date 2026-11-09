@@ -1,0 +1,206 @@
+{
+  "id": "J05",
+  "title": "정상 개발 검증사진의 조건·정렬 수업",
+  "human_status": "H_PENDING",
+  "source_classification": "과거 개발 수업 + final05 저장 재생",
+  "source_collector_status": "COMPLETED_WITH_EVIDENCE_FAILURES",
+  "question": "```markdown\n| code | quantity |\n|------|-----------|\n| P    | 5        |\n| Q    | NULL     |\n| R    | 0        |\n| S    | 11       |\n\nSELECT code, quantity FROM supply\nWHERE quantity IS NOT NULL\nORDER BY quantity DESC, code ASC;\n```\n확정한 원문 데이터:\n{\"sql\": \"SELECT code, quantity FROM supply\\nWHERE quantity IS NOT NULL\\nORDER BY quantity DESC, code ASC;\", \"tables\": [{\"name\": \"supply\", \"columns\": [{\"name\": \"code\", \"type\": \"TEXT\"}, {\"name\": \"quantity\", \"type\": \"INTEGER\"}], \"rows\": [[\"P\", 5], [\"Q\", null], [\"R\", 0], [\"S\", 11]]}], \"choices\": [], \"missing_conditions\": []}",
+  "followup_question": null,
+  "original_test_tables": [],
+  "lessons": [
+    {
+      "role": "원래 수업",
+      "raw_model_response": "{\"sql\":\"SELECT code, quantity FROM supply WHERE quantity IS NOT NULL ORDER BY quantity DESC, code ASC\",\"explanation\":\"SELECT code, quantity FROM supply WHERE quantity IS NOT NULL ORDER BY quantity DESC, code ASC\" }",
+      "app_display_response": "확정한 원본 문제를 기준으로 도구가 계산한 결과입니다. 모델 초안과 구분합니다.\ncode | quantity\nS | 11\nP | 5\nR | 0",
+      "steps": [
+        {
+          "id": "s1",
+          "title": "원본 행과 조건값",
+          "speech": "SQLite에서 각 행의 WHERE 조건을 계산합니다. 원본 4행 중 TRUE인 3행만 남습니다. FALSE와 UNKNOWN은 제외합니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "table",
+              "caption": "확정한 원본 표",
+              "table_name": "supply",
+              "columns": [
+                "code",
+                "quantity"
+              ],
+              "rows": [
+                [
+                  "P",
+                  5
+                ],
+                [
+                  "Q",
+                  null
+                ],
+                [
+                  "R",
+                  0
+                ],
+                [
+                  "S",
+                  11
+                ]
+              ],
+              "slot": "main",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "table",
+              "caption": "WHERE NOT quantity IS NULL",
+              "columns": [
+                "원본 행",
+                "WHERE 결과",
+                "남는가"
+              ],
+              "rows": [
+                [
+                  1,
+                  "TRUE",
+                  "유지"
+                ],
+                [
+                  2,
+                  "FALSE",
+                  "제외"
+                ],
+                [
+                  3,
+                  "TRUE",
+                  "유지"
+                ],
+                [
+                  4,
+                  "TRUE",
+                  "유지"
+                ]
+              ],
+              "slot": "bottom",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "highlight",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            }
+          ],
+          "audio": "audio/J05-1-s1.wav"
+        },
+        {
+          "id": "s2",
+          "title": "정렬 기준과 원본 행 연결",
+          "speech": "1순위는 quantity의 내림차순, NULL은 뒤에 둡니다. 2순위는 code의 오름차순, NULL은 앞에 둡니다. 앞 기준의 값이 같을 때만 다음 기준으로 비교합니다. 모든 정렬 기준이 같은 행끼리의 순서는 따로 정하지 않았습니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "clear"
+            },
+            {
+              "type": "clear"
+            },
+            {
+              "type": "table",
+              "caption": "조건을 통과한 원본 행 · 이번 실행의 정렬",
+              "columns": [
+                "code",
+                "quantity"
+              ],
+              "rows": [
+                [
+                  "S",
+                  11
+                ],
+                [
+                  "P",
+                  5
+                ],
+                [
+                  "R",
+                  0
+                ]
+              ],
+              "slot": "right",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "text",
+              "text": "1순위는 quantity의 내림차순, NULL은 뒤에 둡니다. 2순위는 code의 오름차순, NULL은 앞에 둡니다. 앞 기준의 값이 같을 때만 다음 기준으로 비교합니다. 모든 정렬 기준이 같은 행끼리의 순서는 따로 정하지 않았습니다.",
+              "slot": "bottom"
+            },
+            {
+              "type": "arrow"
+            }
+          ],
+          "audio": "audio/J05-1-s2.wav"
+        },
+        {
+          "id": "s3",
+          "title": "출력 열과 최종 결과",
+          "speech": "남은 행에서 code, quantity 열을 요청한 순서로 출력합니다. 최종 결과는 3행입니다. ORDER BY에서 지정한 기준의 순서입니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "clear"
+            },
+            {
+              "type": "clear"
+            },
+            {
+              "type": "table",
+              "caption": "SQLite 최종 결과 · 원본 행과 열 식별자 유지",
+              "columns": [
+                "code",
+                "quantity"
+              ],
+              "rows": [
+                [
+                  "S",
+                  11
+                ],
+                [
+                  "P",
+                  5
+                ],
+                [
+                  "R",
+                  0
+                ]
+              ],
+              "slot": "bottom",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "text",
+              "text": "출력 열 순서: code → quantity\n1순위는 quantity의 내림차순, NULL은 뒤에 둡니다. 2순위는 code의 오름차순, NULL은 앞에 둡니다. 앞 기준의 값이 같을 때만 다음 기준으로 비교합니다. 모든 정렬 기준이 같은 행끼리의 순서는 따로 정하지 않았습니다.",
+              "slot": "right"
+            },
+            {
+              "type": "arrow"
+            }
+          ],
+          "audio": "audio/J05-1-s3.wav"
+        }
+      ]
+    }
+  ]
+}

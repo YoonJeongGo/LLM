@@ -1,0 +1,2825 @@
+{
+  "project": "edu-tutor-local",
+  "source_version": "0.2.1 r3 repair final07",
+  "published_date_kst": "2026-11-09",
+  "source_workspace": "D:/LLM",
+  "includes": "Source, shipped UI, specs, demo fixtures, test harnesses, selected historical release and verified synthetic lesson artifacts",
+  "local_only": [
+    "private uploads",
+    "authentication",
+    "runtime DB and budget ledger",
+    "model weights and trained adapters",
+    "local-only corpora and reserved answer keys",
+    "environment and raw machine logs"
+  ],
+  "files": {
+    ".gitattributes": {
+      "bytes": 87,
+      "sha256": "1e163202ae07f6af6b3d9c915478bb0f4284a0784e2e1a5db833884f32230dac"
+    },
+    ".gitignore": {
+      "bytes": 179,
+      "sha256": "25bf0431d0b59fcebe5f6edf11604b05c305428fd5ec7f76898b944df0ea6431"
+    },
+    "README.md": {
+      "bytes": 2285,
+      "sha256": "2e857d02a0f62b481d048dae1f509507bf438b550c1d4da9ad96c780be7498e8"
+    },
+    "edu-tutor-local/.gitignore": {
+      "bytes": 161,
+      "sha256": "fdc7dd5219a0a971a3a61afd7fcb5cf6561c15d565ae15f772629dc075ef6c93"
+    },
+    "edu-tutor-local/AGENTS.md": {
+      "bytes": 789,
+      "sha256": "4548dd76a7476fdcc0a1a74053c7391802ec59c336de6efe2caa17aa9f9f642a"
+    },
+    "edu-tutor-local/HANDOFF.md": {
+      "bytes": 2009,
+      "sha256": "e3afc698523c1017e570bdabcc185070848b375e18d066d4fbc0d3cdcb458470"
+    },
+    "edu-tutor-local/README.md": {
+      "bytes": 16264,
+      "sha256": "d2118b98f58387f0f0bef70b4eca939bbba506137fd951e15ee2dfe18c20bc91"
+    },
+    "edu-tutor-local/STATUS.json": {
+      "bytes": 60713,
+      "sha256": "e820838ec23ccd1750fe7fd1ea90a91b68db6cb8972841e11dd34fe5b2ec4782"
+    },
+    "edu-tutor-local/THIRD_PARTY_NOTICES.md": {
+      "bytes": 3148,
+      "sha256": "fc89bf295828cfff21595a40e708aa69e5ceae9c05a3e707ca8dd5a21541033e"
+    },
+    "edu-tutor-local/configs/finish_education.yaml": {
+      "bytes": 1349,
+      "sha256": "9f7e3e265570cb1076d91c63b920f3bc5f78c3e56490037a53313a99e6c4a8e4"
+    },
+    "edu-tutor-local/configs/finish_education_diverse_v2.yaml": {
+      "bytes": 1449,
+      "sha256": "8f8413f33869d8a2cc56753029f1faa17c720053386390f14dd1c02071b5cf86"
+    },
+    "edu-tutor-local/configs/finish_education_reason_v3.yaml": {
+      "bytes": 1505,
+      "sha256": "151f0360af14f07747a1cc922a4da41a5a157d08d5e4a236eec792557a880d41"
+    },
+    "edu-tutor-local/configs/local_8gb.yaml": {
+      "bytes": 1526,
+      "sha256": "b7c8e97a6f8bddc91f884fe76ab92753006a0ea8bcd449b68dfd6084700dc7e8"
+    },
+    "edu-tutor-local/configs/text-inference-bf16.example.json": {
+      "bytes": 26,
+      "sha256": "a83e614f74258f5e91ecebcedfbd6e53328a61f7f52471e1aaa822f6aad1c6b5"
+    },
+    "edu-tutor-local/configs/windows-sapi-provider.example.json": {
+      "bytes": 547,
+      "sha256": "44102ec7e2a54c5348b3323c464be9c337c5ffba226ac60f35e3e05b3db40dd5"
+    },
+    "edu-tutor-local/data/README.md": {
+      "bytes": 1325,
+      "sha256": "e2b6392804ef50695f7a41a6e94643484ebb6393c2d05376ad2cc357d27515b6"
+    },
+    "edu-tutor-local/data/build_demo.py": {
+      "bytes": 19237,
+      "sha256": "1eac3b1d0cbe2a63479fc5c8fac8b34749d13fb4608b08b34ac8812d7b193e05"
+    },
+    "edu-tutor-local/data/demo/test.jsonl": {
+      "bytes": 19915,
+      "sha256": "42de7348047ae7d328fc0532b21ea142a42b543debef06f7ce1f462e8f4e9bd0"
+    },
+    "edu-tutor-local/data/demo/train.jsonl": {
+      "bytes": 41799,
+      "sha256": "2970cddb49177e04f303732a185c95ad5f090917a476abe54fbc95b80ab11051"
+    },
+    "edu-tutor-local/data/demo/validation.jsonl": {
+      "bytes": 13925,
+      "sha256": "110591a7912d24832b80b125098d0d6f194e7196c07f762acba154a4e22080a9"
+    },
+    "edu-tutor-local/data/reference/sqlite-aggregate-v02.md": {
+      "bytes": 734,
+      "sha256": "08b0578ddec94fc99b41c66940328cf7e00d65a1651c2592df0c970c2393e673"
+    },
+    "edu-tutor-local/data/reference/sqlite-selection-v02.md": {
+      "bytes": 772,
+      "sha256": "edce9217691255970c6e32eb09834e43709776794e1a7a1266dd9f7a29011657"
+    },
+    "edu-tutor-local/data/reference/sqlite-structure-v02.md": {
+      "bytes": 807,
+      "sha256": "56f747d2d8f7499ef01b49170cf37e36f68a2717d76e1356c74e362a5e6dc05e"
+    },
+    "edu-tutor-local/docs/ACCEPTANCE.md": {
+      "bytes": 6906,
+      "sha256": "f4947649373281da2f91d186b743018f1b6ab5e66fea8faef4fc73a6ee0f9ca4"
+    },
+    "edu-tutor-local/docs/ACTIVE_EXECUTION.md": {
+      "bytes": 1153,
+      "sha256": "7373053efdfd626a9e800bc35dbda4dac32147bb86f21efe7657810bbc1c449b"
+    },
+    "edu-tutor-local/docs/ARCHITECTURE.md": {
+      "bytes": 1375,
+      "sha256": "4e2583e2581eee5aede83a20d41022e5608d9dd6c321aff00785d366372ecf2f"
+    },
+    "edu-tutor-local/docs/CHATGPT_HANDOFF.md": {
+      "bytes": 13558,
+      "sha256": "4a5356f847d71102fb43f0958511bd0bc2e9d23668063e5008ebb6dab2345c9f"
+    },
+    "edu-tutor-local/docs/DATA_GUIDE.md": {
+      "bytes": 1629,
+      "sha256": "1330c9b385499681bf5ca5af9b85516f59ad6a5f6c66942353da2d6dd0c93f53"
+    },
+    "edu-tutor-local/docs/DECISIONS.md": {
+      "bytes": 1812,
+      "sha256": "d492417b6480c53676bc5d844d3c983efd392c6900fda820d148ab9c6fbde194"
+    },
+    "edu-tutor-local/docs/LIMITATIONS.md": {
+      "bytes": 2558,
+      "sha256": "c8000d72047d4584bd2ed3c33c3f1783d217a85dd0419a39a1054b14fbb03900"
+    },
+    "edu-tutor-local/docs/MODEL_DECISION.md": {
+      "bytes": 7341,
+      "sha256": "61b1b51d5527fd1e1d3dfbef05ac36822e05ab993066b6622d20ec7766d7241f"
+    },
+    "edu-tutor-local/docs/NEURAL_ACCEPTANCE.md": {
+      "bytes": 11116,
+      "sha256": "ccb57869a5a85e31ccea6f297a0547443c338018fe565a13231471d52ccfc483"
+    },
+    "edu-tutor-local/docs/NEURAL_VIEW.md": {
+      "bytes": 9921,
+      "sha256": "142e16c4a2e8f8021c105229fb7d6ab4c27c192bffa9ec6a265e579c4ba1de8a"
+    },
+    "edu-tutor-local/docs/OPERATIONS.md": {
+      "bytes": 1196,
+      "sha256": "51e8237a256189b2425612cdd26ff23da3ef98e2bf5c08ffb048e36274ee1865"
+    },
+    "edu-tutor-local/docs/PHASE2_ACCEPTANCE.md": {
+      "bytes": 18022,
+      "sha256": "f1dffd6669e513593e9ee64a2ddfff6ba02d6902d2002b5eb87ceed7772308b8"
+    },
+    "edu-tutor-local/docs/PHASE2_HUMAN_REVIEW.md": {
+      "bytes": 10562,
+      "sha256": "fbd9ff5a7f2d37effe7eaec8f644a8cb1bb28cd94407a6b7f02f6c72df7344a1"
+    },
+    "edu-tutor-local/docs/PHASE2_IMPLEMENTATION.md": {
+      "bytes": 13229,
+      "sha256": "047c542d2220d3389757e6f119a5707e45031fcb8a2c023e3b0d659d834bcdfc"
+    },
+    "edu-tutor-local/docs/PHASE2_RUNTIME_LIMITS.md": {
+      "bytes": 3941,
+      "sha256": "555150b14073b0d57342d8771f147df3df302833c31e4c14f75b51658b68ce84"
+    },
+    "edu-tutor-local/docs/PROGRESS_BRIEFING.md": {
+      "bytes": 19065,
+      "sha256": "396bf911a6ffabdbacbd3757fd6c44479be5a601b89c0dc82c5522ed6f0deef4"
+    },
+    "edu-tutor-local/docs/QWEN3_4B_CANDIDATE_REVIEW.md": {
+      "bytes": 8916,
+      "sha256": "b704ee8d272bbd3c848f77276f41206bad1c6426b057cb9ce7bcf7018a32de91"
+    },
+    "edu-tutor-local/docs/STUDENT_EXPERIENCE.md": {
+      "bytes": 30079,
+      "sha256": "2e3bf2547b4ce9b21c381f075c1744194cedd79d679545d196db5d0b7197a68f"
+    },
+    "edu-tutor-local/docs/SUPPORTED_SQL_V021.md": {
+      "bytes": 5048,
+      "sha256": "74f2f7c9362e6f22da2f017838f8f694a82be759babf281a1c8cc60beb6132a9"
+    },
+    "edu-tutor-local/docs/TRAINING_GUIDE.md": {
+      "bytes": 2406,
+      "sha256": "9aef880491ce490fb5a858a412d2e2d6c809d50cfdc34444a4b7a653023fab2c"
+    },
+    "edu-tutor-local/docs/licenses/PROJECT_AVATAR.md": {
+      "bytes": 1282,
+      "sha256": "6386b967eeaec64bfe52aa2f561db56124c8fae27725712c7a1b86837e7a4ab0"
+    },
+    "edu-tutor-local/docs/licenses/README.md": {
+      "bytes": 1394,
+      "sha256": "83b0c2f1860b447edbf2e3da70a083ff64c3ab0a09db96f0118b9a5470fdf865"
+    },
+    "edu-tutor-local/docs/licenses/ajv-LICENSE.txt": {
+      "bytes": 1090,
+      "sha256": "a05350a88e318e4f5f2c2a1ff1e2e88daa4dd38e6e78b71cccae422bdc762cc3"
+    },
+    "edu-tutor-local/docs/licenses/katex-LICENSE.txt": {
+      "bytes": 1107,
+      "sha256": "766ccc1f306c885aa45542a9846bbd0a505b27a0374f146778171c2254ce18e3"
+    },
+    "edu-tutor-local/docs/licenses/license-inventory.json": {
+      "bytes": 2563,
+      "sha256": "e09b823e4cee7545bbce9a7c6b97972d204fb8874821206e944b4bedd59b9550"
+    },
+    "edu-tutor-local/docs/licenses/lucide-react-LICENSE.txt": {
+      "bytes": 880,
+      "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc"
+    },
+    "edu-tutor-local/docs/licenses/react-LICENSE.txt": {
+      "bytes": 1088,
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+    },
+    "edu-tutor-local/docs/licenses/react-dom-LICENSE.txt": {
+      "bytes": 1088,
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+    },
+    "edu-tutor-local/docs/licenses/scheduler-LICENSE.txt": {
+      "bytes": 1088,
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+    },
+    "edu-tutor-local/docs/licenses/sqlglot-LICENSE.txt": {
+      "bytes": 1065,
+      "sha256": "b0bf909b472ddf9bd4eab30f6e6fd8b33bf3997ce038b882fe0663f291958d2d"
+    },
+    "edu-tutor-local/docs/licenses/vite-LICENSE.txt": {
+      "bytes": 115624,
+      "sha256": "008938a3441801ca3960f8e3ccb4c0738e7996442a53063141d57d3769a7344d"
+    },
+    "edu-tutor-local/docs/source-pack-v02/edu_tutor_next_v02/00_README_KO.md": {
+      "bytes": 2263,
+      "sha256": "2a27e6e477a0b7be5d8c8d2172270261175c2bc2d3b13efa34ca33a884556c46"
+    },
+    "edu-tutor-local/docs/source-pack-v02/edu_tutor_next_v02/01_START_PROMPT_KO.txt": {
+      "bytes": 3340,
+      "sha256": "51c6049d64a198c8055eb45f691c992382c39a7571a471bd4fca5b7acff894df"
+    },
+    "edu-tutor-local/docs/source-pack-v02/edu_tutor_next_v02/02_NEXT_SPRINT_SPEC_KO.md": {
+      "bytes": 18688,
+      "sha256": "67f66ef744056e644caa691f9cbc57fd1e8cb5797dea45ee12d3d2f8887200d3"
+    },
+    "edu-tutor-local/docs/source-pack-v02/edu_tutor_next_v02/03_ACCEPTANCE_KO.md": {
+      "bytes": 7984,
+      "sha256": "7b75ab9f7aa096f4117308dddb75dbc2741029a29eb3091c1cb4830ba6f48ded"
+    },
+    "edu-tutor-local/docs/source-pack-v02/edu_tutor_next_v02/BASELINE_REPORTED.json": {
+      "bytes": 1552,
+      "sha256": "49587e51d6bd81b86750f23aaeffbc86dd4acdce5bc4c5c851d53bed27ee5a8b"
+    },
+    "edu-tutor-local/docs/source-pack-v02/edu_tutor_next_v02/PACK_VALIDATION.json": {
+      "bytes": 4274,
+      "sha256": "8c772117ecec1d07250095ff29d54e8ee83b0d507e38038a588a7c48ee090dc3"
+    },
+    "edu-tutor-local/docs/source-pack-v02/edu_tutor_next_v02/SHA256SUMS.txt": {
+      "bytes": 802,
+      "sha256": "f133f1096a4b2f9e1ef30d80b46ca115b0d3bce9ca1ed8bd205947f6d738f530"
+    },
+    "edu-tutor-local/docs/source-pack-v02/edu_tutor_next_v02/SOURCE_NOTES_KO.md": {
+      "bytes": 1872,
+      "sha256": "b3b87b0f85228385fb2d4d9c8cd697944f9b29ad38e205bc1cfb776e91def17d"
+    },
+    "edu-tutor-local/docs/source-pack-v02/edu_tutor_next_v02/fixtures/sql_cases_v02.json": {
+      "bytes": 31119,
+      "sha256": "3e665b82d21e595f4ac940cce4cdf9a3deb837ed928d6c599a6b3c2d5eb35fc0"
+    },
+    "edu-tutor-local/docs/source-pack-v02/edu_tutor_next_v02/tools/verify_fixture_oracles.py": {
+      "bytes": 3686,
+      "sha256": "643169938d84790f6fabd0424f0e4228999fce8271015777c5685aedfb55799c"
+    },
+    "edu-tutor-local/docs/source-pack/00_README_KO.md": {
+      "bytes": 4719,
+      "sha256": "c09d3dadb49a4ef7fe0143e00658ead15136014a1d58c108d468574c336a5fc8"
+    },
+    "edu-tutor-local/docs/source-pack/01_START_PROMPT_KO.txt": {
+      "bytes": 1905,
+      "sha256": "6230272b886759e4e0f71db63c5ce8ae50fe29afcaff9cc8d64ff7dc8d1f5502"
+    },
+    "edu-tutor-local/docs/source-pack/02_MASTER_INSTRUCTIONS.md": {
+      "bytes": 7437,
+      "sha256": "f39fd7296521f79ec4b55704de5e06667c4c369eae75d89e07b3cdce183c9bbf"
+    },
+    "edu-tutor-local/docs/source-pack/ALL_IN_ONE_PROMPT_KO.txt": {
+      "bytes": 115812,
+      "sha256": "a223093305ef97be0b7ed2f0fae8f75d3284220b92b9e77b5b9950cd7a7c5ff7"
+    },
+    "edu-tutor-local/docs/source-pack/PACK_VALIDATION.md": {
+      "bytes": 1449,
+      "sha256": "a4f328e1a423986c43f99795f891176b0336ae3b60a6a6b888e171965e00083a"
+    },
+    "edu-tutor-local/docs/source-pack/SHA256SUMS.txt": {
+      "bytes": 2348,
+      "sha256": "5595070486540332ac3625c45bfadbc7aec59b5c66a6d14434e04278e14889d1"
+    },
+    "edu-tutor-local/docs/source-pack/examples/lesson_plan.example.json": {
+      "bytes": 6343,
+      "sha256": "c1b3842ba0f6022e532a34e76d832a678ed4b708764271807fca398b8bae1de6"
+    },
+    "edu-tutor-local/docs/source-pack/examples/qa_record.example.json": {
+      "bytes": 3636,
+      "sha256": "c48ce1d2b9b7c91ac6cede659cbc8a6e14c68ae9755b7663ff9f575fe4241b68"
+    },
+    "edu-tutor-local/docs/source-pack/finish-v2/MANIFEST.json": {
+      "bytes": 1379,
+      "sha256": "70205a7ee7de8f93025d86afe66d26f082db5ac08cffafe80c377e3a55433ff3"
+    },
+    "edu-tutor-local/docs/source-pack/finish-v2/MASTER_KO.txt": {
+      "bytes": 27805,
+      "sha256": "7821885b3819413d73a0b1c43420246ebbd3322c490fa21306e8b03ecc544640"
+    },
+    "edu-tutor-local/docs/source-pack/finish-v2/POLICY_REFERENCE.json": {
+      "bytes": 1532,
+      "sha256": "cc8fdd37af7fac3e57be3568b03e391dadc13b5c530b3cfeb490f59fbceb73b2"
+    },
+    "edu-tutor-local/docs/source-pack/finish-v2/README_KO.txt": {
+      "bytes": 2279,
+      "sha256": "b50052bdd2c657ba178360c6036d60577cd2e22cb12992d89ad82b68671d1d42"
+    },
+    "edu-tutor-local/docs/source-pack/finish-v2/REPORT_COMPARISON.json": {
+      "bytes": 570,
+      "sha256": "ef9982bdc744df80ce95cfffbd56b9185bf1f45c1b2cd73cca1a199c80e04c53"
+    },
+    "edu-tutor-local/docs/source-pack/finish-v2/SOURCES_AND_SCOPE.txt": {
+      "bytes": 1347,
+      "sha256": "88fa2f60537d668bfe7958f4a29855429e6dc4970cd843201b8d997763e301cc"
+    },
+    "edu-tutor-local/docs/source-pack/finish-v2/START_HERE_KO.txt": {
+      "bytes": 2779,
+      "sha256": "8ea5b62c106b0c3b2718d0b5725a7865148d3c258b0aec25d87a5306f78fc271"
+    },
+    "edu-tutor-local/docs/source-pack/schemas/README_KO.md": {
+      "bytes": 1111,
+      "sha256": "33378c9ba86a617f09ff8a0824aebb2c2fbcfea9d9953ff743e406043bdebde0"
+    },
+    "edu-tutor-local/docs/source-pack/schemas/lesson_plan.schema.json": {
+      "bytes": 12242,
+      "sha256": "8a62488a17f9c16fad85d1d01c04563982ebbb861e32b9d5d1ba945859133f89"
+    },
+    "edu-tutor-local/docs/source-pack/schemas/qa_record.schema.json": {
+      "bytes": 5265,
+      "sha256": "e0562e79414550f443b9421df32712d207d1879491bfaac0096acaaee307ff1d"
+    },
+    "edu-tutor-local/docs/source-pack/specs/00_EXECUTION_PLAN.md": {
+      "bytes": 5519,
+      "sha256": "21a74041c3179c922ce8a80d63d589039226135b616d3e89c21436f8516ca41f"
+    },
+    "edu-tutor-local/docs/source-pack/specs/01_PRODUCT_SCOPE.md": {
+      "bytes": 4492,
+      "sha256": "7a7fea7ae734058363d4e09c423038f6f3f7cb68b5ac2c8e085f8ba57b8aec7e"
+    },
+    "edu-tutor-local/docs/source-pack/specs/02_ARCHITECTURE_RUNTIME.md": {
+      "bytes": 6180,
+      "sha256": "6789d21914c909c49ed8e14796b3c5765cb01b50010131b3ca2d754da22521f9"
+    },
+    "edu-tutor-local/docs/source-pack/specs/03_MODEL_TRAINING.md": {
+      "bytes": 7934,
+      "sha256": "61347b9a08b202fe4403a1ab2ef22fd41e90304120ffb63e2b65e046d26bc4ea"
+    },
+    "edu-tutor-local/docs/source-pack/specs/04_DATA_RAG_EVALUATION.md": {
+      "bytes": 6711,
+      "sha256": "d3a1e1066d4bf25e6369f2aa9f5656f00c734f79724e3a96233cd7948366815c"
+    },
+    "edu-tutor-local/docs/source-pack/specs/05_CHAT_ADMIN_UI.md": {
+      "bytes": 4829,
+      "sha256": "00d3ad52bd2bcc6965891a5f490dc709fcc9c4a74b1e6d3f0965dedffb79c8e6"
+    },
+    "edu-tutor-local/docs/source-pack/specs/06_LECTURE_VOICE_AVATAR.md": {
+      "bytes": 7386,
+      "sha256": "84bd2ef9fe23aa6e041aad7246dae93985fa23f99433fc61f7a0eb9b4a274744"
+    },
+    "edu-tutor-local/docs/source-pack/specs/07_IMAGE_INPUT.md": {
+      "bytes": 3128,
+      "sha256": "747790a0d84c067a33b246f561962ba3b0d4383992e06136ec370042b7f94228"
+    },
+    "edu-tutor-local/docs/source-pack/specs/08_TESTS_SECURITY.md": {
+      "bytes": 6100,
+      "sha256": "dfc13d6d551b4af754266def3b2986cd612d4458fdabbb05cea27edafcd8d660"
+    },
+    "edu-tutor-local/docs/source-pack/specs/09_RELEASE_HANDOFF.md": {
+      "bytes": 4923,
+      "sha256": "2198fb0ff6520032eaac5a877bdbb6d63aafd1ee3cf18c9885a5bf9947258141"
+    },
+    "edu-tutor-local/docs/source-pack/specs/10_OFFICIAL_SOURCES.md": {
+      "bytes": 3129,
+      "sha256": "116d13e61387a6931a7c211ae5b0f2c939c6579aa9d9a5334b6c448b1d91fcdc"
+    },
+    "edu-tutor-local/docs/source-pack/templates/AGENTS_ADDENDUM.md": {
+      "bytes": 1543,
+      "sha256": "7d79347aa7dfac0760fa0e6d2583045db59bccd4e8d457b221f0340ec170d4de"
+    },
+    "edu-tutor-local/docs/source-pack/templates/RUN_MANIFEST.example.json": {
+      "bytes": 748,
+      "sha256": "7696043955731cdae8063242c14025ec6ce2dcf2bd14530d643383bfd4cc80a4"
+    },
+    "edu-tutor-local/docs/source-pack/templates/STATUS.example.json": {
+      "bytes": 2904,
+      "sha256": "f3350ad9c5fcd4f48b37c45f8e6e50a29a0180deefd9d4dcaed30776d39b6416"
+    },
+    "edu-tutor-local/docs/source-pack/templates/local_8gb.example.yaml": {
+      "bytes": 1662,
+      "sha256": "fa70ef3b7e50f33f752dfcbf11a415afcc30460c8f0ecabe1b7652981593c0ba"
+    },
+    "edu-tutor-local/pyproject.toml": {
+      "bytes": 1099,
+      "sha256": "e4e0ba51bb77cd82da50f82c7ec96a7cc2e6f8a4bd1c45936e9d1cf74fefd460"
+    },
+    "edu-tutor-local/requirements-lock.txt": {
+      "bytes": 1973,
+      "sha256": "aa6ddd256a54fb7afb722fc902761b51283a28340c25e1b2ea6974c9efcd485d"
+    },
+    "edu-tutor-local/runs/PUBLISHED_RUN_SOURCES.md": {
+      "bytes": 2533,
+      "sha256": "e4b5f40e23992e42f13b35bd27e6daa3d49d071ddcd572145bdee2123b7f570b"
+    },
+    "edu-tutor-local/runs/PUBLISHED_SOURCE_MANIFEST.json": {
+      "bytes": 21986,
+      "sha256": "b9e18f1fe25a699afcb765f9c1b3e0cbc44df6fd81e19eb7c5b8a02b78644a82"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/capture_final_state.py": {
+      "bytes": 2359,
+      "sha256": "19595af398803f6b3411acce1ddcde56a4b3829e888650f3ab4fe3a96697927a"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/education/assemble_final03_summary.py": {
+      "bytes": 10054,
+      "sha256": "db03137e1bd2386f2fc255b4ebbd4f77b775bc8ac3b51d1f1924cbb674dac6bd"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/education/assemble_final160_comparison.py": {
+      "bytes": 5978,
+      "sha256": "09b25e0576bb727745300bb83f504cf3eaf25fd76a49f6394ee210af496109cb"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/education/audit_candidate_tokenizer.py": {
+      "bytes": 4279,
+      "sha256": "1daec2d7de1f3c8dfe223e9b2879e5813b9c39476974e5c28aeb736f37d3a364"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/education/audit_final02_completed.py": {
+      "bytes": 5509,
+      "sha256": "32afca24122a1734bcf3ed51ad4aed29f1bfb78f1e443ba6c82de5a109358299"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/education/audit_final_condition.py": {
+      "bytes": 4021,
+      "sha256": "c10537f6fdf737e2b73d9094db8ce2480e802aacde7b031684f0fa159a437af5"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/education/audit_old_j02_repair_cpu.py": {
+      "bytes": 5377,
+      "sha256": "d073fd5e7dccdcd98e272c4ce8f4ec761e9b02c0c4004df5f226e312105c6853"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/education/build-validation-comparison-v2.py": {
+      "bytes": 9340,
+      "sha256": "71a551e22fe02acd558f3b9933bf83bb7c39d3ec9355ff6a5d22e8831ca96b86"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/education/build_candidate_comparison.py": {
+      "bytes": 8070,
+      "sha256": "46fde9f9d61c17d5f470246c216526093cfce188ba048d515cc88740fbaafec2"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/education/candidate_first_batch.py": {
+      "bytes": 4297,
+      "sha256": "55b6560f790c97cfb41b012e6914845644437c170ac3c896145df64468a6a26b"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/education/freeze_final.py": {
+      "bytes": 3725,
+      "sha256": "47239bb52d17234490a529817c249900d5128cf768a438b95c147ca476f0ce95"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/education/regrade_final_r14_followup_binding.py": {
+      "bytes": 4656,
+      "sha256": "18b3eabab00d1dc2753949e7edc82c190a7d4a5efc4099aab3320a19fd082c64"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/education/summarize_j04_j05_readreview.py": {
+      "bytes": 6355,
+      "sha256": "05d87b05ab8ba9cc54c396d68bf157bf108d6c33db84f365357fe1043974033f"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/stability-proposal/audit_gestures.py": {
+      "bytes": 4345,
+      "sha256": "9091f45a8bf843fcc85ee433bb6e6f3e2633adc51bffaf7ada1640bc2983c459"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/stability-proposal/audit_identity.py": {
+      "bytes": 8962,
+      "sha256": "4bff7fed50fe4756d6041bc8506523a8e296bb4e9467f5f31505c57241d4049d"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/stability-proposal/cache_missing_probe.py": {
+      "bytes": 10137,
+      "sha256": "37c288ee5541f6ecbd4229181927641361107e96a2fbb22e4f68567638cc4645"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/stability-proposal/cross_version_receipt.py": {
+      "bytes": 7449,
+      "sha256": "3a81a27f5b0cfa488650818e98ccfeba445db2b89a33539404a03b43b18dac4c"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/stability-proposal/explicit_cancel_once.py": {
+      "bytes": 18129,
+      "sha256": "1d7c425202fb090316f2e4ed408c0c22b3487686bf4fff3a96d5cb70d5100759"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/stability-proposal/replay_pair_get_only.mjs": {
+      "bytes": 10642,
+      "sha256": "5c8cb33fa0c425b143b8c4d5f6424ada5ff2db7aa0e9cc49a9382414cbcbaf2e"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/stability-proposal/test_cross_version_receipt.py": {
+      "bytes": 4364,
+      "sha256": "dd50e405cc8d411ea69ab2bcaebcd7ce8cb21a6fc721544a4a0b61643efeca95"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/stability-proposal/test_explicit_cancel_prepared.py": {
+      "bytes": 9216,
+      "sha256": "b23b1ab99a7e5b180cb7e1163c278653a6e6b1bfd57000a17772b3179b0ef5cb"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/stability-proposal/test_gesture_audit.py": {
+      "bytes": 2117,
+      "sha256": "5ed7db8362b1c204efbd3af9cccc16b39f899df6bc3bcf3b91d37e3028b3babe"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/stability-proposal/test_prepared_probes.py": {
+      "bytes": 5752,
+      "sha256": "b4971390ec2ee6b616b481c7928ccddc4479a5fa2ecc0ce01741d7c7fece838d"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/storage-readonly-profile.py": {
+      "bytes": 3606,
+      "sha256": "3eb20c15fafb4bb8c3ee7b93e31034deae4c327253ec4af17e130cc2adc6256c"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/storage-scan-proposal.py": {
+      "bytes": 1214,
+      "sha256": "244bd4b3b39c74919bea5e5f752e9cba5e37468f4da49f95fbd9a32f121052c0"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/student/images/cropped-condition.png": {
+      "bytes": 31269,
+      "sha256": "4d2c62688be65e14482c968a57ec0ccc5b56be60ecbf06250f89eb7a36f650fe"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/student/images/normal-stock.png": {
+      "bytes": 35053,
+      "sha256": "11f034df8805a1c2981f610e727546cc9a8db4fb4966a88831feca1c75ec93f1"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/student/images/rotated-bills.png": {
+      "bytes": 95005,
+      "sha256": "1fc16bf29af65119264adf6d2350ccff7683c6ec3f06783985bb69f3e3a43793"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/student/journeys.json": {
+      "bytes": 8844,
+      "sha256": "b5bfb398b35cc60ee1debd82349133755dc57003d98f3792e45b0373db86e521"
+    },
+    "edu-tutor-local/runs/finish-v2/20261029/test_storage_proposal.py": {
+      "bytes": 4434,
+      "sha256": "8ad182ea57c52aac9b3d174d9b2a800c967fd6dba7552e2382fbb2b692a2b738"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/EDU_TUTOR_V021R3_NEXT_REPAIR_KO.txt": {
+      "bytes": 15938,
+      "sha256": "9757d163910bb7a72b5c7e32233a18cf363e07a2c275584fd199142d66ab4f90"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/evaluation-final03/public.json": {
+      "bytes": 3098,
+      "sha256": "1d3d5ba84ddf22a8053d18fea7f64a29a8d8610bf89a19a152b65af538c456c7"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/evaluation/assess_final07_subset.py": {
+      "bytes": 4199,
+      "sha256": "d3b18f44d5ccefd3142b65813cff44da4d9c354d30247c5fd64399740de1d6a2"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/evaluation/cpu-boundaries-development-final03.json": {
+      "bytes": 333,
+      "sha256": "1b0ea2b60e54dcd1b789eb7f916f10ac5ba440773a7f88f7217edca863a7d76f"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/evaluation/final07-n01-regression.json": {
+      "bytes": 3349,
+      "sha256": "f0ddc9e321a54f69d64541a19f47da95d96c67ae1ce1612d64881b446b6cdb68"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/evaluation/postrun_review.py": {
+      "bytes": 25476,
+      "sha256": "8817f4bada83fddcb5da38429d4f11346666e9b62d5abd45b1292eb3aba31daa"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/evaluation/public.json": {
+      "bytes": 5596,
+      "sha256": "b9ba6682291a58e091d6af10618b0e32e9f1a04450c5f7415a473bda9bf6313f"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/evaluation/run_cpu_boundaries.py": {
+      "bytes": 7920,
+      "sha256": "134257f64e39719d58fa249ff33b95557b652ad6f8ab571873dba1a10a896e3a"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/explanations/natural-repair/replay_c04_boundary.py": {
+      "bytes": 2132,
+      "sha256": "35cbd0dfddeebfa1d4e9add3ea2ffbf20bbb76e158c57b68a6add9295d18e21d"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/explanations/natural-repair/reprocess_followups.py": {
+      "bytes": 3771,
+      "sha256": "736a380c16235376c3370b1fdbc02de8bfe173181967647fc6fc52941b35fe50"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/explanations/natural-repair/reprocess_saved.py": {
+      "bytes": 3239,
+      "sha256": "62c6f9a9aae47e9baa45e577905a54e4f0d916bcf4533f7b34d3cd70867cb517"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/explanations/reprocess_saved_j04.py": {
+      "bytes": 2749,
+      "sha256": "46be86af7dd5841bc4c12c4ca796b2e7778026cc67328238b98d26f39d334d3d"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/playback/analyze_saved_pointer_regression.py": {
+      "bytes": 5696,
+      "sha256": "c34c5b892f20adc6d89b80cc6acc0671486d8069cd01a6764d979aa9fef2dffa"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/playback/analyze_saved_visibility_intervals.py": {
+      "bytes": 5264,
+      "sha256": "1c8a1e50ae1ff0d967cb235368f68f888e754bd4abb927b1df2ed1395dadb89e"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/run_cpu.py": {
+      "bytes": 2802,
+      "sha256": "d27bd82f2d1b299ddad243269e392708e5b53db7651256368332f2d759e44be9"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/browser_probe.mjs": {
+      "bytes": 6327,
+      "sha256": "7c588eddd423f7c9d3add3d36bb797941aedb1d2151db8d63637e350ebc8f822"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/collect_journeys.py": {
+      "bytes": 60488,
+      "sha256": "4603eaca920aaa93c1f34dc064ce3a6a81f5c22b461d3913d89ea5f14d6dd24f"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/evidence_writer.mjs": {
+      "bytes": 4567,
+      "sha256": "6465b01b46676716a41fb3abdb4245f0ec3ecba12f2649706f782f01524bc2ec"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/evidence_writer_worker.mjs": {
+      "bytes": 3596,
+      "sha256": "4d426caf5efb515abf4bc85d805a60f899dc3308468eb996287ed0cdbd8ef830"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/followup_cycle.mjs": {
+      "bytes": 3504,
+      "sha256": "cc71dd11325e83ecdc613d71771e01ade6fdd8af780ccbbeed81b69d962c83c3"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/job_ownership.mjs": {
+      "bytes": 1112,
+      "sha256": "ccd90fb48eea4e08fc693e7517cc63789c1647cf05896df6608f9fb09dea3d3e"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/journeys.json": {
+      "bytes": 9069,
+      "sha256": "ac5a3705bdc93e2de4173982deddd7b4e6b00f16d401678a2d8d68d16ceca7fc"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/journeys.mjs": {
+      "bytes": 62909,
+      "sha256": "2501c4628d1f87e49064b3e8779b0c8d6ebb11d33dd42d02c07c1e82cabb0737"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/latency_breakdown.py": {
+      "bytes": 7232,
+      "sha256": "bb5a655d38d8ab1cd8c3b93f068758fee073b5e8c95a37ab0fba0ed3f384843a"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/measure_logger_baseline.mjs": {
+      "bytes": 1602,
+      "sha256": "491326e904e96dd70df98a5b46522e0b24ee73249e60e2ea02cf7f21b646d47b"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/measure_logger_incremental.mjs": {
+      "bytes": 2724,
+      "sha256": "1713efd103cf7ee7ed629f1b0cf726274994fd66b131c4c5d5c0f8dd59b82aea"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/repair-new-final02/N01/actual.json": {
+      "bytes": 3655,
+      "sha256": "86d60d2d91840c33d8781ee56f12d1029f4004d95a99322f0b779c7a372d4513"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/repair-new-final02/N02/actual.json": {
+      "bytes": 3579,
+      "sha256": "3cb84ff827a849da119b57215e4df0358606521094294b6ebf33c006d5577013"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/saved_replay.mjs": {
+      "bytes": 11942,
+      "sha256": "ad2c24553ea2bebf4e0d62386d462a36b95f6be9f61440d9c1b4a19679e26305"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/saved_replay_sources.mjs": {
+      "bytes": 1987,
+      "sha256": "6cec30e3234621dd3c0b9b46f625bc78a755e3a9467eeb01929b2ea4f1bfe2fb"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/test_cache_provenance.py": {
+      "bytes": 4236,
+      "sha256": "7aba62ae4c0109cd7d7514e8c019b9207738f9da0e4bfb5855c7194cb12b4843"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/test_collectors.py": {
+      "bytes": 13837,
+      "sha256": "a72cc9ba0819182b0fe61940de08b96263df1e96d55782d5dc3e5607adad7b28"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/test_evidence_writer.mjs": {
+      "bytes": 7523,
+      "sha256": "bdd95ef949d7de57da6ebd549f8743c72b8a82d34fc61c85f81f08e8b92aac9c"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/test_harness_guards.mjs": {
+      "bytes": 11264,
+      "sha256": "a3916fb846c83a415cbb77ec3f094c2edff4c8de3453d21a8b815ef074549210"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/test_photo_locators.mjs": {
+      "bytes": 1905,
+      "sha256": "3ee0d86094cd1607606904cc1577c81e21d52c4e3c6cc187e441d4a7bf001994"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/test_recording_commit.py": {
+      "bytes": 2987,
+      "sha256": "a267ee8eab5dc19fd65ba84931aae4ca1ed5724f299de3940ab8e67502ca65a9"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/test_repeat_followup.mjs": {
+      "bytes": 6766,
+      "sha256": "628885dfbf8416057598eff109846f50a5abbc12b7f28cb570a9a2b8ea841850"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/test_saved_replay_sources.mjs": {
+      "bytes": 2922,
+      "sha256": "c980ab049e1f90086f303b07c23866898154d686739065f036ddf58628313aeb"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/verify_saved_missing_photo.mjs": {
+      "bytes": 5287,
+      "sha256": "d99a627f212280746a9e8821caa5d6c147a18429fb64f966543eba2888f3579c"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/student/verify_saved_photo_correction.mjs": {
+      "bytes": 6728,
+      "sha256": "4794a80d47be3bb20cb36a635d3e00498d403be566ca01fe39e6d762b7a18acc"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/timing-final02/read_timings.py": {
+      "bytes": 16249,
+      "sha256": "0e7b4d269d660538f0aae88b23af802e287e2eb5c80f1680fbf036a01efb237a"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/timing-final04/read_timings.py": {
+      "bytes": 18377,
+      "sha256": "dd8f800c0bb02e63ddd8fb7735e81f726db2ba1a745e0c99171412502194c81e"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/timing-final06/read_cancel.py": {
+      "bytes": 4129,
+      "sha256": "8892eef951cf48c33205914ad850033d5dfd73efb17c6e0685968f747e945dbe"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/timing-final06/read_control.py": {
+      "bytes": 8855,
+      "sha256": "51bddae2e41f9673e9a49f18ccc7b33cce68bef005871a67c1def4295f1a5599"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/timing-final06/read_development.py": {
+      "bytes": 5308,
+      "sha256": "131a4e635d74e326cbe5774a6dc245ee4cf10bd00aecd0d8d599ae6de6856156"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/timing-final07/read_cancel.py": {
+      "bytes": 4378,
+      "sha256": "315f26a2e2b3079e039f9f7afed7703cd247cf9fe28d1da20e8eee9c79299822"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/timing-final07/read_control.py": {
+      "bytes": 7792,
+      "sha256": "ef647b0c4e2a4916a6040fa42bb24b0774a05bd414a18c342f723d1038a0f123"
+    },
+    "edu-tutor-local/runs/v021-r3-repair/20261030/timing-final07/read_development.py": {
+      "bytes": 6053,
+      "sha256": "659b638384a43ed87fde0bea90034997c213642fcf19ee01e8a9ceace814deba"
+    },
+    "edu-tutor-local/runs/v021-support/20261029/EDU_TUTOR_V021_SUPPORT_AND_ACCURACY_KO.txt": {
+      "bytes": 11482,
+      "sha256": "eb7bb1adcc676559e2096b3ee7b0a2b13ca900855d2bc7f943bdd2c7dfdbbc5c"
+    },
+    "edu-tutor-local/runs/v021-support/20261029/capture_state.py": {
+      "bytes": 1487,
+      "sha256": "bc4d6660b9063c8f86313a474da1d5151ce088993cae7db616065f1b891c2b90"
+    },
+    "edu-tutor-local/runs/v021-support/20261029/run_final_cpu.py": {
+      "bytes": 2155,
+      "sha256": "c2e27d99f7ac627d4d80af7f2b41ccbc797121ac79d228158cd5508f9c5bf9fa"
+    },
+    "edu-tutor-local/runs/v021-support/20261029/student/audit_audio_provenance.py": {
+      "bytes": 5005,
+      "sha256": "3cd002c520ddd90ba8896316e780c744cefdb19da5c8b1513d4618b59062bac1"
+    },
+    "edu-tutor-local/runs/v021-support/20261029/student/check_authored_contract.py": {
+      "bytes": 3233,
+      "sha256": "82affb46f9291398c076b11866bd6602ca39b2a21d98a2a6665e393ff3122d0a"
+    },
+    "edu-tutor-local/runs/v021-support/20261029/student/collect_journeys.py": {
+      "bytes": 45745,
+      "sha256": "5e2425dae5da57681c301dae81c7148d31f11dccefa7fe5d824e346b4251891f"
+    },
+    "edu-tutor-local/runs/v021-support/20261029/student/combine_reports.py": {
+      "bytes": 11568,
+      "sha256": "d4632ca7f79ec928d4903c2d848f2ca98abdae2a8311498f718f08efa138fd34"
+    },
+    "edu-tutor-local/runs/v021-support/20261029/student/correction-aggregate.png": {
+      "bytes": 122132,
+      "sha256": "d0ab8b7532adb7028ab9b1058b3c4a169e2040e7370e831bc83f855cf701cbac"
+    },
+    "edu-tutor-local/runs/v021-support/20261029/student/cropped-critical-condition.png": {
+      "bytes": 34528,
+      "sha256": "b1bc2850e12b1b01ed3522c0c0388cf2674d48e36298fd327d9214cbee973fee"
+    },
+    "edu-tutor-local/runs/v021-support/20261029/student/job_ownership.mjs": {
+      "bytes": 1112,
+      "sha256": "ccd90fb48eea4e08fc693e7517cc63789c1647cf05896df6608f9fb09dea3d3e"
+    },
+    "edu-tutor-local/runs/v021-support/20261029/student/journeys.json": {
+      "bytes": 8905,
+      "sha256": "f8a7a6cae64cfab30cd76c8cf4f566fa3a457dabc9c2a3069b28b27ce6234117"
+    },
+    "edu-tutor-local/runs/v021-support/20261029/student/journeys.mjs": {
+      "bytes": 54166,
+      "sha256": "9382472ccc7bbf9831634b362e2b6ba1558b64978b6c92b9760f9a4d93dc0974"
+    },
+    "edu-tutor-local/runs/v021-support/20261029/student/latency_breakdown.py": {
+      "bytes": 5302,
+      "sha256": "d9af7b7d08da469b3a491aeccae393a8c4e50961ce09cc458fe122fdb60711f7"
+    },
+    "edu-tutor-local/runs/v021-support/20261029/student/link_final_readonly_reviews.py": {
+      "bytes": 2531,
+      "sha256": "fb13c4e826b72b2b2d2d3286876bc2c083fbccfa5ac94d97dce455442ea94e08"
+    },
+    "edu-tutor-local/runs/v021-support/20261029/student/normal-projection.png": {
+      "bytes": 44774,
+      "sha256": "ee70370fb10b779b86e3efc1f5ffb0e99331096a429989e639e976ed31eb12dd"
+    },
+    "edu-tutor-local/runs/v021-support/20261029/student/reconcile_audio_regimes.py": {
+      "bytes": 3324,
+      "sha256": "6273a4feabf90aa43fc9587e72af16abb215998b94ce9a0f3a4a0da20be6f18c"
+    },
+    "edu-tutor-local/runs/v021-support/20261029/student/test_harness_guards.mjs": {
+      "bytes": 7553,
+      "sha256": "dce419ad05fe8fb5d9bfd69db7de88e36f08925d7737d98209d25401f310673d"
+    },
+    "edu-tutor-local/runs/v021-support/20261029/student/test_photo_locators.mjs": {
+      "bytes": 2345,
+      "sha256": "467a483b76a983339480be7abc462dad00fabc7b94a058fe094b15ce86a69bba"
+    },
+    "edu-tutor-local/runs/v021-support/20261029/student/verify_saved_missing_photo.mjs": {
+      "bytes": 5287,
+      "sha256": "d99a627f212280746a9e8821caa5d6c147a18429fb64f966543eba2888f3579c"
+    },
+    "edu-tutor-local/runs/v021-support/20261029/student/verify_saved_photo_correction.mjs": {
+      "bytes": 6728,
+      "sha256": "4794a80d47be3bb20cb36a635d3e00498d403be566ca01fe39e6d762b7a18acc"
+    },
+    "edu-tutor-local/schemas/lesson_plan.schema.json": {
+      "bytes": 43640,
+      "sha256": "a810e862787e9f7d0f41bdd333699c26c7e7793b61c35680503993d2648eaaa9"
+    },
+    "edu-tutor-local/schemas/qa_record.schema.json": {
+      "bytes": 5265,
+      "sha256": "e0562e79414550f443b9421df32712d207d1879491bfaac0096acaaee307ff1d"
+    },
+    "edu-tutor-local/scripts/build_release.py": {
+      "bytes": 2972,
+      "sha256": "833e12890196f2b103d1e64b0037afddf548e6003838f7cf374eff055f5ceba7"
+    },
+    "edu-tutor-local/scripts/check.ps1": {
+      "bytes": 415,
+      "sha256": "ca2b43a5e1ccbcb75bccb15da993c4a626f67889d67052f674f1e5e2c0319303"
+    },
+    "edu-tutor-local/scripts/check.sh": {
+      "bytes": 203,
+      "sha256": "d7c7f686e12012355ceaf2d89e1f8d337113e027495a1493ad3c376bb20b660d"
+    },
+    "edu-tutor-local/scripts/conditional_recovery_collect.py": {
+      "bytes": 11275,
+      "sha256": "013824ac1981aef4220549d63aface8b2942f8873bc4223483f561fe42ce0308"
+    },
+    "edu-tutor-local/scripts/conditional_recovery_preflight.py": {
+      "bytes": 4049,
+      "sha256": "c06286160963c2af835f48ef0248ebfbc78382b4c582ff8583c5cc520f373913"
+    },
+    "edu-tutor-local/scripts/conditional_recovery_preserve.py": {
+      "bytes": 6734,
+      "sha256": "8635baab99d579d407ed0a8fab02de5b02356a15753130200f7add3c3b3b60a8"
+    },
+    "edu-tutor-local/scripts/conditional_recovery_report.py": {
+      "bytes": 22652,
+      "sha256": "50335aee658809cd2119e322000a7e1e247e9af33de3b90da9907cfa53697ce1"
+    },
+    "edu-tutor-local/scripts/download_model.py": {
+      "bytes": 4566,
+      "sha256": "39ccc5b2dd9311513199161721914e80fffe2ce68b4171620ff40f96a0e7055d"
+    },
+    "edu-tutor-local/scripts/evaluate_models.py": {
+      "bytes": 386,
+      "sha256": "5a4c931823cb03fec4d2b82bbedf50321bcd084df9ec3ca582437846b9a7da70"
+    },
+    "edu-tutor-local/scripts/finish_authorize.py": {
+      "bytes": 4335,
+      "sha256": "ce4a7282fa426e8953504032545eab84231fb196759462d8a95a57d4d1e66359"
+    },
+    "edu-tutor-local/scripts/finish_binding_evidence.py": {
+      "bytes": 4074,
+      "sha256": "72ef983b380555228a5788355306d1b348d63108e5f8147ae044b2c255a1c291"
+    },
+    "edu-tutor-local/scripts/finish_candidate_download_live.py": {
+      "bytes": 2825,
+      "sha256": "7e302aea928ab498d096e302fae29d1521b74964a3c2ce5161f3673881dcab82"
+    },
+    "edu-tutor-local/scripts/finish_collect_journeys.py": {
+      "bytes": 42754,
+      "sha256": "fc8f03429da9596adbccc4ad89cefe1ac57cf3084c668ac502470c2c77f13b43"
+    },
+    "edu-tutor-local/scripts/finish_education_app_grade.py": {
+      "bytes": 4349,
+      "sha256": "25fb9ae41dc97a65a7e15017bf839d3b67f03abac3f37e9f89c39a070bf7f596"
+    },
+    "edu-tutor-local/scripts/finish_education_claims.py": {
+      "bytes": 2726,
+      "sha256": "770820c10cdf20be693492cc3f56ccf5a98c72140e32bd95ca884c537bce5e95"
+    },
+    "edu-tutor-local/scripts/finish_education_counterexamples.py": {
+      "bytes": 3859,
+      "sha256": "fb5ac753b9ae0be86953e2ea0d13c01b61b6f5fe9acac94b0838cf4fe93f44a2"
+    },
+    "edu-tutor-local/scripts/finish_education_live.py": {
+      "bytes": 20757,
+      "sha256": "fa56d272da3d32fc8ed1d6a31f236f6939bc0b010359c944991b12ce84e9d53d"
+    },
+    "edu-tutor-local/scripts/finish_education_regrade.py": {
+      "bytes": 4745,
+      "sha256": "00fffe3c499d05e5595303922bb7072a3f919f7f44b233ffc39887f895d9444f"
+    },
+    "edu-tutor-local/scripts/finish_precision_live.py": {
+      "bytes": 12549,
+      "sha256": "274527589b63c7d649a0b54ffff1b22c547f0c4f09d9c9ed3fbb6837329b0127"
+    },
+    "edu-tutor-local/scripts/finish_prepare_journeys.py": {
+      "bytes": 10052,
+      "sha256": "4f65d3d3ffa5c9d9fe815c81f9797e688959815c0b072acc302e76b20bcaf012"
+    },
+    "edu-tutor-local/scripts/finish_preservation_audit.py": {
+      "bytes": 3587,
+      "sha256": "42dfa9dc7fc248fdc037e037b73a24c386191d9a35e425189c71fd74185d7e5c"
+    },
+    "edu-tutor-local/scripts/finish_text_resident_live.py": {
+      "bytes": 9068,
+      "sha256": "0b051bef788baf93ddece3eb427401d7c3e0ee53c3313bdaad3736deaec3bc5c"
+    },
+    "edu-tutor-local/scripts/finish_token_audit.py": {
+      "bytes": 2316,
+      "sha256": "fd096f36fd9f09348362c47eae857f543836b06fc6922e106882dc35539428b0"
+    },
+    "edu-tutor-local/scripts/finish_voice_live.py": {
+      "bytes": 11017,
+      "sha256": "d35bbe440d1391d9dbb89426c872db49c5896e172812aeda06ad5540050801eb"
+    },
+    "edu-tutor-local/scripts/integration_live.py": {
+      "bytes": 19234,
+      "sha256": "8c8631b41152642bab373ad1aa1f65f4a0082fb10c30ba6870225e902102ea02"
+    },
+    "edu-tutor-local/scripts/integration_recovery_live.py": {
+      "bytes": 10179,
+      "sha256": "d85c15210d4d2ca717106486d9e11ab55e4e9e686377e24f81229514e909b584"
+    },
+    "edu-tutor-local/scripts/neural_finalize.py": {
+      "bytes": 9189,
+      "sha256": "d09991ce6ec3ba4f94693f906c7940264fb5411b8588e869aa8a8b60e5b27fa0"
+    },
+    "edu-tutor-local/scripts/neural_live.py": {
+      "bytes": 11985,
+      "sha256": "c90cd8cbf16b5cfdab3e4243f46d4c8b03c683e5d5e626fd4a5b3c61d7846c3e"
+    },
+    "edu-tutor-local/scripts/phase2_audit.py": {
+      "bytes": 2999,
+      "sha256": "558e33c357d916568001f078a4904193cece8c4395d5af87570b960a0f380294"
+    },
+    "edu-tutor-local/scripts/phase2_finalize.py": {
+      "bytes": 5586,
+      "sha256": "c016e05cbab81712fb9bf1e25117c9e97c47ea80d12b7efe326d84ccfca73873"
+    },
+    "edu-tutor-local/scripts/phase2_live.py": {
+      "bytes": 14371,
+      "sha256": "030e9c21dadd10c4f7914d859757ae943e672b654f59ee84c910d85e56fbc476"
+    },
+    "edu-tutor-local/scripts/phase2_metrics.py": {
+      "bytes": 3044,
+      "sha256": "dfb9e974929f41284f0681826976b4452b3501d195da6232df84a5aa243aeecb"
+    },
+    "edu-tutor-local/scripts/phase2_references.py": {
+      "bytes": 2071,
+      "sha256": "a94954565669280319229f69270089663924da08c75ebdd679a6f72d85e8fc0c"
+    },
+    "edu-tutor-local/scripts/phase2_regrade_saved.py": {
+      "bytes": 4984,
+      "sha256": "c3977414297531810058037e3a6d383b6614c596cab10e3164b6ea8d1a67d5d7"
+    },
+    "edu-tutor-local/scripts/phase2_snapshot.py": {
+      "bytes": 1581,
+      "sha256": "4a1c257a102803c41c8f3fa81632da0c11fb2bb42057fe20ca4b45c2bd9f5076"
+    },
+    "edu-tutor-local/scripts/phase2_verify_release.py": {
+      "bytes": 4366,
+      "sha256": "65a60f2e561fe2a2d9f03540ffa6bcc2cdbe5993f3409249b0c978f513b3b3b8"
+    },
+    "edu-tutor-local/scripts/profile_storage_scan.py": {
+      "bytes": 2060,
+      "sha256": "aa9cb733ff20aec60654a6a7713f586fb248d1289d4b38452abc573f4314f166"
+    },
+    "edu-tutor-local/scripts/speech_inventory.ps1": {
+      "bytes": 1992,
+      "sha256": "3f798de4bb011a4243be76ba9d0152cdeaf5f8e9456e31fcb52c5d0aa6c9deed"
+    },
+    "edu-tutor-local/scripts/start.ps1": {
+      "bytes": 724,
+      "sha256": "6f76ac1c1b9978237ad32f90321567d78c68d06cfecbce64eec166834a0737a3"
+    },
+    "edu-tutor-local/scripts/start.sh": {
+      "bytes": 209,
+      "sha256": "2ffd955b904d1da598c100ff4dbbf6048fb4b76ed9f0ff99f2971ac5ef06f86e"
+    },
+    "edu-tutor-local/scripts/student_experience_gallery.py": {
+      "bytes": 30536,
+      "sha256": "f1d2228bf617b7e0843b0d13fd524d2e224f60948c0a6ef42bd12ab5e4586a76"
+    },
+    "edu-tutor-local/scripts/student_experience_report.py": {
+      "bytes": 30406,
+      "sha256": "880d2eedbe570c16e3705b89e8e6a690d98a93f5761b67b5067e9b018ff42e90"
+    },
+    "edu-tutor-local/scripts/student_latency_audit.py": {
+      "bytes": 29442,
+      "sha256": "f5d0d2249311505bf94916ba006556f1a463a5952a79578bd0420a68a7661185"
+    },
+    "edu-tutor-local/scripts/student_latency_finalize_report.py": {
+      "bytes": 22718,
+      "sha256": "1a404eebac47b96054f980d15b3546426854996cc08a66245697ac6aaeb1d9cf"
+    },
+    "edu-tutor-local/scripts/student_latency_preserve.py": {
+      "bytes": 4080,
+      "sha256": "bee4b47a29cf0954f0957ceb5b72198b60697c928611378aca1836f6aac3a822"
+    },
+    "edu-tutor-local/scripts/student_preservation_audit.py": {
+      "bytes": 15880,
+      "sha256": "398ed115e502387ded3bfff63d01ee788d902acc2e2c8cd1205284438662a0a3"
+    },
+    "edu-tutor-local/scripts/student_review_ui.js": {
+      "bytes": 10726,
+      "sha256": "6f919f3a4e65f145326c2ca7fd28381bc1ceee210d5b3aea10997222d0b9b186"
+    },
+    "edu-tutor-local/scripts/text_resident_cpu_fixture.py": {
+      "bytes": 1505,
+      "sha256": "12cf7f3ff5c01d651662f7a9fbe0a138b09ef1ef8855a4830b6d4c9ed7f50a4b"
+    },
+    "edu-tutor-local/scripts/tts_reuse_authorize.py": {
+      "bytes": 4561,
+      "sha256": "d8ca619555efb6d4676e99f396ece7fdbb8e64f435d0d199c0a2085ab970234b"
+    },
+    "edu-tutor-local/scripts/tts_reuse_live.py": {
+      "bytes": 7611,
+      "sha256": "23d190fba464bd6ce757f194a65dfe354fc21e26479293fc7bec659b3352ff5f"
+    },
+    "edu-tutor-local/scripts/tts_reuse_preservation.py": {
+      "bytes": 5134,
+      "sha256": "7af94adac95e24aa0952196f1332f7da53a553e1a80931cad3fd057d94ae9b95"
+    },
+    "edu-tutor-local/scripts/tts_startup_check.py": {
+      "bytes": 7186,
+      "sha256": "f16f97d3cae37c8d971fcf8a6c8b4535112ad20c5b49a8f4a2ca37611f8be7a1"
+    },
+    "edu-tutor-local/scripts/tts_startup_probe.py": {
+      "bytes": 3928,
+      "sha256": "8cee62922faf33f1f0bb7d24bc5389f2186d32ae9f19d0d5116b66541170cb50"
+    },
+    "edu-tutor-local/scripts/v021_eval_grade.py": {
+      "bytes": 16319,
+      "sha256": "a5cc05f68c5e658a6a5f7a690626ba8163b8c56683d75a8d770caea0f477d5ce"
+    },
+    "edu-tutor-local/scripts/v021_eval_live.py": {
+      "bytes": 14852,
+      "sha256": "29e9ec892479c24a3aa72af9af579b9ea77851d42f887358c0fc8d330661a117"
+    },
+    "edu-tutor-local/scripts/v021_eval_regression.py": {
+      "bytes": 4211,
+      "sha256": "ce366a4b586e1255f1c8a25cce12c62a1af47d4f2614503ee178162a4ed2cc12"
+    },
+    "edu-tutor-local/scripts/v021_eval_saved_regression.py": {
+      "bytes": 6165,
+      "sha256": "2bc605dd5c53facadfebac0ba874a558adfb94c495ea61917043198257448f58"
+    },
+    "edu-tutor-local/scripts/verify_pack.py": {
+      "bytes": 912,
+      "sha256": "5d0de31117ca56d20cc5bdb7f6c503109d715fcfd8d82cc1a4d831db84bf33f5"
+    },
+    "edu-tutor-local/src/edu_tutor/__init__.py": {
+      "bytes": 85,
+      "sha256": "bdf778aa5b9a44d496e89d524316e05923fc28c27d2e69e3fd85f940e36bee4f"
+    },
+    "edu-tutor-local/src/edu_tutor/__main__.py": {
+      "bytes": 61,
+      "sha256": "3129adff95e0f38b87ab34cddfc27082c7892bcaec267ff5d40f160fdf55b44a"
+    },
+    "edu-tutor-local/src/edu_tutor/api/__init__.py": {
+      "bytes": 54,
+      "sha256": "5abaf4212df43f25dcd2e0cef8da2b25a97b6756bdfe28f38f172d64f7c22a3e"
+    },
+    "edu-tutor-local/src/edu_tutor/api/admin.py": {
+      "bytes": 22776,
+      "sha256": "f5e964300dec9622788377a3c5ab7d3462fb5d9f001c654dc3d8a9796912b710"
+    },
+    "edu-tutor-local/src/edu_tutor/api/app.py": {
+      "bytes": 70831,
+      "sha256": "e1067c2e6caad2276afa9cefa80e188c114c3c4a80563b5f2098107d26c6d707"
+    },
+    "edu-tutor-local/src/edu_tutor/api/limits.py": {
+      "bytes": 1304,
+      "sha256": "8bed072f3930ee47fc2a835e15530ae1d528aac9d39e96803cc529ded45461f8"
+    },
+    "edu-tutor-local/src/edu_tutor/api/neural.py": {
+      "bytes": 5374,
+      "sha256": "9de4c9c0b4deadffb237422d04e646b76c45f9e73abd7e107bdd9d019bc9cd81"
+    },
+    "edu-tutor-local/src/edu_tutor/cli.py": {
+      "bytes": 7956,
+      "sha256": "c347615c5f73aa0b30b62084a5a3b03382736e3179c85f9e5f9fb37ca3e1df0c"
+    },
+    "edu-tutor-local/src/edu_tutor/doctor.py": {
+      "bytes": 4379,
+      "sha256": "224b78122b58544ad725903df53c11b82b7da4029b9e17e5c917108529699235"
+    },
+    "edu-tutor-local/src/edu_tutor/evaluation/__init__.py": {
+      "bytes": 76,
+      "sha256": "539da245d0e127ec0f2deca4a99d0384b00ad2f793f7762cc3f22c39be45e3c7"
+    },
+    "edu-tutor-local/src/edu_tutor/evaluation/comparison.py": {
+      "bytes": 4833,
+      "sha256": "fe4e351d280f87adf09d2061843d32bb20d478d835a1541d34f5b9e0ed748167"
+    },
+    "edu-tutor-local/src/edu_tutor/evaluation/phase2_audit.py": {
+      "bytes": 15420,
+      "sha256": "f864149c64b34889904d7ed2b83998a35f762a4033241b67b5e280b2628b4fa1"
+    },
+    "edu-tutor-local/src/edu_tutor/evaluation/phase2_diagnostics.py": {
+      "bytes": 31779,
+      "sha256": "3ea124376ce9324f961b65e2923abcd8466ea2e466c31c88663d11d839f92258"
+    },
+    "edu-tutor-local/src/edu_tutor/evaluation/sql_sandbox.py": {
+      "bytes": 7435,
+      "sha256": "1dc84b746917a73fa7b894348aa054f4367fbbfa367a43cb06dfcf19712e82a4"
+    },
+    "edu-tutor-local/src/edu_tutor/jobs/__init__.py": {
+      "bytes": 59,
+      "sha256": "97462d1a207a345fb7e8b01d0a180d4d1e312c989ef0b01000ca021526574e1b"
+    },
+    "edu-tutor-local/src/edu_tutor/jobs/inspection.py": {
+      "bytes": 4390,
+      "sha256": "727a60728fa180f27948edb5523ff3a1e59cfffbba4f38a0901ed7507e602bfa"
+    },
+    "edu-tutor-local/src/edu_tutor/jobs/lease.py": {
+      "bytes": 3392,
+      "sha256": "9e0ff077819978a8862d00a30082afce4f99309bad07b1f71001df86fb9b396b"
+    },
+    "edu-tutor-local/src/edu_tutor/jobs/manager.py": {
+      "bytes": 13026,
+      "sha256": "2d90c357671801e4ee488a7011ecf6b1df7e19b073bb66ab3f0e9584f7405707"
+    },
+    "edu-tutor-local/src/edu_tutor/jobs/owned_process.py": {
+      "bytes": 5970,
+      "sha256": "68d05334ff133e3c382bc34ba92a5ae94eb73228c3e14772b489c9d0a601918a"
+    },
+    "edu-tutor-local/src/edu_tutor/lessons/__init__.py": {
+      "bytes": 57,
+      "sha256": "849a54ab37b4b1b7f6bea95e5ea2b84e0baacfcf016590ae0eacc5e9a8096f76"
+    },
+    "edu-tutor-local/src/edu_tutor/lessons/assets/lesson_plan.example.json": {
+      "bytes": 6343,
+      "sha256": "c1b3842ba0f6022e532a34e76d832a678ed4b708764271807fca398b8bae1de6"
+    },
+    "edu-tutor-local/src/edu_tutor/lessons/assets/lesson_plan.schema.json": {
+      "bytes": 43640,
+      "sha256": "a810e862787e9f7d0f41bdd333699c26c7e7793b61c35680503993d2648eaaa9"
+    },
+    "edu-tutor-local/src/edu_tutor/lessons/assets/qa_record.example.json": {
+      "bytes": 3636,
+      "sha256": "c48ce1d2b9b7c91ac6cede659cbc8a6e14c68ae9755b7663ff9f575fe4241b68"
+    },
+    "edu-tutor-local/src/edu_tutor/lessons/concepts.py": {
+      "bytes": 12654,
+      "sha256": "d7f1d2ca0ba227e12c100b2a15a2de2d90c699ccb3c03e73588cf53e065dc5f1"
+    },
+    "edu-tutor-local/src/edu_tutor/lessons/conditions.py": {
+      "bytes": 4059,
+      "sha256": "ca0583ee192f67bd65ec7b27bfec52029fa1ccd1246e1e286d2db05bb942fc48"
+    },
+    "edu-tutor-local/src/edu_tutor/lessons/generation.py": {
+      "bytes": 7005,
+      "sha256": "0351f303f6638be2c092a92a78e7b635620c1e0d19f91f4dfcfdc8fb75092bf8"
+    },
+    "edu-tutor-local/src/edu_tutor/lessons/plans.py": {
+      "bytes": 9874,
+      "sha256": "07deebe1150ece9f84967206c450e07b6fc506b541c8cb1d8b516a9c9366e2dd"
+    },
+    "edu-tutor-local/src/edu_tutor/lessons/reference_support.py": {
+      "bytes": 6830,
+      "sha256": "a4021c09e2d10a2e6fbfcd8017a9442bfa0928e1ee7b63c0dbce20b656e7d0d1"
+    },
+    "edu-tutor-local/src/edu_tutor/lessons/reprocessing.py": {
+      "bytes": 3764,
+      "sha256": "2b23bf5fa6bc2eb898a9d36b69353db1a53001929d0784e53874b357120b0c7e"
+    },
+    "edu-tutor-local/src/edu_tutor/lessons/requested_explanations.py": {
+      "bytes": 28235,
+      "sha256": "3158534e62721e5cb63bfab1019e0ad3595dd9075742c52cf2b1534b548bb80a"
+    },
+    "edu-tutor-local/src/edu_tutor/lessons/verified.py": {
+      "bytes": 71140,
+      "sha256": "f2f9daa9506004cb87630b20e42d69df38fe51fbbff8c51379d8c93ead2d9daa"
+    },
+    "edu-tutor-local/src/edu_tutor/models/__init__.py": {
+      "bytes": 55,
+      "sha256": "9a584e0688a968977b107bab34d19355203ccb01197431f9236ab7c75a1c1b0d"
+    },
+    "edu-tutor-local/src/edu_tutor/models/budget.py": {
+      "bytes": 30390,
+      "sha256": "e407040f75ebc1f94e75a40246d17ad01ce08e4dfa40e9b0a1ab1d7c0ff6dd28"
+    },
+    "edu-tutor-local/src/edu_tutor/models/candidate_download.py": {
+      "bytes": 7771,
+      "sha256": "714b1fcfb8c369f76edf488041a9f4f52965c3ded004c74093a92ace57fab5ee"
+    },
+    "edu-tutor-local/src/edu_tutor/models/candidate_transfer.py": {
+      "bytes": 7269,
+      "sha256": "f9523e64a98f082f7f72db7a1d3a0ffa2b842bdd2d82d05d1ae40c5fa813ebb5"
+    },
+    "edu-tutor-local/src/edu_tutor/models/evaluate.py": {
+      "bytes": 9880,
+      "sha256": "e884c5e10584f58288afc4d06caae483d4724e33dd28af69a8e3be6abbc220c3"
+    },
+    "edu-tutor-local/src/edu_tutor/models/execution_context.py": {
+      "bytes": 1163,
+      "sha256": "3a5b87aa2faf532f53c2015758082c6f6aa7356efdd0b02150b14e9a5bfa04a9"
+    },
+    "edu-tutor-local/src/edu_tutor/models/observation.py": {
+      "bytes": 23235,
+      "sha256": "b1fb509f5c55894f13ba2066a7fdf8bf6e5069783838c26855931180265e2a67"
+    },
+    "edu-tutor-local/src/edu_tutor/models/registry.py": {
+      "bytes": 1959,
+      "sha256": "9c23c548eab4cdfe9e99b0d708e064f81c2b72972085a69a6affb87e13f80df2"
+    },
+    "edu-tutor-local/src/edu_tutor/models/runtime.py": {
+      "bytes": 14669,
+      "sha256": "e24bcfaf91b7f458ba1a49a1f27f5b6ce1dc88230454186bde13fef596bd01d0"
+    },
+    "edu-tutor-local/src/edu_tutor/models/text_candidate.py": {
+      "bytes": 8698,
+      "sha256": "c21bfc1fd0ae68f528464bc486e96ec36d3a27470cbaacf05324f063a8b7d245"
+    },
+    "edu-tutor-local/src/edu_tutor/models/text_eos.py": {
+      "bytes": 1056,
+      "sha256": "065e183ecf90cc66ed9e44fe312749f2e2d9a54d0aedb01057adb2cb9726fc1b"
+    },
+    "edu-tutor-local/src/edu_tutor/models/text_precision.py": {
+      "bytes": 2701,
+      "sha256": "d6417a4493f64d24c50c6293b0831a525816795a536cefc7bea546830ad5348a"
+    },
+    "edu-tutor-local/src/edu_tutor/models/text_session.py": {
+      "bytes": 27029,
+      "sha256": "1c46b2792da021b6f37742c79ac418eebec88b29482049ead67b53cb0ba681cf"
+    },
+    "edu-tutor-local/src/edu_tutor/models/text_session_worker.py": {
+      "bytes": 9342,
+      "sha256": "0960cca80bf8325b9db0d81740ef85d200795ddb4525c3aed8cb369f015f50c2"
+    },
+    "edu-tutor-local/src/edu_tutor/models/vision_runtime.py": {
+      "bytes": 4881,
+      "sha256": "23526afb2c1b0d4e2dc5e038973cae792023209d30110278fff7547e9b05a361"
+    },
+    "edu-tutor-local/src/edu_tutor/models/worker.py": {
+      "bytes": 17764,
+      "sha256": "366ff498c914fc7eb188a9fe90c39e50fdd5bac9e1b396600ef2443aacefecfb"
+    },
+    "edu-tutor-local/src/edu_tutor/neural/__init__.py": {
+      "bytes": 70,
+      "sha256": "c6ba14a02cf0983c685847796e56bc82e17c2f82e5058862c2819789c5fb88ce"
+    },
+    "edu-tutor-local/src/edu_tutor/neural/service.py": {
+      "bytes": 33371,
+      "sha256": "0516bd536be74634c94df183f150f525fddbf5db91994567cf0ed3c1d245a1b0"
+    },
+    "edu-tutor-local/src/edu_tutor/paths.py": {
+      "bytes": 390,
+      "sha256": "85a74da1cb15da5ed17f9725389ff1a688f33ba70c8ea9bab8e838e2386cbb2f"
+    },
+    "edu-tutor-local/src/edu_tutor/problems/__init__.py": {
+      "bytes": 80,
+      "sha256": "1ad54ad4e25cc76c31e232338e99164bad47b29722efb7258735cae575b4a482"
+    },
+    "edu-tutor-local/src/edu_tutor/problems/app_correction.py": {
+      "bytes": 4433,
+      "sha256": "9d5d290111bd0842d2978d5b18298995911db050ddd750ea269eb84345f3b92f"
+    },
+    "edu-tutor-local/src/edu_tutor/problems/ddl_examples.py": {
+      "bytes": 22340,
+      "sha256": "dfc7338de9fedce9b413d5635eb459b50624a7f5ed8f7223b96ad666b2600197"
+    },
+    "edu-tutor-local/src/edu_tutor/problems/evidence.py": {
+      "bytes": 59632,
+      "sha256": "9f0cecf869a52f03cd775d7cfd3fb1e76220061887b30c0733d68359d483afe7"
+    },
+    "edu-tutor-local/src/edu_tutor/problems/explanation_requests.py": {
+      "bytes": 9987,
+      "sha256": "c62758e6afba1914ae7a47ce27b328c22ae24a4f1b4b854ad3594b07c13c0509"
+    },
+    "edu-tutor-local/src/edu_tutor/problems/intent_language.py": {
+      "bytes": 30644,
+      "sha256": "2f7a955bc7e0cdaf9d42e17e7b4d313ccc7c288bc112ab44a1120ab06716bd60"
+    },
+    "edu-tutor-local/src/edu_tutor/problems/models.py": {
+      "bytes": 16668,
+      "sha256": "609d08adf2a789c0aeb070142e7ea1d5b0534e79e0027cc3aa948ebb2564ff96"
+    },
+    "edu-tutor-local/src/edu_tutor/problems/pipeline.py": {
+      "bytes": 7707,
+      "sha256": "3c8a6f0211ce6c5d80b0fdac1f4cb540f750b979cc145cf89203dc7e4ccff629"
+    },
+    "edu-tutor-local/src/edu_tutor/problems/response_claims.py": {
+      "bytes": 8565,
+      "sha256": "f42e58cab564bcde76107a293263235689a37206ee97ec82f99247cfffac8b9c"
+    },
+    "edu-tutor-local/src/edu_tutor/problems/sql_response.py": {
+      "bytes": 4360,
+      "sha256": "3f292d0041b5e7f9928ef94988b331cdf97359fcd72fe57a31db424436f8fb4e"
+    },
+    "edu-tutor-local/src/edu_tutor/retrieval/__init__.py": {
+      "bytes": 44,
+      "sha256": "523ea0bdbea855b4f97eb44de18406b7f2e7d0da90326ca9222668547f44a5b4"
+    },
+    "edu-tutor-local/src/edu_tutor/retrieval/index.py": {
+      "bytes": 7476,
+      "sha256": "d7cf9a354028d41b83f609b8aff909b5fe9ef168779c535568725f7e919eaf78"
+    },
+    "edu-tutor-local/src/edu_tutor/speech/__init__.py": {
+      "bytes": 62,
+      "sha256": "26d2196290ff2b1777f683508f5deff26559485114694a1e3f4708e30cb14abf"
+    },
+    "edu-tutor-local/src/edu_tutor/speech/benchmark.py": {
+      "bytes": 10708,
+      "sha256": "b4bfcdd0463fd908cd5fdf6f649fc00960d371fb58aa4bcd209655e17eb7418b"
+    },
+    "edu-tutor-local/src/edu_tutor/speech/direct.py": {
+      "bytes": 2967,
+      "sha256": "15c5c8fe213d732649ffe30023bee61cd7b31ffd671b901b295b8c2b0b3c1ed6"
+    },
+    "edu-tutor-local/src/edu_tutor/speech/provider.py": {
+      "bytes": 23619,
+      "sha256": "5186eb7e21d0cecf5dd19e995eddc2d7e5e02699108e95d870879f9b4d6f5f17"
+    },
+    "edu-tutor-local/src/edu_tutor/speech/session.py": {
+      "bytes": 23211,
+      "sha256": "8cbe53f7e440fdfe7b2b1d31fd821ab88b587d244c329cb64342fc1006b0b752"
+    },
+    "edu-tutor-local/src/edu_tutor/speech/session_worker.py": {
+      "bytes": 21320,
+      "sha256": "aad12a757d55ead838f3a640742c853fa41a965832ffc12c88bdcf076063ae45"
+    },
+    "edu-tutor-local/src/edu_tutor/speech/windows_sapi.py": {
+      "bytes": 14556,
+      "sha256": "0484fe3018884a4159cc235c537eff3a46ea18915d9cb87380910ea01d2be229"
+    },
+    "edu-tutor-local/src/edu_tutor/speech/windows_sapi_worker.ps1": {
+      "bytes": 4247,
+      "sha256": "1784122737a2055496eee1a8b9a336b7214982f6ebe451adecbb0249f95085cb"
+    },
+    "edu-tutor-local/src/edu_tutor/storage/__init__.py": {
+      "bytes": 72,
+      "sha256": "fd83b54d4b9dabe2872e218645ad82392c21ec56b171db32d7ad93ec03d389b7"
+    },
+    "edu-tutor-local/src/edu_tutor/storage/db.py": {
+      "bytes": 5925,
+      "sha256": "5ee348d110a27c6605542671d2132a8d6d1c6f03ecde31d6518c240dfc01ffcc"
+    },
+    "edu-tutor-local/src/edu_tutor/storage/timing.py": {
+      "bytes": 1712,
+      "sha256": "27e82a104a7cbb235c77c65614af42e9c1912f3c055a3a720d96eaa0d44be67d"
+    },
+    "edu-tutor-local/src/edu_tutor/training/README.md": {
+      "bytes": 2844,
+      "sha256": "c8517ca2ab3f2aa37dc4f450e426dbdb0ff9d08bb4b0288b1955802eda9e1c22"
+    },
+    "edu-tutor-local/src/edu_tutor/training/__init__.py": {
+      "bytes": 312,
+      "sha256": "5d0095e1417589b91b96936478014622704edaa029d3be390d25c729bff7a165"
+    },
+    "edu-tutor-local/src/edu_tutor/training/audit.py": {
+      "bytes": 2196,
+      "sha256": "2fbca3acec655985750c0f73f633d970b59312c17d2f657d86f77a71b7d1cf2f"
+    },
+    "edu-tutor-local/src/edu_tutor/training/data.py": {
+      "bytes": 7337,
+      "sha256": "2af3e008c689683dd9c8b4548fe2a2e52edc2626af01543bc12f617bed0f9ff4"
+    },
+    "edu-tutor-local/src/edu_tutor/training/finish_app_score.py": {
+      "bytes": 5364,
+      "sha256": "bf80d67125b71ec5b8776ed93194b8185bd13bf9a7d6f1ed1597e98ac55253f5"
+    },
+    "edu-tutor-local/src/edu_tutor/training/finish_claims.py": {
+      "bytes": 230,
+      "sha256": "e16dbcbdbb474eda1eae3196ab68709ada388a551a24125c41639e07d13961d3"
+    },
+    "edu-tutor-local/src/edu_tutor/training/finish_counterexamples.py": {
+      "bytes": 4050,
+      "sha256": "1de2da5ea596a7559f71f18873b80a66c9b2a7f43d843635c2c2019eceabd2ab"
+    },
+    "edu-tutor-local/src/edu_tutor/training/finish_data.py": {
+      "bytes": 25485,
+      "sha256": "944fb56b2c0498e1abd6862bae7b83b92d7b9539639b027cd332ab66af751fa3"
+    },
+    "edu-tutor-local/src/edu_tutor/training/finish_reason_only.py": {
+      "bytes": 8989,
+      "sha256": "239ca2b3af42787f9ddc50d49cae481127b2ee7036ce99124fef63aef59ad281"
+    },
+    "edu-tutor-local/src/edu_tutor/training/finish_remediation.py": {
+      "bytes": 12894,
+      "sha256": "5f5f7278d48449388ad560a7587366ef84556d068ebad9da915759d4b8ab1802"
+    },
+    "edu-tutor-local/src/edu_tutor/training/finish_score.py": {
+      "bytes": 2801,
+      "sha256": "56df4145639225c7705d41d66a84182ab0b46bc5b62ceb2b1487bb91c0702a0a"
+    },
+    "edu-tutor-local/src/edu_tutor/training/masking.py": {
+      "bytes": 3184,
+      "sha256": "2830a9d3b17f0cdcca74c55391ea5770ca90dcbe507c541d540f59b4dfd50f36"
+    },
+    "edu-tutor-local/src/edu_tutor/training/runner.py": {
+      "bytes": 32780,
+      "sha256": "11c18fa573dd012e2b0595dd294e448ec743f14240ebf13922395089aac25e77"
+    },
+    "edu-tutor-local/src/edu_tutor/training/tiny.py": {
+      "bytes": 5845,
+      "sha256": "1f8ebe74f6d3402f676d866862d996a54ee548fa4d3be43886798fdcb9143903"
+    },
+    "edu-tutor-local/src/edu_tutor/vision/__init__.py": {
+      "bytes": 80,
+      "sha256": "206b3baf1f5ad5c0bc193ef65f5a940088c30e93a16a8af90be9b2c4744451c8"
+    },
+    "edu-tutor-local/src/edu_tutor/vision/conditions.py": {
+      "bytes": 2558,
+      "sha256": "570822c5b7880df96f7c5c0c4e6ecef4ef95dceb84cad624399792f2a5146aa3"
+    },
+    "edu-tutor-local/src/edu_tutor/vision/photos.py": {
+      "bytes": 4172,
+      "sha256": "82bd1fe4a92f6d868354c4d439a13141e1cde2df5941a7e7b82fc55fa3f2c264"
+    },
+    "edu-tutor-local/src/edu_tutor/vision/structure.py": {
+      "bytes": 7436,
+      "sha256": "a209506d9d64fd1e06067cefcd3378f308c70c0ab9b2b8d2788fc23540636997"
+    },
+    "edu-tutor-local/tests/candidate_support.py": {
+      "bytes": 929,
+      "sha256": "be37c60d08be8f1f6ede786cb4e502ddae9958f9893cce4fd5b9d5c35491b816"
+    },
+    "edu-tutor-local/tests/conftest.py": {
+      "bytes": 455,
+      "sha256": "8e6bf16984afe90dc6d2a7d66e6122312403b47796945679f6b6e3d62b79f925"
+    },
+    "edu-tutor-local/tests/fixtures/qwen3_4b_official_metadata.json": {
+      "bytes": 8929,
+      "sha256": "11bb67a4d6aa4a44a3314b39f4874989c1faee127ce47664eb6f129630779b48"
+    },
+    "edu-tutor-local/tests/fixtures/vision_clear.png": {
+      "bytes": 23950,
+      "sha256": "90525966fa519d750fff37b94950a1b717a041e095c0aa2b3e58505f14781f81"
+    },
+    "edu-tutor-local/tests/fixtures/vision_cut.png": {
+      "bytes": 21059,
+      "sha256": "5f13aa42c45c298b942f78d5c74a03438a496fb9c01c7c943b5a1a4a808d9123"
+    },
+    "edu-tutor-local/tests/fixtures/vision_table.png": {
+      "bytes": 21623,
+      "sha256": "b294d31a014744dcf69b61338e043e351c7d6ce68dc1c0279e8c539dc1b290eb"
+    },
+    "edu-tutor-local/tests/test_admin.py": {
+      "bytes": 13540,
+      "sha256": "65fe08cad023c447c968f3846767f96c13d68294ee887c5737e0f70c6b7ba871"
+    },
+    "edu-tutor-local/tests/test_candidate_evaluation.py": {
+      "bytes": 7174,
+      "sha256": "21255c87180a1253af71769d4b7101b800c8c680268bdd84a47c9e5d90a32692"
+    },
+    "edu-tutor-local/tests/test_candidate_registry.py": {
+      "bytes": 9397,
+      "sha256": "a147f488048a0146a3bc8fcaf7a0032716c73522b8762fe57aa37dd33ef6e046"
+    },
+    "edu-tutor-local/tests/test_candidate_transfer.py": {
+      "bytes": 6692,
+      "sha256": "218544d4ee9288dc8e608f2e5a5c75794e5eaae4ccc7b5b3b4a22122ce760982"
+    },
+    "edu-tutor-local/tests/test_concept_operation_classification.py": {
+      "bytes": 2138,
+      "sha256": "2de0882014bca6b4505ba8726a6eb5bc8f0aa6b8f15b6bc70b8b8c77ca8af82d"
+    },
+    "edu-tutor-local/tests/test_concept_pedagogic_guard.py": {
+      "bytes": 7238,
+      "sha256": "1172350801d9744c8ade79cfb924851d91d8570917cfa7b6a6d9bf1ea12328d2"
+    },
+    "edu-tutor-local/tests/test_condition_narration.py": {
+      "bytes": 5036,
+      "sha256": "76bc7a66945859ac486a939b6c7c25d3bab1bd213db7960887ab003a3d17991a"
+    },
+    "edu-tutor-local/tests/test_conditional_sum_contract.py": {
+      "bytes": 13059,
+      "sha256": "67b7cdd2e85fd4037f3d825c8d7bb276b261f3ed0e1ffd68f77f438d32058fbb"
+    },
+    "edu-tutor-local/tests/test_direct_aggregate_row_proof.py": {
+      "bytes": 11837,
+      "sha256": "43879498d7060fe9c502315fd627dbe8328fbf9db09e1c741945a8563378217e"
+    },
+    "edu-tutor-local/tests/test_doctor.py": {
+      "bytes": 4279,
+      "sha256": "2738ce08f3f6fe11d4f27a0a0307e410352c9f631379cf3a5d0d57c89f3a79f8"
+    },
+    "edu-tutor-local/tests/test_evaluation_protocol.py": {
+      "bytes": 7134,
+      "sha256": "dead2a85be60db1c89b2a4448c78a5e4c8009de14e9f3c2908cca76704371f6d"
+    },
+    "edu-tutor-local/tests/test_finish_app_correction.py": {
+      "bytes": 4685,
+      "sha256": "dfbc7de39a73e6b72fffd8afef434e6603e1851d0972edca285abdf07f809ed4"
+    },
+    "edu-tutor-local/tests/test_finish_app_score.py": {
+      "bytes": 3007,
+      "sha256": "c3dea032dc299eee7383b022d942d7b8bd9d59487584ccfa01de803c1e97eaab"
+    },
+    "edu-tutor-local/tests/test_finish_binding_evidence.py": {
+      "bytes": 3544,
+      "sha256": "ba5d26204aef47c560feec2b6de781049d210c8542980fe3686a7ca8c78dcf8f"
+    },
+    "edu-tutor-local/tests/test_finish_claims.py": {
+      "bytes": 1293,
+      "sha256": "df8633e808311d62f169dbb4780ad0286de90bb4ee5749dcbf93d8af4c396229"
+    },
+    "edu-tutor-local/tests/test_finish_counterexamples.py": {
+      "bytes": 1492,
+      "sha256": "81246b132af016d595f23394e122792c676dec745bf053e75a7f439931791b57"
+    },
+    "edu-tutor-local/tests/test_finish_dataset_mapping.py": {
+      "bytes": 990,
+      "sha256": "7fa1f17636a3f52d7eab36d6526ab520b6a5007accb4fb701f88a5325a35bf03"
+    },
+    "edu-tutor-local/tests/test_finish_education_client.py": {
+      "bytes": 4370,
+      "sha256": "9f36fe368a15b77b5a04c6bd60d0f60b09accc910c113baf10afdb7492abab01"
+    },
+    "edu-tutor-local/tests/test_finish_education_data.py": {
+      "bytes": 3821,
+      "sha256": "7a02851a80252d943645496ea8a6c5840d5a069e32ad1b7cf74c198d12ea9eb9"
+    },
+    "edu-tutor-local/tests/test_finish_equation_glyph_binding.py": {
+      "bytes": 2411,
+      "sha256": "7b065daa622f760cbacea39ffb85eb183290a296f07ed04d79a9a8db06483f88"
+    },
+    "edu-tutor-local/tests/test_finish_evaluation_precision.py": {
+      "bytes": 5221,
+      "sha256": "884d7d4c8cf011c41bd8b27e4f91bb0f3a10d65f3d3b9f935174988000c40166"
+    },
+    "edu-tutor-local/tests/test_finish_extrema.py": {
+      "bytes": 3987,
+      "sha256": "ae46f8ea6ebb4543884db4eb257fcaf0ae7dc39bd539f4a5c318a2938be5bdfd"
+    },
+    "edu-tutor-local/tests/test_finish_inline_source.py": {
+      "bytes": 2514,
+      "sha256": "fd7d488a1f970b84a9d47bb7b69de078f1c8ea507ae29c6b24397a83ddfc05f6"
+    },
+    "edu-tutor-local/tests/test_finish_intent_repair.py": {
+      "bytes": 8298,
+      "sha256": "78a4bc6aa5ab55a23d0e6c1cbac4c36571dbb7c1fe6ba537c59e16e1b67a1763"
+    },
+    "edu-tutor-local/tests/test_finish_journey_measurements.py": {
+      "bytes": 21937,
+      "sha256": "c3d34b6549152c84be1d2a21000e229e23e6940a1f59716d78bccc95009edbe7"
+    },
+    "edu-tutor-local/tests/test_finish_precision_client.py": {
+      "bytes": 6937,
+      "sha256": "c3ec535529449b7d92fdf4785f7c8294579d7db07daf3ab1bb1e0304a134cb4c"
+    },
+    "edu-tutor-local/tests/test_finish_reason_only.py": {
+      "bytes": 2286,
+      "sha256": "afe205130081c6028947e21db8c2354d81e1d9db388da366a0ee998dacd8d55d"
+    },
+    "edu-tutor-local/tests/test_finish_remediation.py": {
+      "bytes": 2671,
+      "sha256": "2d11527a0eaebc2bf8c48fda15da588974e981f27d5fe0d8e9da17203687eacd"
+    },
+    "edu-tutor-local/tests/test_finish_scope_transport.py": {
+      "bytes": 4734,
+      "sha256": "0682ed8bd44cf9e996925b2122f02349a5c3daaecc7388fcdc617ec6cb43c3e1"
+    },
+    "edu-tutor-local/tests/test_finish_training_bounds.py": {
+      "bytes": 2521,
+      "sha256": "dcea8e304a46a4e3c3a2466ecd8865dfefadb43bb062450867db4832c74d7bfc"
+    },
+    "edu-tutor-local/tests/test_finish_update_example.py": {
+      "bytes": 3695,
+      "sha256": "496d14f0eaf5c2a9dc7f09da402a2ed1ca88614ad781a1162fdd73a9fbc2ba53"
+    },
+    "edu-tutor-local/tests/test_finish_voice_cache_api.py": {
+      "bytes": 2119,
+      "sha256": "4bbb7395ce88e339a386e5acac12101eccfd04beeefbe1ab45fe598c598a0e41"
+    },
+    "edu-tutor-local/tests/test_logical_teaching_speech.py": {
+      "bytes": 6907,
+      "sha256": "96153f6b9fd6a984a21838f6c342b3a0248d82a534de80357570993f9ad765cd"
+    },
+    "edu-tutor-local/tests/test_neural_ipc.py": {
+      "bytes": 1035,
+      "sha256": "17446fed18f36af839a35797232a3235ea29443873bc00eed5e5e00ae8f6caad"
+    },
+    "edu-tutor-local/tests/test_neural_observation.py": {
+      "bytes": 22572,
+      "sha256": "f5b93a2c45652ce79ec15185fa9058192fc9c91e0acca3be535465a37bb5136c"
+    },
+    "edu-tutor-local/tests/test_neural_service.py": {
+      "bytes": 17290,
+      "sha256": "7fe4c35e3e76069b0ffbbf9683df939a60174064b3c6feaf446ae3e96f2220a1"
+    },
+    "edu-tutor-local/tests/test_partial_persistence.py": {
+      "bytes": 6214,
+      "sha256": "14d44d9ab0dc8c6aa7c9d1d12fd14b077ec09421d1e50e188defe6a9f9884403"
+    },
+    "edu-tutor-local/tests/test_partial_persistence_failures.py": {
+      "bytes": 5236,
+      "sha256": "33e85530e78512b10a6b4842f0d1c65172730d0f6012ae972e368905de051a2f"
+    },
+    "edu-tutor-local/tests/test_phase2_backend.py": {
+      "bytes": 32923,
+      "sha256": "e5d3c14e90190965817b8d19b12f0006742c739867c0915c610a985290d2ee26"
+    },
+    "edu-tutor-local/tests/test_phase2_budget_speech.py": {
+      "bytes": 9549,
+      "sha256": "77dbfe328d9ed18f29682e4400fa3301a37accde941a1a5985ded6cb2cbfa581"
+    },
+    "edu-tutor-local/tests/test_phase2_ddl_examples.py": {
+      "bytes": 13075,
+      "sha256": "b6d4021a4bf80899b87ead685c2edc3297de2d4ca9793ebc9c7425eb4dd85f60"
+    },
+    "edu-tutor-local/tests/test_phase2_evaluation.py": {
+      "bytes": 10438,
+      "sha256": "ba5db1ddc592fedd9f4c46b14cf5f2bdd14dbd84356b04001d8163e851e0ff25"
+    },
+    "edu-tutor-local/tests/test_phase2_sql_response.py": {
+      "bytes": 5019,
+      "sha256": "64c7ee40cfe8b1679f9e347cff08918a9e9d93f7028106f8567359c22f82990f"
+    },
+    "edu-tutor-local/tests/test_phase2_training_capability.py": {
+      "bytes": 1339,
+      "sha256": "802889eb0723ea6248c3b6f106026806baad9a5b2d5342333671321ec29c9286"
+    },
+    "edu-tutor-local/tests/test_reference_supported_concepts.py": {
+      "bytes": 10818,
+      "sha256": "09bcd047de3a31a5c68445c3b7001db54c09139d87a846e22595e59d20710732"
+    },
+    "edu-tutor-local/tests/test_runtime_cancellation_ownership.py": {
+      "bytes": 7906,
+      "sha256": "40b1de9a8b3111612cab7bca19a06eadb7038f9a315d6ea3c82c713ddd25acd6"
+    },
+    "edu-tutor-local/tests/test_runtime_contract.py": {
+      "bytes": 3352,
+      "sha256": "5201de5d6c1afa112de54656bda7c799204847e9378b2b9a3ad09ac9bc688c86"
+    },
+    "edu-tutor-local/tests/test_saved_lesson_reprocess.py": {
+      "bytes": 5799,
+      "sha256": "97229876b4a4b17645484028aa4c3a3b2b15fba49ea0133597604a06b3c4be70"
+    },
+    "edu-tutor-local/tests/test_scoped_lesson_execution.py": {
+      "bytes": 2319,
+      "sha256": "6006df86f6860b63427bc6376a8b8b68c798ae17ea4ebe20c5ef98f696d8e69a"
+    },
+    "edu-tutor-local/tests/test_selected_row_api.py": {
+      "bytes": 2690,
+      "sha256": "a0e097bd5a5a2ebaac7f29d7ba75598d5a5557a293558ac827bdb42f32a8b65f"
+    },
+    "edu-tutor-local/tests/test_selected_row_lessons.py": {
+      "bytes": 13649,
+      "sha256": "773637368eba2d2005d5b7a1298d9685775309971ca7da027b102b242d7330ba"
+    },
+    "edu-tutor-local/tests/test_speech_cache_replay.py": {
+      "bytes": 18239,
+      "sha256": "d883796fa4160305f38ae1d7857cc7aff2635b45b88061c646e3342a64edb803"
+    },
+    "edu-tutor-local/tests/test_sql_question_data_separation.py": {
+      "bytes": 5989,
+      "sha256": "0a7f3409ff2f99dd95558255dda35b751163f57255f0dcf0f161ba33d9758d41"
+    },
+    "edu-tutor-local/tests/test_storage_scan.py": {
+      "bytes": 5200,
+      "sha256": "57ae9d6434b4d2a74e12ab48a686acd7399d06ad85d5929bd11289c965415d0a"
+    },
+    "edu-tutor-local/tests/test_student_budget_api.py": {
+      "bytes": 16515,
+      "sha256": "f014c4eb2721087a76ae93fe80329554e4345550c2ee71e16c923fadee4e2c73"
+    },
+    "edu-tutor-local/tests/test_student_budget_cpu.py": {
+      "bytes": 7695,
+      "sha256": "3996a63965fb8fe360a7d1e034337b571c8b89a916b9a2c0f70d8f315f38c183"
+    },
+    "edu-tutor-local/tests/test_student_photo_structure.py": {
+      "bytes": 6241,
+      "sha256": "ba52888dbf9b1504bf918d8b91fee4c6a1373eb286445cb24aeb572a4ebf7c7c"
+    },
+    "edu-tutor-local/tests/test_student_retrieval.py": {
+      "bytes": 1177,
+      "sha256": "499406fd9beda87c413c7fe6421ddb92443abeb1a9e871440cea0da69f96ee5a"
+    },
+    "edu-tutor-local/tests/test_student_text_precision.py": {
+      "bytes": 9096,
+      "sha256": "936eb560e959607e08c4ed32de9fc94edf6e01147c5510ca1a4cf228d2cbeed3"
+    },
+    "edu-tutor-local/tests/test_text_dispatch.py": {
+      "bytes": 7234,
+      "sha256": "9efc94b4481aefe51b163857fde520fa143f370791946b243dd8820395dbb421"
+    },
+    "edu-tutor-local/tests/test_text_eos.py": {
+      "bytes": 7712,
+      "sha256": "ff4a7cfef1b04a0653f76eaf0ac21bdc5785e49da2fe92df93e2ce2a440f85de"
+    },
+    "edu-tutor-local/tests/test_text_precision.py": {
+      "bytes": 11577,
+      "sha256": "cde4fb9a2740de98c9a5ced96b225fe60037f9179a31a9312b025b49657b0cbb"
+    },
+    "edu-tutor-local/tests/test_text_preflight_activity.py": {
+      "bytes": 12713,
+      "sha256": "3c6173376adae4a838616c0c8563d0e2b67dc9f3323c714759b99d6c7a1a221e"
+    },
+    "edu-tutor-local/tests/test_text_residency.py": {
+      "bytes": 9874,
+      "sha256": "4e0dcbfb7a3dc68d479394309cd9f5325bdcff33b0ad389d2cddb8c8c0257625"
+    },
+    "edu-tutor-local/tests/test_training_data.py": {
+      "bytes": 3223,
+      "sha256": "f3320990d37594d1a93365e663e44a9fe7afaa20a9a40df79073ed91ecef87d6"
+    },
+    "edu-tutor-local/tests/test_training_masking.py": {
+      "bytes": 4107,
+      "sha256": "8e5e0e18a4306fcfdcb0be6312314f84100c1c5812b4f3f9b8c3a24e95c93865"
+    },
+    "edu-tutor-local/tests/test_training_runner.py": {
+      "bytes": 3961,
+      "sha256": "9069e751d579ef278e664d3d9fab366b6d90bbfadad15ca494c909796f1a7804"
+    },
+    "edu-tutor-local/tests/test_tts_reader_failure.py": {
+      "bytes": 3343,
+      "sha256": "2933d677419c954487f79e7a0efdab73193db4a344949ba96cb855d6cdead330"
+    },
+    "edu-tutor-local/tests/test_tts_reuse_api.py": {
+      "bytes": 8238,
+      "sha256": "ff639df5ca84d9221d0ffb1b3c04eacfa729df1777a3ea3d2cc2f7ee10af889b"
+    },
+    "edu-tutor-local/tests/test_tts_session_cancel_api.py": {
+      "bytes": 2776,
+      "sha256": "f3013f81907317545f4a1d7afd3d9a46cf44dd3eaad1897344e7a918e908b51e"
+    },
+    "edu-tutor-local/tests/test_tts_session_reuse.py": {
+      "bytes": 18345,
+      "sha256": "b25ac762e83e88535d304fdd79b5d981cac76305299fdce55701ccabf53facc0"
+    },
+    "edu-tutor-local/tests/test_tts_startup_observability.py": {
+      "bytes": 2841,
+      "sha256": "6a3ec5b615143ab39d099394e42e6db270a8a5600d3426ce467ab4ed9be4d122"
+    },
+    "edu-tutor-local/tests/test_v021_app_score_reporting.py": {
+      "bytes": 1768,
+      "sha256": "25369b779b6f686d80c9b292a0c798fbadd77c2c95383b1f45035edaa825bcd7"
+    },
+    "edu-tutor-local/tests/test_v021_claims_and_photo.py": {
+      "bytes": 2696,
+      "sha256": "c37bec32a8b6515cf045a1c036f9b5bee915bbc2d8177d9c4406cae9dbf176f8"
+    },
+    "edu-tutor-local/tests/test_v021_eval_contract.py": {
+      "bytes": 2352,
+      "sha256": "34d4dbdc3f9500ff7dd2ebe5000e86db3c1e7cbe5d2602d9ee3e6230f6ca4010"
+    },
+    "edu-tutor-local/tests/test_v021_eval_journals.py": {
+      "bytes": 5587,
+      "sha256": "a1126540de1a563ae0e59c7cfd870a778680d3de7b87eae849d968d0244182f9"
+    },
+    "edu-tutor-local/tests/test_v021_evidence.py": {
+      "bytes": 10864,
+      "sha256": "77b4c32f0b1f152346d0b20d20900d3d3d1a1b4826cc24ba362b15132fbdb2e2"
+    },
+    "edu-tutor-local/tests/test_v021_evidence_classification.py": {
+      "bytes": 3534,
+      "sha256": "f12dddb603b4c81692c8d79ab7627be83db6db03de8953a4e31b2f7d82095121"
+    },
+    "edu-tutor-local/tests/test_v021_intent_language.py": {
+      "bytes": 7011,
+      "sha256": "06283f15794adba3ce451ddd0d43d6dfc5a87f8930cf3452c88f9edd16f91ded"
+    },
+    "edu-tutor-local/tests/test_v021_intent_review_regressions.py": {
+      "bytes": 4882,
+      "sha256": "1eecf133e26aec91253156868b0403d5abfccb4974a3aa792fadf107ef7002dd"
+    },
+    "edu-tutor-local/tests/test_v021_lesson_safety_followup.py": {
+      "bytes": 5966,
+      "sha256": "b0f44b8999ca9a6fb87fbebdcaba80499ac54ab57514bdd5702607523eecef96"
+    },
+    "edu-tutor-local/tests/test_v021_projection_lessons.py": {
+      "bytes": 10025,
+      "sha256": "671cad9e54b4257fa8e79383370e1536b2ddf300874a8b74170ed1a54428c974"
+    },
+    "edu-tutor-local/tests/test_v021_response_tail.py": {
+      "bytes": 7906,
+      "sha256": "886c56b351a9dd2db3d415679e5d143d86ec7252ee8b22626b743cb64c3766b7"
+    },
+    "edu-tutor-local/tests/test_v021r3_comparison_ambiguity.py": {
+      "bytes": 3710,
+      "sha256": "2e5cc701c18ab8bf03bfd4c6c0d0a44fe7da812569eb7d58fb746f29451070dd"
+    },
+    "edu-tutor-local/tests/test_v021r3_explanation_api.py": {
+      "bytes": 3562,
+      "sha256": "78f18be14b83797c862ef71fb91d6098b77b911d150dd12615451a1907a98d8a"
+    },
+    "edu-tutor-local/tests/test_v021r3_explanation_repair.py": {
+      "bytes": 15429,
+      "sha256": "23fa2816478c9f039c202a99f157f41a009604f9d07927fc1e8efda900b1f6e2"
+    },
+    "edu-tutor-local/tests/test_v021r3_followup_requests.py": {
+      "bytes": 6640,
+      "sha256": "eaf981dec8dba51203756442e38b7721685e2b391065d8bfe3436c06cd0ad6c3"
+    },
+    "edu-tutor-local/tests/test_v021r3_missing_threshold.py": {
+      "bytes": 2531,
+      "sha256": "a9bb078e27ad13ad0b72606f34acffa2fb01f8f95e8d78a9ec8b6dc261b2b873"
+    },
+    "edu-tutor-local/tests/test_v021r3_natural_sentence_repair.py": {
+      "bytes": 10089,
+      "sha256": "f3f6fb4346da9674a6fffbd14a53201270363fe9b70fd1c04137588407874cbc"
+    },
+    "edu-tutor-local/tests/test_v021r3_ordering_explanations.py": {
+      "bytes": 5020,
+      "sha256": "031695c60a414d2ec322f0d4293439aaf30361bb63b921c688b28a30ebe4d0ba"
+    },
+    "edu-tutor-local/tests/test_verified_equations.py": {
+      "bytes": 2800,
+      "sha256": "86a978e20cb4b2232f32bb5a9524aa1b3df0e533887514ad5f7b6c32e7b123c4"
+    },
+    "edu-tutor-local/tests/test_windows_sapi.py": {
+      "bytes": 8289,
+      "sha256": "db5d263933de4ffcd471c678180057141ee2eb3c35edfec98de90299675b1ea3"
+    },
+    "edu-tutor-local/tests/unit/test_backend.py": {
+      "bytes": 33735,
+      "sha256": "b7f598bf121fa7781a551c027a12dad7168db5630a7e0d4aaaef52eedf73cac1"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_AMS-Regular-BQhdFMY1.woff2": {
+      "bytes": 28076,
+      "sha256": "0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_AMS-Regular-DMm9YOAa.woff": {
+      "bytes": 33516,
+      "sha256": "30da91e84c893f875e252689faebdc590b2871145e8adc7f9a9d4dbd8ce0b251"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_AMS-Regular-DRggAlZN.ttf": {
+      "bytes": 63632,
+      "sha256": "68534840bcfdd2bffb6f0e8deb48684dd01e7f04ea2813267577afb906de1d13"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Caligraphic-Bold-ATXxdsX0.ttf": {
+      "bytes": 12368,
+      "sha256": "07d8e303ce4fc12b4bb54f1004170dd190a1f3db45d400fe68060df3e0897268"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Caligraphic-Bold-BEiXGLvX.woff": {
+      "bytes": 7716,
+      "sha256": "1ae6bd7475590e97e7f145a89e09ccde322f7a6bc0b91607b1c8b8ee28290fed"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Caligraphic-Bold-Dq_IR9rO.woff2": {
+      "bytes": 6912,
+      "sha256": "de7701e42cf1f4cf0b766c03fb27977207eee2f4fd5d76fa82188406da43ea4c"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Caligraphic-Regular-CTRA-rTL.woff": {
+      "bytes": 7656,
+      "sha256": "3398dd02302557a793f2863f88e02d96ce10df2abffa07c8e9fa90775116e65c"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Caligraphic-Regular-Di6jR-x-.woff2": {
+      "bytes": 6908,
+      "sha256": "5d53e70ad607c2352162dec9e0923fb54ecdafaccbf604cd8dcf7d00facb989b"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Caligraphic-Regular-wX97UBjC.ttf": {
+      "bytes": 12344,
+      "sha256": "ed0b74372feefcbb9c0666b2e210da37b7e49fa7fbbf3eeb11db5f693dacfbb7"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Fraktur-Bold-BdnERNNW.ttf": {
+      "bytes": 19584,
+      "sha256": "9163df9c7122432e6495b4229fa9071cf9ae86a758ae5efc4924ec2e1a6dbce1"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Fraktur-Bold-BsDP51OF.woff": {
+      "bytes": 13296,
+      "sha256": "9be7ceb88004ab8ad124082246fbfcca4091e36385d4ec6ed1df67375dad50fb"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Fraktur-Bold-CL6g_b3V.woff2": {
+      "bytes": 11348,
+      "sha256": "74444efd593c005e3f4573b44524704c0af0a937fe911cca9e94068d0d140d3f"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Fraktur-Regular-CB_wures.ttf": {
+      "bytes": 19572,
+      "sha256": "1e6f9579e90e2cac37f8f60a597c436e075c114385652b7cbeb0dec0421291b3"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Fraktur-Regular-CTYiF6lA.woff2": {
+      "bytes": 11316,
+      "sha256": "51814d270d06ff0255dba0799994fa4d8c84d11f09951d47595f4abb1f3602dc"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Fraktur-Regular-Dxdc4cR9.woff": {
+      "bytes": 13208,
+      "sha256": "5e28753be717dac97f559f49bc10be9cf3c124ddcabda6659d11cb68febc6463"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Main-Bold-Cx986IdX.woff2": {
+      "bytes": 25324,
+      "sha256": "0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Main-Bold-Jm3AIy58.woff": {
+      "bytes": 29912,
+      "sha256": "c76c5d696297d51b9cb1639c7da4334f0e7dec81b42b11213b5e25ef671bb822"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Main-Bold-waoOVXN0.ttf": {
+      "bytes": 51336,
+      "sha256": "138ac28d1663b3037e9c5f52371fa5c63d8324f4a38d22cd573e6ea3a3fd0cf8"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Main-BoldItalic-DxDJ3AOS.woff2": {
+      "bytes": 16780,
+      "sha256": "99cd42a3c072d918f2f44984a807cf7aa16e13545fd0875fc07c6c65f99e715b"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Main-BoldItalic-DzxPMmG6.ttf": {
+      "bytes": 32968,
+      "sha256": "70ee1f64a20f2048c21940ef46d0144fd215baa953ca69afd1e31e98544f708f"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Main-BoldItalic-SpSLRI95.woff": {
+      "bytes": 19412,
+      "sha256": "a6f7ec0d846ac7ad975adb8959c37ed49b94acbc4ae436db9ce9e20287e4a64c"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Main-Italic-3WenGoN9.ttf": {
+      "bytes": 33580,
+      "sha256": "0d85ae7cc30f23790a7f1a58c4a112fdca8aae769b6ba11429af1d98b1b6cb3a"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Main-Italic-BMLOBm91.woff": {
+      "bytes": 19676,
+      "sha256": "f1d6ef86f3b11a528bd5185199bd2443ecb2b0dead96d88674b5a2c12be24bdf"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Main-Italic-NWA7e6Wa.woff2": {
+      "bytes": 16988,
+      "sha256": "97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Main-Regular-B22Nviop.woff2": {
+      "bytes": 26272,
+      "sha256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Main-Regular-Dr94JaBh.woff": {
+      "bytes": 30772,
+      "sha256": "c6368d87e8a1a3a5d337623d83d8dc4b868f242a9ad476237d6f8d1e0f168cdc"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Main-Regular-ypZvNtVU.ttf": {
+      "bytes": 53580,
+      "sha256": "d0332f52868370fd83ae7fa46470f90c8f2eab2fcf12bc4f88080b340c95a830"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Math-BoldItalic-B3XSjfu4.ttf": {
+      "bytes": 31196,
+      "sha256": "f9377ab0271cda59af24bcffbd46a4d0c8a3572ffafdbb38de2ad5ea7b0d5ee5"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Math-BoldItalic-CZnvNsCZ.woff2": {
+      "bytes": 16400,
+      "sha256": "dc47344dbb6cb5b655c8460d561f4df5f501b90c804ad3c6cec65fe322351ab1"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Math-BoldItalic-iY-2wyZ7.woff": {
+      "bytes": 18668,
+      "sha256": "850c0af5c2238497febaf5e461d880bf458c341f42f4f330f1b1ab5698b1998e"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Math-Italic-DA0__PXp.woff": {
+      "bytes": 18748,
+      "sha256": "8a8d244581371912b8f3f5a23e2437cb2a59cd9bcaebb0346e722c05737a2571"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Math-Italic-flOr_0UB.ttf": {
+      "bytes": 31308,
+      "sha256": "08ce98e51b04d58945a301e639e02b6998af29fdfd61a7b8afdd07bbfc479d4a"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Math-Italic-t53AETM-.woff2": {
+      "bytes": 16440,
+      "sha256": "7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_SansSerif-Bold-CFMepnvq.ttf": {
+      "bytes": 24504,
+      "sha256": "1ece03f79f95277d57dc7f6b435a74e1379b0d46104a8530286b60ff49369ea0"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_SansSerif-Bold-D1sUS0GD.woff2": {
+      "bytes": 12216,
+      "sha256": "e99ae51144bf1232efcc1bfe5add36262c6866b0faab24fa75740e1b98577a62"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_SansSerif-Bold-DbIhKOiC.woff": {
+      "bytes": 14408,
+      "sha256": "ece03cfd83e22c212cdef66feb8442d25a083beb988db3f1883f3f9738d750ba"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_SansSerif-Italic-C3H0VqGB.woff2": {
+      "bytes": 12028,
+      "sha256": "00b26ac825e2095056396e0553b8ac26d3f8ad158c3826e28b4c45b385c4714a"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_SansSerif-Italic-DN2j7dab.woff": {
+      "bytes": 14112,
+      "sha256": "91ee67500cc0129aa0ace3ac5c61ff1692102f0f31d02b69347fba35dcb75bf2"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_SansSerif-Italic-YYjJ1zSn.ttf": {
+      "bytes": 22364,
+      "sha256": "3931dd81faed86ba021bb2bbdc36f5bed9a38d6b4f4077aca59b265aa1b02083"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_SansSerif-Regular-BNo7hRIc.ttf": {
+      "bytes": 19436,
+      "sha256": "f36ea897e19f4a2e571d1e900e4e3710e438deb05a842486045ba0a3e616a4ad"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_SansSerif-Regular-CS6fqUqJ.woff": {
+      "bytes": 12316,
+      "sha256": "11e4dc8a6471ff6d6ee561d53d10fde8f7489e798257ff449c5d37c197435605"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_SansSerif-Regular-DDBCnlJ7.woff2": {
+      "bytes": 10344,
+      "sha256": "68e8c73ef42afd3ccec58bf0fba302cce448938e7fc020a5e31f8a952eee1342"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Script-Regular-C5JkGWo-.ttf": {
+      "bytes": 16648,
+      "sha256": "1c67f068fea8bb09bf099c088b1cf64bd27516a6e07f4684344873564bb66a67"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Script-Regular-D3wIWfF6.woff2": {
+      "bytes": 9644,
+      "sha256": "036d4e95149b69ff9bcc0cd55771efeb25ffa3947293e69acd78d5ac328c684b"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Script-Regular-D5yQViql.woff": {
+      "bytes": 10588,
+      "sha256": "d96cdf2b3bdd4d64a8fd5f74a4c467f123a8a73931cd435889f08ffaf9bf947a"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Size1-Regular-C195tn64.woff": {
+      "bytes": 6496,
+      "sha256": "c943cc986384f59e86bea5fd7dc50a9c4dfe567a7c05eb40d6790720dead97c9"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Size1-Regular-Dbsnue_I.ttf": {
+      "bytes": 12228,
+      "sha256": "95b6d2f1a50173bfedb8c63e1d1c99b10427d0a4df4201cb44513b226951a22b"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Size1-Regular-mCD8mA8B.woff2": {
+      "bytes": 5468,
+      "sha256": "6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Size2-Regular-B7gKUWhC.ttf": {
+      "bytes": 11508,
+      "sha256": "a6b2099fb555c60e3a0db3a08842ebf1d732c6eb4e4bf44913613bed4fc4e39b"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Size2-Regular-Dy4dx90m.woff2": {
+      "bytes": 5208,
+      "sha256": "d04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Size2-Regular-oD1tc_U0.woff": {
+      "bytes": 6188,
+      "sha256": "2014c523c3210bcc166648c4d4cc57f05b747df07a24277bf71c51e67dc79e3d"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Size3-Regular-CTq5MqoE.woff": {
+      "bytes": 4420,
+      "sha256": "6ab6b62e9b62dae2c00dd90f791bd10950be0ecc3490d7d6045f51c2e8fe0949"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Size3-Regular-DgpXs0kz.ttf": {
+      "bytes": 7588,
+      "sha256": "500e04d54f0d51666332c9d2089aa803be22aa878eca539e59fa53c6e522b082"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Size4-Regular-BF-4gkZK.woff": {
+      "bytes": 5980,
+      "sha256": "99f9c6750b489c9462bf04900bd3f939df9b829339daaaaa99ef5495cdddea58"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Size4-Regular-DWFBv043.ttf": {
+      "bytes": 10364,
+      "sha256": "c647367d1dd4e162468717d020e1fc0f1dc5c26ebfdffbe55261713bf88c5877"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Size4-Regular-Dl5lxZxV.woff2": {
+      "bytes": 4928,
+      "sha256": "a4af7d414440a1c1790825cfb700cf9cf43b0f2c4b04f0ebc523011ad9853ec0"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Typewriter-Regular-C0xS9mPB.woff": {
+      "bytes": 16028,
+      "sha256": "e14fed02b1aba7ce9f5afd5844b5d0321b22351febc720e0de8b8723527609f7"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Typewriter-Regular-CO6r4hn1.woff2": {
+      "bytes": 13568,
+      "sha256": "71d517d67827787cfabdf186914cc3358eda539e37931941f2b2fd4a21f68c0b"
+    },
+    "edu-tutor-local/web/dist/assets/KaTeX_Typewriter-Regular-D3Ib7_Hf.ttf": {
+      "bytes": 27556,
+      "sha256": "f01f3e87d9c6a61c0c081ceb577abd864eb00a612f7ac1620dd6915fad2ef5aa"
+    },
+    "edu-tutor-local/web/dist/assets/index-CELJR-Tv.js": {
+      "bytes": 930650,
+      "sha256": "67a1a9b9dc9e42336ac4bdb44195b63729e167adea2d7648425b03c53b86c745"
+    },
+    "edu-tutor-local/web/dist/assets/index-DY629Aiz.css": {
+      "bytes": 75354,
+      "sha256": "40d16b0561e73d9c66029c2992be3b4c233246d3c3f7668a1d4d1dd8fa9161c6"
+    },
+    "edu-tutor-local/web/dist/avatar-manifest.json": {
+      "bytes": 1201,
+      "sha256": "8d330787cf1d9f26044d205a3858a4f6c5dc27ca6297c496d39bc2d5b60ded28"
+    },
+    "edu-tutor-local/web/dist/index.html": {
+      "bytes": 471,
+      "sha256": "646aad471c5978492667ce642022186d4ed682878cb6e664cdb21df403c5a199"
+    },
+    "edu-tutor-local/web/index.html": {
+      "bytes": 373,
+      "sha256": "196066755be7e38350b1fc075a58aa0c53c3535d3051eab4057017e6447015aa"
+    },
+    "edu-tutor-local/web/package-lock.json": {
+      "bytes": 86585,
+      "sha256": "87be71b803b5bce97d86c0e450a5b4f37685f3081688c54b5bbf8bca13194a4a"
+    },
+    "edu-tutor-local/web/package.json": {
+      "bytes": 1052,
+      "sha256": "ddda2b3596708d54c690eb305bc8c00fae1085bb5ac70d345f507d8a42ddc4e0"
+    },
+    "edu-tutor-local/web/playwright.config.ts": {
+      "bytes": 558,
+      "sha256": "552cb3171c9b8376fda8dc1d85b171b1b9d6aa21691fe6616abbb46dd1cbfedf"
+    },
+    "edu-tutor-local/web/playwright.finish-table.config.ts": {
+      "bytes": 678,
+      "sha256": "4873fc482d1fd19966dfbb59ac8793f491cbbe709d44446dea1ce02867a30947"
+    },
+    "edu-tutor-local/web/playwright.live.config.ts": {
+      "bytes": 477,
+      "sha256": "6f16b9ba5905e9832d4420f53931c9ebac50339dd22c400e8e47b83f2c7be767"
+    },
+    "edu-tutor-local/web/playwright.neural-regression.config.ts": {
+      "bytes": 816,
+      "sha256": "301f3ed8363c08bf3f1a6c2dc239848cd20ded9943d2cbd5868c1e75261463f7"
+    },
+    "edu-tutor-local/web/playwright.neural.config.ts": {
+      "bytes": 644,
+      "sha256": "4f758bc4f8fe8d815b5045557326d136d0af678a9f4558f8759884d54db48e5b"
+    },
+    "edu-tutor-local/web/playwright.phase2-blocked.config.ts": {
+      "bytes": 474,
+      "sha256": "1390e5ea6f2ddc76d93a5f4c9a3cee4b116d49c3198c87475d1785febe84c393"
+    },
+    "edu-tutor-local/web/playwright.phase2-cached.config.ts": {
+      "bytes": 471,
+      "sha256": "580fe3419f24a30a8070d4addd3167b8f533ab2337f1684c5ddaed6c5d4e7e4a"
+    },
+    "edu-tutor-local/web/playwright.phase2-content.config.ts": {
+      "bytes": 474,
+      "sha256": "1cc655d89127077064d665a019d6bebbba058ee01c3967120dbafdbedbcff9a8"
+    },
+    "edu-tutor-local/web/playwright.phase2-live.config.ts": {
+      "bytes": 467,
+      "sha256": "53dc58da3ec791014195c437a91e02e9fb1c1be430d6fcc1dc9b0410742833b9"
+    },
+    "edu-tutor-local/web/playwright.phase2-photo.config.ts": {
+      "bytes": 468,
+      "sha256": "993e2f9b17c9c74338d9716fa449a7dc23c958fe6c8daa0c623a9206728b4c1e"
+    },
+    "edu-tutor-local/web/playwright.phase2-training-policy.config.ts": {
+      "bytes": 456,
+      "sha256": "50099d924600ade019348eb125bed1b790ffe370b50b71c4d11201ca07ade015"
+    },
+    "edu-tutor-local/web/playwright.phase2.config.ts": {
+      "bytes": 607,
+      "sha256": "1462dc3cc88f86408c490c0bfd802dc993b79c4e3c10899e7088b9c5f4b68d3d"
+    },
+    "edu-tutor-local/web/playwright.repair.config.ts": {
+      "bytes": 698,
+      "sha256": "2b0db4768bf7c185e04fb30bfe81f62b593e892af5f1f70daa2bb20117343bf0"
+    },
+    "edu-tutor-local/web/playwright.s3.config.ts": {
+      "bytes": 468,
+      "sha256": "5da3348152a8ec6ca4be088689824180dca57d09d6407e9c27c7f2f215230d70"
+    },
+    "edu-tutor-local/web/playwright.student.config.ts": {
+      "bytes": 853,
+      "sha256": "7d5fd15bb15cb2972b9927c701cbf217d969de4934b6e3d4acb859c26aef5b81"
+    },
+    "edu-tutor-local/web/playwright.t3.config.ts": {
+      "bytes": 455,
+      "sha256": "27567e325cb6aa2985770a03e2a7a4e26bef1fd5ac69c51da4539013edbc7374"
+    },
+    "edu-tutor-local/web/public/avatar-manifest.json": {
+      "bytes": 1201,
+      "sha256": "8d330787cf1d9f26044d205a3858a4f6c5dc27ca6297c496d39bc2d5b60ded28"
+    },
+    "edu-tutor-local/web/scripts/capture-admin.mjs": {
+      "bytes": 4631,
+      "sha256": "7aeb42eeaeb763bf8ccd61040f822b41094bedc4b726af1593f12ed0189e0f63"
+    },
+    "edu-tutor-local/web/scripts/capture-metrics.mjs": {
+      "bytes": 2239,
+      "sha256": "5b5bceee98461e88528229ed1ac0b2c5690ed6ce14beacb119736dc144759c82"
+    },
+    "edu-tutor-local/web/scripts/compile-schema.mjs": {
+      "bytes": 1069,
+      "sha256": "65c0dc5f43430aad2f6b401c47c49ddaae2cc9fc14f6ef2248908fcbd6196bc3"
+    },
+    "edu-tutor-local/web/scripts/extend-schema-v02.mjs": {
+      "bytes": 3184,
+      "sha256": "5791afe5ed930cb5d0e02fc96a9bf6320a7d934ba03edf585705a75b64aa33d5"
+    },
+    "edu-tutor-local/web/scripts/finish-student-journeys.mjs": {
+      "bytes": 38585,
+      "sha256": "a339f5121af43e30dfcfc3f67549132d134cc28c169c2a36e45957b03343e912"
+    },
+    "edu-tutor-local/web/scripts/neural-live.mjs": {
+      "bytes": 6092,
+      "sha256": "7514638dabed2e141e2a6a3a28a05724156c19835559c1754cc12460a1c14801"
+    },
+    "edu-tutor-local/web/scripts/neural-replay.mjs": {
+      "bytes": 5571,
+      "sha256": "8e02e043240a4e71e0869796e8707b99d8274bf3dfb2f92f96918240e54d71ef"
+    },
+    "edu-tutor-local/web/scripts/student-cache-replay-qa.mjs": {
+      "bytes": 18339,
+      "sha256": "4026c354087d674a9d9d17ba83a4e2f8e63a305cfbb70380c8e680bc4836d8c6"
+    },
+    "edu-tutor-local/web/scripts/student-condition-recovery-live.mjs": {
+      "bytes": 10496,
+      "sha256": "10699de821f320abc446d1411c24495dbee922876777b9ac9b80e8264ed75504"
+    },
+    "edu-tutor-local/web/scripts/student-experience-live.mjs": {
+      "bytes": 16299,
+      "sha256": "074e4af7d3d1166f180b51f90067bf46da98672636ae0925c9350fc9d52b167c"
+    },
+    "edu-tutor-local/web/scripts/student-gallery-qa.mjs": {
+      "bytes": 3337,
+      "sha256": "0577636f22d807b931966ef85bdfe79b7edb47e0d745e57413cb46005e4baf3b"
+    },
+    "edu-tutor-local/web/scripts/student-new-lesson-live.mjs": {
+      "bytes": 8422,
+      "sha256": "e849297fdd63cac8d453d7edf8739edf923b58c4c8e0e02b803c077de46b4e87"
+    },
+    "edu-tutor-local/web/scripts/student-readonly-qa.mjs": {
+      "bytes": 25862,
+      "sha256": "81e9a9a4d1d52f5451fab6552a33c0df5c5f4613ab2e9a78f774e4dfd9eee01a"
+    },
+    "edu-tutor-local/web/scripts/student-review-qa.mjs": {
+      "bytes": 12197,
+      "sha256": "9a701e1081d6e0c1c9d759f58ae32392d65ff912ba59cb857e775557f9bbb297"
+    },
+    "edu-tutor-local/web/scripts/test-failed-supplement-board.mjs": {
+      "bytes": 14355,
+      "sha256": "70106c0aa207652ae9fda37b53c322d6a29cd32f876434e993fa5a83c6ed201b"
+    },
+    "edu-tutor-local/web/scripts/test-finish-evidence-cpu.mjs": {
+      "bytes": 5424,
+      "sha256": "686578bb376e73fd543e5db95bf943984d7be1e86455be623eeee3801c6d4bb2"
+    },
+    "edu-tutor-local/web/scripts/test-student-budget-cpu.mjs": {
+      "bytes": 14722,
+      "sha256": "d278ca1ef82080f196e8aa6197951ffc37bc9c504e8da00251fd4a482b0699d1"
+    },
+    "edu-tutor-local/web/src/Admin.tsx": {
+      "bytes": 22169,
+      "sha256": "f62900b33917e77f6e4ce1394d65ca9578f79da980b6ea7de0952b3d0f93b584"
+    },
+    "edu-tutor-local/web/src/App.tsx": {
+      "bytes": 102355,
+      "sha256": "a353f58e6eeb77667150fad04929942a1a9aceadd287d7ca1ba04cbbcb268ccc"
+    },
+    "edu-tutor-local/web/src/BoardShapes.tsx": {
+      "bytes": 3246,
+      "sha256": "739aab9b18dbf51283cb0132d633a7296bc1b5d0cfeaaac7b3bae4eeab9a7be2"
+    },
+    "edu-tutor-local/web/src/Classroom.tsx": {
+      "bytes": 62713,
+      "sha256": "eed93be9d9419b0c38d7f134bca88cb715b1f34efaf5ea343052a16b65e27b94"
+    },
+    "edu-tutor-local/web/src/EvaluationComparison.tsx": {
+      "bytes": 10586,
+      "sha256": "1a831b9532347c22a6d0b87903bb67b283c0a25c41245216d4ee42ab6f1ab06d"
+    },
+    "edu-tutor-local/web/src/Metrics.tsx": {
+      "bytes": 4842,
+      "sha256": "843ff68c6e4b6c0a09d86666ab60397804e6a6a37e995a901501bfbb3170ff5a"
+    },
+    "edu-tutor-local/web/src/Neural.tsx": {
+      "bytes": 72171,
+      "sha256": "fed9659cbb4755e17015cd1f9e8114edd3a3b432486880724859a8ad00c90bb4"
+    },
+    "edu-tutor-local/web/src/PhotoDialog.tsx": {
+      "bytes": 17312,
+      "sha256": "f0db87fe9da4ad6fea5fdf5ff7590eb178c596cb926450045391ded021d1bda0"
+    },
+    "edu-tutor-local/web/src/ProblemEditor.tsx": {
+      "bytes": 10669,
+      "sha256": "dcca3be151bcd84d9b7892c6dabdf41ba08bca5c026643da5736b5d57c779b38"
+    },
+    "edu-tutor-local/web/src/Training.tsx": {
+      "bytes": 22837,
+      "sha256": "b32731a71b61fe178b075e349cbd70184e6de8078c333d4aa555f47144b2dab8"
+    },
+    "edu-tutor-local/web/src/api.ts": {
+      "bytes": 7897,
+      "sha256": "73247d998f8da6c30b9b17721a8295e304009ab7d9f159f1841ffcf68f9fd833"
+    },
+    "edu-tutor-local/web/src/avatar-manifest.json": {
+      "bytes": 1201,
+      "sha256": "8d330787cf1d9f26044d205a3858a4f6c5dc27ca6297c496d39bc2d5b60ded28"
+    },
+    "edu-tutor-local/web/src/avatar.ts": {
+      "bytes": 1331,
+      "sha256": "5db2627988b88f06b40a8d9d0fc3b966c4e68fcd55883467c56c475d93b2da83"
+    },
+    "edu-tutor-local/web/src/boardGeometry.ts": {
+      "bytes": 3677,
+      "sha256": "3f2ee6d09fe139dc112a245009fcf63f265afce431509e22299886f8b471a818"
+    },
+    "edu-tutor-local/web/src/evaluation.test.ts": {
+      "bytes": 1345,
+      "sha256": "937638f5ab332b314f79cf9082c967e6e5106597cb320a609f509c4c941b9b78"
+    },
+    "edu-tutor-local/web/src/evaluation.ts": {
+      "bytes": 1285,
+      "sha256": "e5779162515b4f721eb9ff5758dcf6534fca4568dfeb70f359c562751e76e6fe"
+    },
+    "edu-tutor-local/web/src/finishGroupFlow.test.ts": {
+      "bytes": 1243,
+      "sha256": "db6ad7d8976b3953778c4d8d063d4d505573e39adc2fc6e7ab6650f9727287fc"
+    },
+    "edu-tutor-local/web/src/finishSpeechScope.test.ts": {
+      "bytes": 2778,
+      "sha256": "3865bc9bab6d927750c16942aa24ba773706d838bdeb292f7e602abd9a858ce2"
+    },
+    "edu-tutor-local/web/src/lesson.fixture.json": {
+      "bytes": 6343,
+      "sha256": "c1b3842ba0f6022e532a34e76d832a678ed4b708764271807fca398b8bae1de6"
+    },
+    "edu-tutor-local/web/src/lesson.test.ts": {
+      "bytes": 5879,
+      "sha256": "e3e5fa1704395d13c47c7b454746752212f1a9084a424ebb88ed8aed58359741"
+    },
+    "edu-tutor-local/web/src/lesson.ts": {
+      "bytes": 11810,
+      "sha256": "fc88a9ffb9ef7c740731673acd11d6d1916e42f042b3db8efac3025b242248ca"
+    },
+    "edu-tutor-local/web/src/lesson_plan.schema.json": {
+      "bytes": 43640,
+      "sha256": "a810e862787e9f7d0f41bdd333699c26c7e7793b61c35680503993d2648eaaa9"
+    },
+    "edu-tutor-local/web/src/localAssets.ts": {
+      "bytes": 1981,
+      "sha256": "98f1eeed5851d8a9289cbfb2c4c27c4d285ca04fd84d5a2671bf747d5b25f5f1"
+    },
+    "edu-tutor-local/web/src/main.tsx": {
+      "bytes": 269,
+      "sha256": "5712232f62582ef236f9a5d825d7f4a5e792c5360a40a7d0f280ca1fb3434ff5"
+    },
+    "edu-tutor-local/web/src/neural.css": {
+      "bytes": 10175,
+      "sha256": "9774183ab546ead341a7a4d570c40da282cda69fed4eec8de695c6bedc4dc710"
+    },
+    "edu-tutor-local/web/src/neuralEvents.test.ts": {
+      "bytes": 5817,
+      "sha256": "6e253038ea3bd343f924fded3c44efd35f933ca1847b5da048a4f050cc19e7f5"
+    },
+    "edu-tutor-local/web/src/neuralEvents.ts": {
+      "bytes": 4597,
+      "sha256": "957020116a4cb08ed261c088417ff76d170f9a86120eae81e3736044bfb03b01"
+    },
+    "edu-tutor-local/web/src/phase2.test.ts": {
+      "bytes": 4573,
+      "sha256": "5a0018862dd12cc99f0d1b1fadd7fe91b1493918b653aa5109d232bf815759c1"
+    },
+    "edu-tutor-local/web/src/playbackSession.test.ts": {
+      "bytes": 1619,
+      "sha256": "46659bf7991bdf6fae205ee4bfda78261bcb7c77f30c49f942bed359c8088be8"
+    },
+    "edu-tutor-local/web/src/playbackSession.ts": {
+      "bytes": 1250,
+      "sha256": "1df1296303101c16ab7efe4df4c0bdfbfb06610f8cc9c6e83d619f7ab611a1d1"
+    },
+    "edu-tutor-local/web/src/problemTables.test.ts": {
+      "bytes": 2787,
+      "sha256": "e196e01f240ca2d4868cc472bfadc4023333550d2c0538f51aaa19f823eba958"
+    },
+    "edu-tutor-local/web/src/problemTables.ts": {
+      "bytes": 3237,
+      "sha256": "77f327bfec0f518594df8c8e23819101d31e53c382edbc2930d57897e208d6b0"
+    },
+    "edu-tutor-local/web/src/speechCache.test.ts": {
+      "bytes": 15462,
+      "sha256": "8c408c1ecdae6c20e8c7cef8d50e441fbb32f33fb8373cc7d8e88d6e2c0443f4"
+    },
+    "edu-tutor-local/web/src/speechCache.ts": {
+      "bytes": 12783,
+      "sha256": "38f3d26fecadb7aaa166ffbbf0c4d24f1ead1322db2c50825ffdd8515d419de6"
+    },
+    "edu-tutor-local/web/src/student.test.ts": {
+      "bytes": 3316,
+      "sha256": "79702203a07b509e68dc33ced2b3cb1da8ff593c4de37947e28bd7cbbe772967"
+    },
+    "edu-tutor-local/web/src/student.ts": {
+      "bytes": 2292,
+      "sha256": "ab1426aee7e7964e06f167d34340bf25bd8899fe2417ad8da3b5dbf3abd8d194"
+    },
+    "edu-tutor-local/web/src/styles.css": {
+      "bytes": 48058,
+      "sha256": "76c86ef29870598823384312bf693d905c153f64784982eaedad6667c91127e2"
+    },
+    "edu-tutor-local/web/src/validate-lesson.d.ts": {
+      "bytes": 112,
+      "sha256": "ea9e964651311522c8d9fcb22b27421bc4335974b5432e5c089b234a92c63669"
+    },
+    "edu-tutor-local/web/src/validate-lesson.js": {
+      "bytes": 288410,
+      "sha256": "ad9f15f63911061f2e044317eaf10f74f0bfb0a7b3ab094237a00e909566c3ac"
+    },
+    "edu-tutor-local/web/tests/actual-model.spec.ts": {
+      "bytes": 13902,
+      "sha256": "1cd561d0a717de837fa63167e9b8ff605af9fa48d5c4ada49eb83c9a6e2d3fad"
+    },
+    "edu-tutor-local/web/tests/actual-training.spec.ts": {
+      "bytes": 7569,
+      "sha256": "501bd192690022c7503955480bfb34d88af1318de90e693497e53ed83a73f10f"
+    },
+    "edu-tutor-local/web/tests/finish-table-editor.spec.ts": {
+      "bytes": 8043,
+      "sha256": "d965679ff5761c0acc96ee75f1e9fdf2a4109b2a6f13a02f967b58160b22b0d4"
+    },
+    "edu-tutor-local/web/tests/live-api.spec.ts": {
+      "bytes": 6516,
+      "sha256": "a0cbf9703f369f91aa41937d9486cc798e6f6d2730623d46fb54402181f22544"
+    },
+    "edu-tutor-local/web/tests/neural-fixture.spec.ts": {
+      "bytes": 21899,
+      "sha256": "21fd1933dddc643d3998f00c2efe15ad4b129d6cb3d75385930c4e0cbc606419"
+    },
+    "edu-tutor-local/web/tests/phase2-blocked.spec.ts": {
+      "bytes": 4715,
+      "sha256": "be472ba88aef9aebde5b1df5e05ee3e77b48adf89abf0c78b29bd3c851acf540"
+    },
+    "edu-tutor-local/web/tests/phase2-cached.spec.ts": {
+      "bytes": 6653,
+      "sha256": "9288397980d6628152213e5a851e7538819ab4bdefc2cd879ee6514244be631d"
+    },
+    "edu-tutor-local/web/tests/phase2-content.spec.ts": {
+      "bytes": 12407,
+      "sha256": "0c0a99b4e21dc6beff92ae21c82b762254f40fdd443b588d569606004fb62695"
+    },
+    "edu-tutor-local/web/tests/phase2-fixture.spec.ts": {
+      "bytes": 15640,
+      "sha256": "f1497e5b26c8926bf6c9f565d927667d5221ecb0516f2ff97324f87746842010"
+    },
+    "edu-tutor-local/web/tests/phase2-live.spec.ts": {
+      "bytes": 13487,
+      "sha256": "2cf42a5a7a56f52eb42c65a9fdb10640d6fdee39e213db4167ab963e72e29995"
+    },
+    "edu-tutor-local/web/tests/phase2-photo.spec.ts": {
+      "bytes": 9940,
+      "sha256": "d0b47bbb86586335bceeb88e80cad41b857a292868e490b085ca5fc712ebe034"
+    },
+    "edu-tutor-local/web/tests/phase2-training-policy.spec.ts": {
+      "bytes": 2996,
+      "sha256": "d646e58dab1a460b4130d464661593a1340b5192c19eeeba358d071aa701f0ae"
+    },
+    "edu-tutor-local/web/tests/student-fixture.spec.ts": {
+      "bytes": 75987,
+      "sha256": "c47bc466ae32954a4a57c67a7b3e80ac66a73b057bf8ffdbbac95f69c53dffc5"
+    },
+    "edu-tutor-local/web/tests/ui-fixture.spec.ts": {
+      "bytes": 24836,
+      "sha256": "87971f0a239939a872784a7a0653ba751ded844c6c1b6f3f87550fc9c4070143"
+    },
+    "edu-tutor-local/web/tsconfig.json": {
+      "bytes": 367,
+      "sha256": "289be762cf2b51e92d089f0eef34d0b07dab4f2479a7e4131d590963bf151259"
+    },
+    "edu-tutor-local/web/vite.config.ts": {
+      "bytes": 341,
+      "sha256": "3dadca73e133f6a97dac732a0c1191493430424e7deba248395a540c03977d05"
+    },
+    "edu_tutor_codex_pack/00_README_KO.md": {
+      "bytes": 4719,
+      "sha256": "c09d3dadb49a4ef7fe0143e00658ead15136014a1d58c108d468574c336a5fc8"
+    },
+    "edu_tutor_codex_pack/01_START_PROMPT_KO.txt": {
+      "bytes": 1905,
+      "sha256": "6230272b886759e4e0f71db63c5ce8ae50fe29afcaff9cc8d64ff7dc8d1f5502"
+    },
+    "edu_tutor_codex_pack/02_MASTER_INSTRUCTIONS.md": {
+      "bytes": 7437,
+      "sha256": "f39fd7296521f79ec4b55704de5e06667c4c369eae75d89e07b3cdce183c9bbf"
+    },
+    "edu_tutor_codex_pack/ALL_IN_ONE_PROMPT_KO.txt": {
+      "bytes": 115812,
+      "sha256": "a223093305ef97be0b7ed2f0fae8f75d3284220b92b9e77b5b9950cd7a7c5ff7"
+    },
+    "edu_tutor_codex_pack/PACK_VALIDATION.md": {
+      "bytes": 1449,
+      "sha256": "a4f328e1a423986c43f99795f891176b0336ae3b60a6a6b888e171965e00083a"
+    },
+    "edu_tutor_codex_pack/SHA256SUMS.txt": {
+      "bytes": 2348,
+      "sha256": "5595070486540332ac3625c45bfadbc7aec59b5c66a6d14434e04278e14889d1"
+    },
+    "edu_tutor_codex_pack/examples/lesson_plan.example.json": {
+      "bytes": 6343,
+      "sha256": "c1b3842ba0f6022e532a34e76d832a678ed4b708764271807fca398b8bae1de6"
+    },
+    "edu_tutor_codex_pack/examples/qa_record.example.json": {
+      "bytes": 3636,
+      "sha256": "c48ce1d2b9b7c91ac6cede659cbc8a6e14c68ae9755b7663ff9f575fe4241b68"
+    },
+    "edu_tutor_codex_pack/schemas/README_KO.md": {
+      "bytes": 1111,
+      "sha256": "33378c9ba86a617f09ff8a0824aebb2c2fbcfea9d9953ff743e406043bdebde0"
+    },
+    "edu_tutor_codex_pack/schemas/lesson_plan.schema.json": {
+      "bytes": 12242,
+      "sha256": "8a62488a17f9c16fad85d1d01c04563982ebbb861e32b9d5d1ba945859133f89"
+    },
+    "edu_tutor_codex_pack/schemas/qa_record.schema.json": {
+      "bytes": 5265,
+      "sha256": "e0562e79414550f443b9421df32712d207d1879491bfaac0096acaaee307ff1d"
+    },
+    "edu_tutor_codex_pack/specs/00_EXECUTION_PLAN.md": {
+      "bytes": 5519,
+      "sha256": "21a74041c3179c922ce8a80d63d589039226135b616d3e89c21436f8516ca41f"
+    },
+    "edu_tutor_codex_pack/specs/01_PRODUCT_SCOPE.md": {
+      "bytes": 4492,
+      "sha256": "7a7fea7ae734058363d4e09c423038f6f3f7cb68b5ac2c8e085f8ba57b8aec7e"
+    },
+    "edu_tutor_codex_pack/specs/02_ARCHITECTURE_RUNTIME.md": {
+      "bytes": 6180,
+      "sha256": "6789d21914c909c49ed8e14796b3c5765cb01b50010131b3ca2d754da22521f9"
+    },
+    "edu_tutor_codex_pack/specs/03_MODEL_TRAINING.md": {
+      "bytes": 7934,
+      "sha256": "61347b9a08b202fe4403a1ab2ef22fd41e90304120ffb63e2b65e046d26bc4ea"
+    },
+    "edu_tutor_codex_pack/specs/04_DATA_RAG_EVALUATION.md": {
+      "bytes": 6711,
+      "sha256": "d3a1e1066d4bf25e6369f2aa9f5656f00c734f79724e3a96233cd7948366815c"
+    },
+    "edu_tutor_codex_pack/specs/05_CHAT_ADMIN_UI.md": {
+      "bytes": 4829,
+      "sha256": "00d3ad52bd2bcc6965891a5f490dc709fcc9c4a74b1e6d3f0965dedffb79c8e6"
+    },
+    "edu_tutor_codex_pack/specs/06_LECTURE_VOICE_AVATAR.md": {
+      "bytes": 7386,
+      "sha256": "84bd2ef9fe23aa6e041aad7246dae93985fa23f99433fc61f7a0eb9b4a274744"
+    },
+    "edu_tutor_codex_pack/specs/07_IMAGE_INPUT.md": {
+      "bytes": 3128,
+      "sha256": "747790a0d84c067a33b246f561962ba3b0d4383992e06136ec370042b7f94228"
+    },
+    "edu_tutor_codex_pack/specs/08_TESTS_SECURITY.md": {
+      "bytes": 6100,
+      "sha256": "dfc13d6d551b4af754266def3b2986cd612d4458fdabbb05cea27edafcd8d660"
+    },
+    "edu_tutor_codex_pack/specs/09_RELEASE_HANDOFF.md": {
+      "bytes": 4923,
+      "sha256": "2198fb0ff6520032eaac5a877bdbb6d63aafd1ee3cf18c9885a5bf9947258141"
+    },
+    "edu_tutor_codex_pack/specs/10_OFFICIAL_SOURCES.md": {
+      "bytes": 3129,
+      "sha256": "116d13e61387a6931a7c211ae5b0f2c939c6579aa9d9a5334b6c448b1d91fcdc"
+    },
+    "edu_tutor_codex_pack/templates/AGENTS_ADDENDUM.md": {
+      "bytes": 1543,
+      "sha256": "7d79347aa7dfac0760fa0e6d2583045db59bccd4e8d457b221f0340ec170d4de"
+    },
+    "edu_tutor_codex_pack/templates/RUN_MANIFEST.example.json": {
+      "bytes": 748,
+      "sha256": "7696043955731cdae8063242c14025ec6ce2dcf2bd14530d643383bfd4cc80a4"
+    },
+    "edu_tutor_codex_pack/templates/STATUS.example.json": {
+      "bytes": 2904,
+      "sha256": "f3350ad9c5fcd4f48b37c45f8e6e50a29a0180deefd9d4dcaed30776d39b6416"
+    },
+    "edu_tutor_codex_pack/templates/local_8gb.example.yaml": {
+      "bytes": 1662,
+      "sha256": "fa70ef3b7e50f33f752dfcbf11a415afcc30460c8f0ecabe1b7652981593c0ba"
+    },
+    "evidence/README.md": {
+      "bytes": 2303,
+      "sha256": "15ceef55dacf5234087db3dd8a2d0106932c16f2997858459933119780b2b539"
+    },
+    "evidence/final-result.json": {
+      "bytes": 3846,
+      "sha256": "207e1652733fdbfbd008cd62974c6c5f2b765d3fa0e0108763fbae0354368ed1"
+    },
+    "evidence/fixtures/final07-n01-regression.json": {
+      "bytes": 3234,
+      "sha256": "49138a7178b08563e0a982627839c0f98aa10bbeb3057333e87c42f3f26a602e"
+    },
+    "evidence/gallery/J01.json": {
+      "bytes": 5495,
+      "sha256": "e962bc7f2c9ed9bcde24d141e00548451853cca19827bc1763db83a59e2fd02c"
+    },
+    "evidence/gallery/J03.json": {
+      "bytes": 11760,
+      "sha256": "c98847c81522512d5dd533daae59be47f827a6cff439a8a93e594e9409109163"
+    },
+    "evidence/gallery/J05.json": {
+      "bytes": 7215,
+      "sha256": "16e3a770c205f29ea7dceb6c0abf7c96adb44c16b05c4f06443ce779914c5ad3"
+    },
+    "evidence/gallery/N01.json": {
+      "bytes": 44928,
+      "sha256": "3e3d110fffb22a743eda1425f9d367379a88cdaa1f3f84c8c4a69aa9df208548"
+    },
+    "evidence/gallery/N02.json": {
+      "bytes": 49470,
+      "sha256": "8aec89843584e078725c3b8bd54900b9cd44f0e373c2a8ed66d5b7369298eff1"
+    },
+    "evidence/gallery/audio/J01-1-s1.wav": {
+      "bytes": 351662,
+      "sha256": "60dbba77dcd9ce7082742fde38b30d9e3104791fffeabecfb0611a1407586f08"
+    },
+    "evidence/gallery/audio/J01-1-s2.wav": {
+      "bytes": 506868,
+      "sha256": "13a67f2e122de7800062b730a5a8baec4cadcec8c2157d6b469a205f8532c58b"
+    },
+    "evidence/gallery/audio/J01-1-s3.wav": {
+      "bytes": 457480,
+      "sha256": "6cbbc2305b518fe8316fd44308a109232b5e87a6fa4d43350936d6d0f11e0ef8"
+    },
+    "evidence/gallery/audio/J03-1-s1.wav": {
+      "bytes": 590634,
+      "sha256": "daf2c229d7e3f8874b1a8b39cebe5b29938d6e878959716317fb9b47783f2944"
+    },
+    "evidence/gallery/audio/J03-1-s2.wav": {
+      "bytes": 304702,
+      "sha256": "978bf70975321d2315b16a62c6d598a930f9742cf7c44bb33e7fd6d30944e911"
+    },
+    "evidence/gallery/audio/J03-1-s3.wav": {
+      "bytes": 409192,
+      "sha256": "c848eb89355011b5fdb0e8f2820941a1506c322e7d16ed6c103bc576a4967872"
+    },
+    "evidence/gallery/audio/J03-1-s4.wav": {
+      "bytes": 410524,
+      "sha256": "37a0fba7c907579e14dc5fc2defc072e5585f8f83d80f1f675ac629ef4750b03"
+    },
+    "evidence/gallery/audio/J03-1-s5.wav": {
+      "bytes": 896438,
+      "sha256": "b0e69f30f86c981492361fa6a5f8d9fb519c85ad1b5c2dd86c29f4cfcfa30fe7"
+    },
+    "evidence/gallery/audio/J05-1-s1.wav": {
+      "bytes": 477104,
+      "sha256": "d51e6dd91be6cca4cb5d040df39730d05e942d63f4f10978dc2dff55c5c9eef8"
+    },
+    "evidence/gallery/audio/J05-1-s2.wav": {
+      "bytes": 835364,
+      "sha256": "a77e6be4a8a547219fb040b4b7b64aaab846aeeed2cf9be1c513e43b2674c6dc"
+    },
+    "evidence/gallery/audio/J05-1-s3.wav": {
+      "bytes": 536410,
+      "sha256": "29ccc885f838eab8df717ecd0e71d886124d64d59232bc80134d586d69ee2659"
+    },
+    "evidence/gallery/audio/N01-1-s1.wav": {
+      "bytes": 475344,
+      "sha256": "692dc3f120d17772c9771d7192a78b7b9c1681eeca980d0b2ffeb6dad314cb05"
+    },
+    "evidence/gallery/audio/N01-1-s2.wav": {
+      "bytes": 1032678,
+      "sha256": "883c6cd8010bc060d014c5eb5a4ed6b492acc56358f1d740ffc192419c8cdcf9"
+    },
+    "evidence/gallery/audio/N01-1-s3.wav": {
+      "bytes": 572572,
+      "sha256": "2b4a6802e9399e9f59127de20c93fc4578cd8114627b4cc38a8456a8ec70951c"
+    },
+    "evidence/gallery/audio/N01-2-s1.wav": {
+      "bytes": 916042,
+      "sha256": "8db8521064d962eb711df48e87999fbfa98cd75232c351c7aa5ccbc832bd0e2c"
+    },
+    "evidence/gallery/audio/N01-2-s2.wav": {
+      "bytes": 487680,
+      "sha256": "41186b419754cbb19c0f353459aa709debb44db47c92566a56072963cd42f62d"
+    },
+    "evidence/gallery/audio/N01-2-s3.wav": {
+      "bytes": 1020762,
+      "sha256": "3c6acb0cb2cd276cdc6e5635964288c0cd8ed33f03be9ac2aa8183d39e3734f4"
+    },
+    "evidence/gallery/audio/N01-2-s4.wav": {
+      "bytes": 1046994,
+      "sha256": "c4b6822a87301ad833d375038b833d2efa716fe998b55c49c96354ef7b73cd06"
+    },
+    "evidence/gallery/audio/N01-2-s5.wav": {
+      "bytes": 1034432,
+      "sha256": "53808d45fd0daa8a73c8e1ea2f91acb36b8cc4cd574ee06aa52371d14ce8d74b"
+    },
+    "evidence/gallery/audio/N01-2-s6.wav": {
+      "bytes": 881004,
+      "sha256": "1fc401d4d3af7c200e6ae382a64ca91c5f5de44c44f5927abdec26caec7b4235"
+    },
+    "evidence/gallery/audio/N01-2-s7.wav": {
+      "bytes": 1043058,
+      "sha256": "dfbaa159a6d3d3add82e4d69faca4ca99d9b57cbee5b08b316912b579255f8e2"
+    },
+    "evidence/gallery/audio/N01-2-s8.wav": {
+      "bytes": 1346656,
+      "sha256": "08a40fd7e2731177b261b3d18dc1f995167edd8b4ec3d3287f113b1cdbebd2aa"
+    },
+    "evidence/gallery/audio/N01-2-s9.wav": {
+      "bytes": 1185470,
+      "sha256": "edf587fb17cdff5efc96f50c0045aab17f5104699ccc6b880c6a4c63ab619c16"
+    },
+    "evidence/gallery/audio/N02-1-s1.wav": {
+      "bytes": 476222,
+      "sha256": "e0f618da7b0e72ab08b849d2a617441ccdaa66c72aafe01bcbf0ad6742bf882f"
+    },
+    "evidence/gallery/audio/N02-1-s2.wav": {
+      "bytes": 1049426,
+      "sha256": "0e45dca922d1f9dd199f93f09dd8793d015bf44e58650449a0f4c2393403c8cb"
+    },
+    "evidence/gallery/audio/N02-1-s3.wav": {
+      "bytes": 593960,
+      "sha256": "dbfe5e3ffbe5df5c64acda721c62fae8829f3630ca6b87283497455845ad8125"
+    },
+    "evidence/gallery/audio/N02-2-s1.wav": {
+      "bytes": 1295694,
+      "sha256": "35b9cdebfca7049ce06156b17b005ede9dbd574f0574c7d25f3005145d9b326e"
+    },
+    "evidence/gallery/audio/N02-2-s10.wav": {
+      "bytes": 1256682,
+      "sha256": "b6ab39ca154c04fc71d54e9c36403a21b13eae357f033df7644b55f2ea392b49"
+    },
+    "evidence/gallery/audio/N02-2-s11.wav": {
+      "bytes": 872866,
+      "sha256": "ddae763768b9910a0350756e34db5003f246d8f94671d1854c546402de7a4d44"
+    },
+    "evidence/gallery/audio/N02-2-s2.wav": {
+      "bytes": 517674,
+      "sha256": "5c7013856ec678e7594b0ddefe3ab668a1bb1714b2290d587cae0ebf8f11e1d5"
+    },
+    "evidence/gallery/audio/N02-2-s3.wav": {
+      "bytes": 497160,
+      "sha256": "425a52041287461f5595608d050ffad5a6e28951e43a9a356fefae412940075f"
+    },
+    "evidence/gallery/audio/N02-2-s4.wav": {
+      "bytes": 1211924,
+      "sha256": "1d379fe078b9de117de2f1aa5b2820f640a365347a1997782cefca356e315263"
+    },
+    "evidence/gallery/audio/N02-2-s5.wav": {
+      "bytes": 765472,
+      "sha256": "8df97768da8b6252dd2eebcd17ca4bda1cbffec0c0b9ecf71800dd8d492be5e9"
+    },
+    "evidence/gallery/audio/N02-2-s6.wav": {
+      "bytes": 1220966,
+      "sha256": "2d9da37d5ed89d2f36956fda3144cb16bbd2b8fd8e758b01b43f0adbfe6c1d8f"
+    },
+    "evidence/gallery/audio/N02-2-s7.wav": {
+      "bytes": 769880,
+      "sha256": "7634203ab98991b097aac100cceea4dac4922af95be4bed9ae9f7fce7d10286d"
+    },
+    "evidence/gallery/audio/N02-2-s8.wav": {
+      "bytes": 885420,
+      "sha256": "d5f131d19df416b839265ee3435439fb6347e22ae4fa06c6b5f5d980beebcb9d"
+    },
+    "evidence/gallery/audio/N02-2-s9.wav": {
+      "bytes": 1468998,
+      "sha256": "299b97f337af1a3014b9c9ae30dd2676bfa953eb744e1d5a92b236ede6f02099"
+    },
+    "evidence/gallery/index.html": {
+      "bytes": 18856,
+      "sha256": "6c7bafb5fa43bb4d1416b11900bc6aae923ff6710801e3520b883307d19e379c"
+    },
+    "evidence/gallery/screens/interruption-before.png": {
+      "bytes": 213157,
+      "sha256": "d3cd2e07ed62a5989e7444755c2639e090544d96b133646ff41cf8d6efb29fe5"
+    },
+    "evidence/gallery/screens/original-resumed.png": {
+      "bytes": 206038,
+      "sha256": "9f41ed0fd1c1768c2f6a9570076e115ef0e1043be39d6c8076872b9037324cb1"
+    },
+    "evidence/gallery/screens/supplement-playing.png": {
+      "bytes": 220306,
+      "sha256": "50119f44acf84d12c84e9a5e6ccd538d9a3feaf90ae37c7ce5ea953e3251a7f2"
+    },
+    "evidence/independent-N03-failure.json": {
+      "bytes": 1723,
+      "sha256": "d26777ea3f6d7f207b976f3de257d9498691ac0e5ef3ba751a4690c0ce2f6660"
+    },
+    "evidence/manifest.json": {
+      "bytes": 34260,
+      "sha256": "f66ba3799ce1bd4a03fc733e446b271950617c68d6a4c43087072b9a762b2193"
+    },
+    "evidence/milestones.json": {
+      "bytes": 5784,
+      "sha256": "48218775df4aa50b90fe627b57ce7bc1dfa6bf47c7c50aa40397bea297d1267a"
+    },
+    "evidence/recorder/evidence_writer.mjs": {
+      "bytes": 4567,
+      "sha256": "6465b01b46676716a41fb3abdb4245f0ec3ecba12f2649706f782f01524bc2ec"
+    },
+    "evidence/recorder/evidence_writer_worker.mjs": {
+      "bytes": 3596,
+      "sha256": "4d426caf5efb515abf4bc85d805a60f899dc3308468eb996287ed0cdbd8ef830"
+    },
+    "evidence/reports/final02-independent.md": {
+      "bytes": 4067,
+      "sha256": "dd73ab1dc634717ee66e91ee5fe5cdf861ba5118fd1fc9a216d300684da87054"
+    },
+    "evidence/reports/final04-development.md": {
+      "bytes": 4430,
+      "sha256": "b6743de329a195fde8dd8997bfc285ef9824f2c79a1f1dd243d62e3924fa461b"
+    },
+    "evidence/reports/final04-independent-failure.md": {
+      "bytes": 2255,
+      "sha256": "5e0289f1aa63ae626380bb71358d0969259c843d7eae6aed0bc3f674e6b61c8f"
+    },
+    "evidence/reports/final05-idle-failure.md": {
+      "bytes": 4980,
+      "sha256": "1430cdd89834692f2b759d29153a9ea0f88a67aae9565f5e72178e62081d5c4f"
+    },
+    "evidence/reports/final06-content.md": {
+      "bytes": 5606,
+      "sha256": "c3a8894ca402be2a4fa674aead89e31af60a445f6773a89aa856895a8016da5e"
+    },
+    "evidence/reports/final07-content.md": {
+      "bytes": 3123,
+      "sha256": "eff46a5ff1a8a60415bf87773570e76681bf205f587862731a666fbe947e5b97"
+    },
+    "evidence/reports/final07-timing.md": {
+      "bytes": 5487,
+      "sha256": "ce0bb4ff0e9db0fb11054353e120e5b2674f7169eec2bf7e2d0055d075d3343f"
+    },
+    "evidence/reports/r3-independent-and-regression.md": {
+      "bytes": 7625,
+      "sha256": "05bfd5689201253fb01ed6629b132d519072d00e81c2e1f5a634f1a508360c8b"
+    },
+    "evidence/reports/recording.md": {
+      "bytes": 4216,
+      "sha256": "26aa13415531d2d04382a93f6f2933e1f096692e9dd1cd81dca8a2c101bd1779"
+    },
+    "evidence/reports/runtime-baseline-and-repair.md": {
+      "bytes": 2479,
+      "sha256": "8e6ad6147807a18f377fdbf99d7fcb5a0d5aa8dc0354f85e072dd433b81fe11b"
+    },
+    "evidence/reports/storage.md": {
+      "bytes": 3856,
+      "sha256": "b27e209059fe77792127f7bd47e1fafaa84c51c7d20b032285d7510d4013171c"
+    },
+    "evidence/requirements.json": {
+      "bytes": 5674,
+      "sha256": "365af01d9909ccea31e000505aa39922b5fc4b35a1aac6eb67f6709f9cb6b583"
+    },
+    "release-history/README.md": {
+      "bytes": 1138,
+      "sha256": "fdf983e50226af1693211242ab75cf8f3f29c16f4acbcd972f5cb721034fe33d"
+    },
+    "release-history/archive-manifest.json": {
+      "bytes": 2307,
+      "sha256": "f4914f433792a8899e5c88e4f5c3d604afe848d3d052082a33b8f71d8b523866"
+    },
+    "release-history/edu-tutor-local-0.1.0-20261025T154846Z.zip": {
+      "bytes": 1534473,
+      "sha256": "5d1cd42dd9017f0c4b9617b3cf8d68c11b9b13b113d4f9b2f7d53bc2cc28752d"
+    },
+    "release-history/edu-tutor-local-0.2.0-20261026T015704Z-portable.zip": {
+      "bytes": 1760125,
+      "sha256": "5de7f0eb8162d13a0c76ee6a930ca5311706e72b6c3447aba811781020afa4c9"
+    },
+    "release-history/edu-tutor-local-0.2.0-20261029T080207Z-portable.zip": {
+      "bytes": 2450420,
+      "sha256": "64382c196f0bdf15a33a01e4b21f4aa271a59120bf94cb19a1d2f3c0023a6051"
+    },
+    "release-history/training1-record.json": {
+      "bytes": 10085,
+      "sha256": "ae092dd1c884c665956b317f947f92e679c963c6350693170240067fe9c37a2a"
+    }
+  }
+}

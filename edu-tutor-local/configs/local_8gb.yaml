@@ -1,0 +1,63 @@
+project:
+  name: edu-tutor-local
+  locale: ko-KR
+  timezone: Asia/Seoul
+runtime:
+  host: 127.0.0.1
+  gpu_concurrency: 1
+  seed: 42
+  data_root: .local
+  runs_root: runs
+  context_tokens: 2048
+budgets:
+  new_model_download_gib: 20
+  disk_free_floor_gib: 20
+  smoke_optimizer_steps: 5
+  smoke_wall_seconds: 600
+  demo_optimizer_steps: 50
+  demo_wall_seconds: 900
+  integration_request_seconds: 300
+  bounded_error_attempts: 3
+models:
+  text:
+    id: Qwen/Qwen3-1.7B
+    revision: 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+    local_path: .local/models/text
+    quantization: nf4
+    enable_thinking: false
+training:
+  profile: demo
+  load_in_4bit: true
+  bnb_4bit_quant_type: nf4
+  bnb_4bit_use_double_quant: true
+  compute_dtype: auto_verified
+  lora_r: 8
+  lora_alpha: 16
+  lora_dropout: 0.05
+  target_modules: [q_proj, v_proj]
+  batch_size: 1
+  gradient_accumulation_steps: 8
+  learning_rate: 0.0001
+  max_sequence_length: 512
+  gradient_checkpointing: true
+  use_cache: false
+  packing: false
+  train_last_assistant_only: true
+  auto_promote_adapter: false
+  dataset_paths: [data/demo/train.jsonl, data/demo/validation.jsonl, data/demo/test.jsonl]
+retrieval:
+  provider: char_ngram_tfidf
+  ngram_range: [2, 4]
+  max_chunks: 3
+speech:
+  provider: qwen3_tts_local
+  sequential_gpu: true
+  browser_fallback_enabled: false
+vision:
+  max_file_mib: 10
+  max_image_megapixels: 20
+  require_confirmation_before_solve: true
+privacy:
+  cloud_provider_enabled: false
+  external_telemetry_enabled: false
+  auto_training_from_chat: false

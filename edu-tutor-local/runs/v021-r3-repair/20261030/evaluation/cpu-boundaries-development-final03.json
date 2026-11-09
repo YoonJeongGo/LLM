@@ -1,0 +1,12 @@
+{
+  "_export": {
+    "type": "question-only extract from disclosed CPU regression",
+    "source_sha256": "d950192af6e02429c688b88be4ec9cfa0c403b1ba16a50a1ac71de416b2a9c10"
+  },
+  "cases": [
+    {
+      "id": "C04",
+      "question": "qty가 큰 행만 item과 qty로 보여 주고 item 오름차순으로 정렬해 줘."
+    }
+  ]
+}

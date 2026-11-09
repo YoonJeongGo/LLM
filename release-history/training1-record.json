@@ -1,0 +1,202 @@
+{
+  "run_id": "f1cc05b37bb04d51ba326468f2fd74a1",
+  "status": "TRAINED_NOT_PROMOTED",
+  "base_model": "Qwen/Qwen3-1.7B",
+  "base_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "training_data_source": {
+    "kind": "self_authored_demo",
+    "title": "프로젝트용 독립 계산 규칙 기반 SQLite 예제 v2",
+    "rights_note": "이 프로젝트에서 새로 작성한 생성 규칙과 합성 데이터. 외부 교재·기출·모델 답변 수집 없음. 사용자 승인 범위의 로컬 실험용. 사람 검토 전.",
+    "created_by": "project_procedural_sqlite_authoring"
+  },
+  "review_status": "generated_unreviewed",
+  "training": {
+    "training_samples": 240,
+    "max_epochs": 3,
+    "optimizer_steps": 90,
+    "actual_microbatches": 720,
+    "trainable_parameters": 1605632,
+    "changed_adapter_parameter_count": 112,
+    "finite_gradients": true,
+    "training_loss": 1.4566875331931644,
+    "peak_vram_bytes": 3222642688,
+    "elapsed_seconds": 650.9219999999041,
+    "selected_frozen_base_values_unchanged": true,
+    "target_modules": [
+      "base_model.model.model.layers.0.self_attn.q_proj",
+      "base_model.model.model.layers.0.self_attn.v_proj",
+      "base_model.model.model.layers.1.self_attn.q_proj",
+      "base_model.model.model.layers.1.self_attn.v_proj",
+      "base_model.model.model.layers.2.self_attn.q_proj",
+      "base_model.model.model.layers.2.self_attn.v_proj",
+      "base_model.model.model.layers.3.self_attn.q_proj",
+      "base_model.model.model.layers.3.self_attn.v_proj",
+      "base_model.model.model.layers.4.self_attn.q_proj",
+      "base_model.model.model.layers.4.self_attn.v_proj",
+      "base_model.model.model.layers.5.self_attn.q_proj",
+      "base_model.model.model.layers.5.self_attn.v_proj",
+      "base_model.model.model.layers.6.self_attn.q_proj",
+      "base_model.model.model.layers.6.self_attn.v_proj",
+      "base_model.model.model.layers.7.self_attn.q_proj",
+      "base_model.model.model.layers.7.self_attn.v_proj",
+      "base_model.model.model.layers.8.self_attn.q_proj",
+      "base_model.model.model.layers.8.self_attn.v_proj",
+      "base_model.model.model.layers.9.self_attn.q_proj",
+      "base_model.model.model.layers.9.self_attn.v_proj",
+      "base_model.model.model.layers.10.self_attn.q_proj",
+      "base_model.model.model.layers.10.self_attn.v_proj",
+      "base_model.model.model.layers.11.self_attn.q_proj",
+      "base_model.model.model.layers.11.self_attn.v_proj",
+      "base_model.model.model.layers.12.self_attn.q_proj",
+      "base_model.model.model.layers.12.self_attn.v_proj",
+      "base_model.model.model.layers.13.self_attn.q_proj",
+      "base_model.model.model.layers.13.self_attn.v_proj",
+      "base_model.model.model.layers.14.self_attn.q_proj",
+      "base_model.model.model.layers.14.self_attn.v_proj",
+      "base_model.model.model.layers.15.self_attn.q_proj",
+      "base_model.model.model.layers.15.self_attn.v_proj",
+      "base_model.model.model.layers.16.self_attn.q_proj",
+      "base_model.model.model.layers.16.self_attn.v_proj",
+      "base_model.model.model.layers.17.self_attn.q_proj",
+      "base_model.model.model.layers.17.self_attn.v_proj",
+      "base_model.model.model.layers.18.self_attn.q_proj",
+      "base_model.model.model.layers.18.self_attn.v_proj",
+      "base_model.model.model.layers.19.self_attn.q_proj",
+      "base_model.model.model.layers.19.self_attn.v_proj",
+      "base_model.model.model.layers.20.self_attn.q_proj",
+      "base_model.model.model.layers.20.self_attn.v_proj",
+      "base_model.model.model.layers.21.self_attn.q_proj",
+      "base_model.model.model.layers.21.self_attn.v_proj",
+      "base_model.model.model.layers.22.self_attn.q_proj",
+      "base_model.model.model.layers.22.self_attn.v_proj",
+      "base_model.model.model.layers.23.self_attn.q_proj",
+      "base_model.model.model.layers.23.self_attn.v_proj",
+      "base_model.model.model.layers.24.self_attn.q_proj",
+      "base_model.model.model.layers.24.self_attn.v_proj",
+      "base_model.model.model.layers.25.self_attn.q_proj",
+      "base_model.model.model.layers.25.self_attn.v_proj",
+      "base_model.model.model.layers.26.self_attn.q_proj",
+      "base_model.model.model.layers.26.self_attn.v_proj",
+      "base_model.model.model.layers.27.self_attn.q_proj",
+      "base_model.model.model.layers.27.self_attn.v_proj"
+    ],
+    "dataset_sha256": "40e7b8502da07c570ded48fc495290569be099bb70c499a4bbfda15aed61ed65"
+  },
+  "validation": {
+    "training_manifest_status": "passed",
+    "fresh_process_reload_status": "passed",
+    "selected_adapter": "base",
+    "adapter_auto_promoted": false,
+    "education_review": "H_PENDING",
+    "reason_ko": "저장 어댑터 재로딩 뒤 COUNT(열)의 NULL 처리 설명이 틀렸다. 당시 동결 평가(SQL 60개)에서 고정 표 결과 일치는 기본 모델 15건, 학습1 27건이었다. 학습1은 자기 SQL과 결과 배열이 모순된 답변 17건, 256토큰에서 잘린 전체 답변 9건이 있어 교육용 기본 모델로 승격하지 않았다.",
+    "evaluation_reference": "runs/finish-v2/20261029/education/FINAL160_EDUCATION_RESULTS_KO.md"
+  },
+  "artifact_note": "체크섬과 용량은 로컬 파일에 대한 기록이다. 프로젝트 소스 배포 관례에 따라 모델 가중치·어댑터·토크나이저 파일은 이 배포 폴더에 넣지 않았다.",
+  "files": [
+    {
+      "local_project_path": "runs/train-f1cc05b37bb04d51ba326468f2fd74a1/adapter/adapter_model.safetensors",
+      "bytes": 6437272,
+      "sha256": "ef6171d47eaf3f3835d399fa368fe4023d7a6d37767fa3a6e017993979ada4fa"
+    },
+    {
+      "local_project_path": "runs/train-f1cc05b37bb04d51ba326468f2fd74a1/adapter/adapter_config.json",
+      "bytes": 1039,
+      "sha256": "3fdb07ec26608453cfc0e88268c20360b2f48fb5086b5bfbba4943c0fd629a1a"
+    },
+    {
+      "local_project_path": "runs/train-f1cc05b37bb04d51ba326468f2fd74a1/adapter/adapter-manifest.json",
+      "bytes": 389,
+      "sha256": "4d9d7be547654300e6b7f3c3a038029a08ca7a0ff6b336ecc7118d67125e2c1b"
+    },
+    {
+      "local_project_path": "runs/train-f1cc05b37bb04d51ba326468f2fd74a1/checkpoint-adapter-30/adapter_model.safetensors",
+      "bytes": 6437272,
+      "sha256": "d87b680bedffe64c417c7504be12a5daaa99066800473fa69da54cadd237d21a"
+    },
+    {
+      "local_project_path": "runs/train-f1cc05b37bb04d51ba326468f2fd74a1/checkpoint-adapter-60/adapter_model.safetensors",
+      "bytes": 6437272,
+      "sha256": "21813cc9b50291cc3ab796d574a892d73677a3c9a06facec8b7315a0a289a215"
+    },
+    {
+      "local_project_path": "runs/train-f1cc05b37bb04d51ba326468f2fd74a1/checkpoint-adapter-90/adapter_model.safetensors",
+      "bytes": 6437272,
+      "sha256": "ef6171d47eaf3f3835d399fa368fe4023d7a6d37767fa3a6e017993979ada4fa"
+    },
+    {
+      "local_project_path": "runs/train-f1cc05b37bb04d51ba326468f2fd74a1/manifest.json",
+      "bytes": 25085,
+      "sha256": "7af42a1e5a5d274295b7102a7329ea20ec2a5ad83f5812ad0ce87ec0dcc4d82b"
+    },
+    {
+      "local_project_path": "runs/train-f1cc05b37bb04d51ba326468f2fd74a1/training-result.json",
+      "bytes": 23948,
+      "sha256": "31657158c131c73c48330d87b7e605c63e703b53c4b9fe7125831a8549f3b7a9"
+    },
+    {
+      "local_project_path": "runs/train-f1cc05b37bb04d51ba326468f2fd74a1/reload-result.json",
+      "bytes": 1069,
+      "sha256": "2111f73eed298c2e9c128da7f5d4c6d20a7ed387f8d7dc4720acf8bd3c31b05e"
+    },
+    {
+      "local_project_path": "runs/train-f1cc05b37bb04d51ba326468f2fd74a1/metrics.jsonl",
+      "bytes": 35218,
+      "sha256": "b2b89e4b2e03538a1e31b01ccd97c56620c061c6abc4e6c33ceffa932740f547"
+    },
+    {
+      "local_project_path": "runs/finish-v2/20261029/education/training1-critical-reload-failure.json",
+      "bytes": 3490,
+      "sha256": "4603537f5c0fad509f3345f1b5ffaa31273a1e78b99fa5e1d52f6acca290a23d"
+    },
+    {
+      "local_project_path": "runs/finish-v2/20261029/education/FINAL160_EDUCATION_RESULTS_KO.md",
+      "bytes": 8226,
+      "sha256": "f8232ba2e46d0749e8087316b5cdab3f45fc036e73714290f497182036ce618e"
+    },
+    {
+      "local_project_path": "configs/finish_education.yaml",
+      "bytes": 1349,
+      "sha256": "9f7e3e265570cb1076d91c63b920f3bc5f78c3e56490037a53313a99e6c4a8e4"
+    },
+    {
+      "local_project_path": "src/edu_tutor/training/finish_data.py",
+      "bytes": 25485,
+      "sha256": "944fb56b2c0498e1abd6862bae7b83b92d7b9539639b027cd332ab66af751fa3"
+    },
+    {
+      "local_project_path": "runs/finish-v2/20261028/education/dataset-audit.json",
+      "bytes": 3135,
+      "sha256": "6a324040375785be7dc18636372815022c30b42bb29df86029e2a65138c1cc84"
+    },
+    {
+      "local_project_path": "runs/finish-v2/20261028/education/development/train-claims.jsonl",
+      "bytes": 72915,
+      "sha256": "ada857d20d1b90a57588f7e171d70bdad24631a8269698888ced63994c9b21d4"
+    },
+    {
+      "local_project_path": "runs/finish-v2/20261028/education/development/train.jsonl",
+      "bytes": 455075,
+      "sha256": "15ecbc3432824b8c8427732b8488200971c783aa5e38227c97f37f0edb48e6b2"
+    },
+    {
+      "local_project_path": "runs/finish-v2/20261028/education/development/validation-claims.jsonl",
+      "bytes": 13215,
+      "sha256": "a796d1ce54d56d731e8752be33c4d6b113c2b2752ca0bc2fa8333bd2ad42121b"
+    },
+    {
+      "local_project_path": "runs/finish-v2/20261028/education/development/validation.jsonl",
+      "bytes": 81930,
+      "sha256": "99de8bc098caa5426297f30473e32cd3c2a8e3e29fc3531a9d600d2b7b932e34"
+    },
+    {
+      "local_project_path": "runs/finish-v2/20261028/education/final/test-claims.jsonl",
+      "bytes": 25836,
+      "sha256": "4db85ff2a815fee03fa2d34d7f6da444c50e79d5d946c9a421af1bb8fc6532d9"
+    },
+    {
+      "local_project_path": "runs/finish-v2/20261028/education/final/test.jsonl",
+      "bytes": 160654,
+      "sha256": "a3e66fad387179ff4a0d66e1ebd2aae3e77088862ee567d7bdbdedf319063f2b"
+    }
+  ]
+}

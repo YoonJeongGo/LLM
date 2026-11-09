@@ -1,0 +1,137 @@
+{
+  "id": "J01",
+  "title": "DDL·DML 개념과 예시",
+  "human_status": "H_PENDING",
+  "source_classification": "과거 개발 수업 + final05 저장 재생",
+  "source_collector_status": "FAILED_EVIDENCE_INTEGRITY",
+  "question": "DDL과 DML을 구별하는 법을 SQLite 예시로 설명해 줘. memo_board라는 작은 표를 만든 뒤 행 한 개를 등록하고, 어느 부분이 구조이고 어느 부분이 데이터인지 차례대로 보여 줘.",
+  "followup_question": null,
+  "original_test_tables": [],
+  "lessons": [
+    {
+      "role": "원래 수업",
+      "raw_model_response": "DDL은 표의 구조를 정의하거나 변경하는 명령어이고, DML은 데이터를 추가, 수정, 삭제하는 명령어입니다.  \nmemo_board 표를 만들고, 행을 등록하는 예시는 다음과 같습니다:  \n\n```sql\nCREATE TABLE memo_board (\n    id INTEGER PRIMARY KEY,\n    content TEXT\n);\nINSERT INTO memo_board (content) VALUES ('안녕하세요');\n```\n\n구조는 `id`와 `content` 열로 구성되며, `id`는 기본키로 사용됩니다. 데이터는 `content` 열에 저장됩니다.",
+      "app_display_response": "DDL은 표의 구조를 정의하거나 변경하는 명령어이고, DML은 데이터를 추가, 수정, 삭제하는 명령어입니다.  \nmemo_board 표를 만들고, 행을 등록하는 예시는 다음과 같습니다:  \n\n```sql\nCREATE TABLE memo_board (\n    id INTEGER PRIMARY KEY,\n    content TEXT\n);\nINSERT INTO memo_board (content) VALUES ('안녕하세요');\n```\n\n구조는 `id`와 `content` 열로 구성되며, `id`는 기본키로 사용됩니다. 데이터는 `content` 열에 저장됩니다.",
+      "steps": [
+        {
+          "id": "s1",
+          "title": "참고 자료의 설명",
+          "speech": "참고 자료에서는 이렇게 설명합니다. DDL은 스키마를 정의·변경하는 명령의 분류입니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "clear"
+            },
+            {
+              "type": "text",
+              "text": "참고 자료에서는 이렇게 설명합니다. DDL은 스키마를 정의·변경하는 명령의 분류입니다.",
+              "slot": "main",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            }
+          ],
+          "audio": "audio/J01-1-s1.wav"
+        },
+        {
+          "id": "s2",
+          "title": "표 만들기",
+          "speech": "설명용 새 예시입니다. CREATE TABLE 실행 뒤 memo_board 표에는 열 2개와 행 0개가 있습니다. 표의 구조를 다루는 DDL입니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "clear"
+            },
+            {
+              "type": "code",
+              "language": "sql",
+              "code": "CREATE TABLE \"memo_board\" (\"id\" INTEGER PRIMARY KEY, \"content\" TEXT);",
+              "slot": "bottom"
+            },
+            {
+              "type": "text",
+              "text": "실행 전: 이 예시 표가 없습니다.",
+              "slot": "left"
+            },
+            {
+              "type": "table",
+              "caption": "설명용 새 예시 · 실행 후",
+              "table_name": "memo_board",
+              "columns": [
+                "id",
+                "content"
+              ],
+              "rows": [],
+              "slot": "right",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            }
+          ],
+          "audio": "audio/J01-1-s2.wav"
+        },
+        {
+          "id": "s3",
+          "title": "행 넣기",
+          "speech": "INSERT는 이 예시의 행을 0개에서 1개로 늘렸습니다. 열은 2개로 그대로입니다. 행의 데이터를 다루는 DML입니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "clear"
+            },
+            {
+              "type": "code",
+              "language": "sql",
+              "code": "INSERT INTO \"memo_board\" (\"content\") VALUES ('안녕하세요');",
+              "slot": "bottom"
+            },
+            {
+              "type": "table",
+              "caption": "설명용 새 예시 · 실행 전",
+              "table_name": "memo_board",
+              "columns": [
+                "id",
+                "content"
+              ],
+              "rows": [],
+              "slot": "left",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "table",
+              "caption": "설명용 새 예시 · 실행 후",
+              "table_name": "memo_board",
+              "columns": [
+                "id",
+                "content"
+              ],
+              "rows": [
+                [
+                  1,
+                  "안녕하세요"
+                ]
+              ],
+              "slot": "right",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "highlight"
+            }
+          ],
+          "audio": "audio/J01-1-s3.wav"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "_export": {
+    "type": "project-authored development regression extract",
+    "case": "N02",
+    "source_sha256": "991546ffdefb7ab7da8b080fcb195c93bd917db0434f58af4a462738acb15d9e",
+    "detail": "Only the original test question, table, model answer and subsequent question needed by the CPU regression are reproduced. Full private runtime record is stored locally."
+  },
+  "actual_messages": [
+    {
+      "role": "assistant",
+      "id": "development-example-N02",
+      "problem": {
+        "task_kind": "write_sql",
+        "dialect": "sqlite",
+        "raw_text": "dispatch_stock에서 status가 ready이고 qty가 NULL이 아닌 행 중, qty가 0이거나 5 이상인 행을 찾아 줘. 출력 열은 item, qty, batch야. batch 내림차순, 그 안에서는 qty 오름차순, 두 값이 같으면 item 오름차순으로 정렬하는 SQLite SQL과 원본에서 결과까지의 과정을 설명해 줘.",
+        "source": {
+          "kind": "typed"
+        },
+        "revision": 5,
+        "confirmed": true,
+        "tables": [
+          {
+            "name": "dispatch_stock",
+            "columns": [
+              {
+                "name": "item",
+                "type": "TEXT"
+              },
+              {
+                "name": "qty",
+                "type": "INTEGER"
+              },
+              {
+                "name": "batch",
+                "type": "INTEGER"
+              },
+              {
+                "name": "status",
+                "type": "TEXT"
+              }
+            ],
+            "rows": [
+              [
+                "M1",
+                0,
+                2,
+                "ready"
+              ],
+              [
+                "M2",
+                null,
+                2,
+                "ready"
+              ],
+              [
+                "M3",
+                5,
+                3,
+                "ready"
+              ],
+              [
+                "M4",
+                5,
+                3,
+                "ready"
+              ],
+              [
+                "M5",
+                -1,
+                4,
+                "ready"
+              ],
+              [
+                "M6",
+                2,
+                3,
+                "ready"
+              ],
+              [
+                "M7",
+                0,
+                2,
+                "hold"
+              ],
+              [
+                "M8",
+                0,
+                2,
+                "ready"
+              ]
+            ]
+          }
+        ],
+        "missing_conditions": [],
+        "id": "problem-70e98d9b09567d40"
+      },
+      "raw_model_response": "{\"sql\":\"SELECT item, qty, batch FROM dispatch_stock WHERE status = 'ready' AND qty IS NOT NULL AND qty IN (0, 5) ORDER BY batch DESC, qty ASC, item ASC\",\"explanation\":\"status가 'ready'이고 qty가 NULL이 아닌 행만 선택합니다. qty가 0 또는 5 이상인 행만 필터링하고, batch 내림차순, qty 오름차순, item 오름차순으로 정렬합니다.\"}"
+    }
+  ],
+  "spec": {
+    "followup": {
+      "question": "선택한 M1은 왜 포함돼? qty가 NULL인 원본 M2와, qty가 똑같이 0인데 빠진 M7을 비교해 줘. 현재 정렬에서 값이 같은 행들의 순서도 설명해 줘. 추가로, 별도의 빈 입력 상황이라면 SUM(qty), COUNT(qty), COUNT(*)가 각각 무엇을 반환하는지 구분하고 원래 수업으로 돌아가 줘.",
+      "column": "qty",
+      "row_index": 0,
+      "value": 0,
+      "source_row": [
+        "M1",
+        0,
+        2,
+        "ready"
+      ]
+    }
+  }
+}

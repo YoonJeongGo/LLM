@@ -1,0 +1,48 @@
+{
+  "provenance": "user_pasted_codex_report_not_independently_verified",
+  "project_path_reported": "D:\\LLM\\edu-tutor-local",
+  "runtime_reported": {
+    "os": "Windows 11",
+    "python": "3.12.14",
+    "gpu": "RTX 3060 Ti 8GB",
+    "torch": "2.9.1+cu128"
+  },
+  "python_tests": {
+    "passed": 119,
+    "warnings": 2
+  },
+  "evaluation_reported": {
+    "total_items": 12,
+    "sql_items": 11,
+    "base_sql_correct": 3,
+    "adapter_sql_correct": 3,
+    "base_truncations": 0,
+    "adapter_truncations": 2,
+    "rag_enabled": false,
+    "max_new_tokens": 256
+  },
+  "demo_training_reported": {
+    "optimizer_steps": 50,
+    "microbatches": 316,
+    "wall_seconds_including_reload": 276.531,
+    "peak_cuda_allocated_bytes": 2963142144
+  },
+  "known_quality_gaps": [
+    "RAG COUNT answer referenced a non-existent column and lesson repeated it",
+    "Actual interruption/restore occurred with an empty board; populated-board restore was fixture-only",
+    "Listening and educational human review not performed",
+    "Last small UI state-refresh change was built but full browser tests were not rerun"
+  ],
+  "status_reported": {
+    "local_feature_mvp": "LOCAL_MVP_VERIFIED",
+    "educational_readiness": "NOT_READY",
+    "new_adapter_promoted": false
+  },
+  "reported_evidence_paths": [
+    "runs/eval-comparison-v1/comparison.json",
+    "runs/integration-live/quality-observations.json",
+    "runs/train-bf0e7bcb6e3f44b29b77fee6f0e586c1/manifest.json",
+    "web/test-results-t3/s2-evidence.json",
+    "web/test-results-s3/s3-evidence.json"
+  ]
+}

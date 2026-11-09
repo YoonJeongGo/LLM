@@ -1,0 +1,754 @@
+{
+  "published_for": "YoonJeongGo/LLM",
+  "classification": "explicit selected project-authored evidence",
+  "source_snapshot": "0.2.1 r3 repair final07",
+  "files": {
+    "final-result.json": {
+      "bytes": 3846,
+      "sha256": "207e1652733fdbfbd008cd62974c6c5f2b765d3fa0e0108763fbae0354368ed1",
+      "mode": "publishable field selection",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/final-result.json",
+          "sha256": "0b849a0a0bb6597e4286f1c7550242620bfcd7a1e5d914778b6ccf94d9184c56"
+        }
+      ]
+    },
+    "requirements.json": {
+      "bytes": 5674,
+      "sha256": "365af01d9909ccea31e000505aa39922b5fc4b35a1aac6eb67f6709f9cb6b583",
+      "mode": "publishable field selection",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/product-verdict.json",
+          "sha256": "b7367609659840c205bc8308304941381b99652835b0b13d24ddbe66d512ce5a"
+        }
+      ]
+    },
+    "independent-N03-failure.json": {
+      "bytes": 1723,
+      "sha256": "d26777ea3f6d7f207b976f3de257d9498691ac0e5ef3ba751a4690c0ce2f6660",
+      "mode": "publishable field selection",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/evaluation-final03/independent-final04-adjudication-v2.json",
+          "sha256": "cb5d72ce817d48e175800fba4a15da680ebcd0f5eb80c9e20a45e7a533e9f3b0"
+        }
+      ]
+    },
+    "milestones.json": {
+      "bytes": 5784,
+      "sha256": "48218775df4aa50b90fe627b57ce7bc1dfa6bf47c7c50aa40397bea297d1267a",
+      "mode": "publishable field selection",
+      "source": [
+        {
+          "path": "STATUS.json",
+          "sha256": "e820838ec23ccd1750fe7fd1ea90a91b68db6cb8972841e11dd34fe5b2ec4782"
+        }
+      ]
+    },
+    "reports/r3-independent-and-regression.md": {
+      "bytes": 7625,
+      "sha256": "05bfd5689201253fb01ed6629b132d519072d00e81c2e1f5a634f1a508360c8b",
+      "mode": "source report with machine-local links/IDs removed",
+      "source": [
+        {
+          "path": "runs/v021-support/20261029/FINAL_EVALUATION_FACTS_KO.md",
+          "sha256": "f5b606151219edd2556c67fc4b14305e94b9017377504513dfd810332e68e8cf"
+        }
+      ]
+    },
+    "reports/final02-independent.md": {
+      "bytes": 4067,
+      "sha256": "dd73ab1dc634717ee66e91ee5fe5cdf861ba5118fd1fc9a216d300684da87054",
+      "mode": "source report with machine-local links/IDs removed",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/evaluation/INDEPENDENT_FINAL02_RESULT_KO.md",
+          "sha256": "dd73ab1dc634717ee66e91ee5fe5cdf861ba5118fd1fc9a216d300684da87054"
+        }
+      ]
+    },
+    "reports/final04-development.md": {
+      "bytes": 4430,
+      "sha256": "b6743de329a195fde8dd8997bfc285ef9824f2c79a1f1dd243d62e3924fa461b",
+      "mode": "source report with machine-local links/IDs removed",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/evaluation/FINAL04_RESULT_KO.md",
+          "sha256": "b6743de329a195fde8dd8997bfc285ef9824f2c79a1f1dd243d62e3924fa461b"
+        }
+      ]
+    },
+    "reports/final04-independent-failure.md": {
+      "bytes": 2255,
+      "sha256": "5e0289f1aa63ae626380bb71358d0969259c843d7eae6aed0bc3f674e6b61c8f",
+      "mode": "source report with machine-local links/IDs removed",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/evaluation-final03/INDEPENDENT_FINAL04_RESULT_KO.md",
+          "sha256": "5e0289f1aa63ae626380bb71358d0969259c843d7eae6aed0bc3f674e6b61c8f"
+        }
+      ]
+    },
+    "reports/final06-content.md": {
+      "bytes": 5606,
+      "sha256": "c3a8894ca402be2a4fa674aead89e31af60a445f6773a89aa856895a8016da5e",
+      "mode": "source report with machine-local links/IDs removed",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/evaluation/FINAL06_CONTENT_RESULT_KO.md",
+          "sha256": "2a4d2b66be6a7189ede199577a84505bdda4cd536219ad21debeba7ea5efba83"
+        }
+      ]
+    },
+    "reports/final07-content.md": {
+      "bytes": 3123,
+      "sha256": "eff46a5ff1a8a60415bf87773570e76681bf205f587862731a666fbe947e5b97",
+      "mode": "source report with machine-local links/IDs removed",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/evaluation/FINAL07_N01_CONTENT_RESULT_KO.md",
+          "sha256": "6e5cd18b98c1e174a5c7457f73c7c5c9c7d78392ad673d4de5f62e534fbcce72"
+        }
+      ]
+    },
+    "reports/final07-timing.md": {
+      "bytes": 5487,
+      "sha256": "ce0bb4ff0e9db0fb11054353e120e5b2674f7169eec2bf7e2d0055d075d3343f",
+      "mode": "source report with machine-local links/IDs removed",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/timing-final07/FINAL07_FINDINGS_KO.md",
+          "sha256": "ce0bb4ff0e9db0fb11054353e120e5b2674f7169eec2bf7e2d0055d075d3343f"
+        }
+      ]
+    },
+    "reports/final05-idle-failure.md": {
+      "bytes": 4980,
+      "sha256": "1430cdd89834692f2b759d29153a9ea0f88a67aae9565f5e72178e62081d5c4f",
+      "mode": "source report with machine-local links/IDs removed",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/timing-final05/ANOMALY_DIAGNOSIS_KO.md",
+          "sha256": "009e7066af133f279f3e89eceed7b81347caaf36e440a18844b59af620e3a3a4"
+        }
+      ]
+    },
+    "reports/storage.md": {
+      "bytes": 3856,
+      "sha256": "b27e209059fe77792127f7bd47e1fafaa84c51c7d20b032285d7510d4013171c",
+      "mode": "source report with machine-local links/IDs removed",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/storage/IMPLEMENTATION_KO.md",
+          "sha256": "b27e209059fe77792127f7bd47e1fafaa84c51c7d20b032285d7510d4013171c"
+        }
+      ]
+    },
+    "reports/recording.md": {
+      "bytes": 4216,
+      "sha256": "26aa13415531d2d04382a93f6f2933e1f096692e9dd1cd81dca8a2c101bd1779",
+      "mode": "source report with machine-local links/IDs removed",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/logger-repair/RESULT_KO.md",
+          "sha256": "26aa13415531d2d04382a93f6f2933e1f096692e9dd1cd81dca8a2c101bd1779"
+        }
+      ]
+    },
+    "reports/runtime-baseline-and-repair.md": {
+      "bytes": 2479,
+      "sha256": "8e6ad6147807a18f377fdbf99d7fcb5a0d5aa8dc0354f85e072dd433b81fe11b",
+      "mode": "source report with machine-local links/IDs removed",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/runtime-activity-proposal/RESULT_KO.md",
+          "sha256": "8e6ad6147807a18f377fdbf99d7fcb5a0d5aa8dc0354f85e072dd433b81fe11b"
+        }
+      ]
+    },
+    "recorder/evidence_writer.mjs": {
+      "bytes": 4567,
+      "sha256": "6465b01b46676716a41fb3abdb4245f0ec3ecba12f2649706f782f01524bc2ec",
+      "mode": "verbatim project recorder source",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/evidence_writer.mjs",
+          "sha256": "6465b01b46676716a41fb3abdb4245f0ec3ecba12f2649706f782f01524bc2ec"
+        }
+      ]
+    },
+    "recorder/evidence_writer_worker.mjs": {
+      "bytes": 3596,
+      "sha256": "4d426caf5efb515abf4bc85d805a60f899dc3308468eb996287ed0cdbd8ef830",
+      "mode": "verbatim project recorder source",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/evidence_writer_worker.mjs",
+          "sha256": "4d426caf5efb515abf4bc85d805a60f899dc3308468eb996287ed0cdbd8ef830"
+        }
+      ]
+    },
+    "fixtures/final07-n01-regression.json": {
+      "bytes": 3234,
+      "sha256": "49138a7178b08563e0a982627839c0f98aa10bbeb3057333e87c42f3f26a602e",
+      "mode": "publishable field selection",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/evaluation/final07-n01-regression.json",
+          "sha256": "f0ddc9e321a54f69d64541a19f47da95d96c67ae1ce1612d64881b446b6cdb68"
+        }
+      ]
+    },
+    "gallery/audio/J01-1-s1.wav": {
+      "bytes": 351662,
+      "sha256": "60dbba77dcd9ce7082742fde38b30d9e3104791fffeabecfb0611a1407586f08",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-support/20261029/student/final-v021-r3-student-v2/report-20261029T111247368962Z/audio/f16264eb8ceb9a9e678c779a65fc4d93ea789dea4b92dc7bec6f05ff6c55a35e.wav",
+          "sha256": "60dbba77dcd9ce7082742fde38b30d9e3104791fffeabecfb0611a1407586f08"
+        }
+      ]
+    },
+    "gallery/audio/J01-1-s2.wav": {
+      "bytes": 506868,
+      "sha256": "13a67f2e122de7800062b730a5a8baec4cadcec8c2157d6b469a205f8532c58b",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-support/20261029/student/final-v021-r3-student-v2/report-20261029T111247368962Z/audio/818d62688bd224ac90a275abafc36eb186713fe2930c2b6f8501ac3fff00d309.wav",
+          "sha256": "13a67f2e122de7800062b730a5a8baec4cadcec8c2157d6b469a205f8532c58b"
+        }
+      ]
+    },
+    "gallery/audio/J01-1-s3.wav": {
+      "bytes": 457480,
+      "sha256": "6cbbc2305b518fe8316fd44308a109232b5e87a6fa4d43350936d6d0f11e0ef8",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-support/20261029/student/final-v021-r3-student-v2/report-20261029T111247368962Z/audio/776be9edce22dd7354f0fee881b5092baafdef38099959d29b0e501f2c237b30.wav",
+          "sha256": "6cbbc2305b518fe8316fd44308a109232b5e87a6fa4d43350936d6d0f11e0ef8"
+        }
+      ]
+    },
+    "gallery/J01.json": {
+      "bytes": 5495,
+      "sha256": "e962bc7f2c9ed9bcde24d141e00548451853cca19827bc1763db83a59e2fd02c",
+      "mode": "publishable field selection",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/human-review-queue.json",
+          "sha256": "479ba2a3b6f3fad790b83d7a7af27f8eb6f57d60d4b4ba62e92a2e27e4b76972"
+        },
+        {
+          "path": "runs/v021-support/20261029/student/final-v021-r3-student-v2/report-20261029T111247368962Z/J01.json",
+          "sha256": "aa0eeced4700578a5b68ad3268771d582ea24806b5ba9030e70a7c5a3ebba09a"
+        }
+      ]
+    },
+    "gallery/audio/J03-1-s1.wav": {
+      "bytes": 590634,
+      "sha256": "daf2c229d7e3f8874b1a8b39cebe5b29938d6e878959716317fb9b47783f2944",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-support/20261029/student/final-v021-r3-student-v3/report-20261029T111247584176Z/audio/715123948215350ecea7eaa7670d93082e07d779d9e9ab3ee526be2138469916.wav",
+          "sha256": "daf2c229d7e3f8874b1a8b39cebe5b29938d6e878959716317fb9b47783f2944"
+        }
+      ]
+    },
+    "gallery/audio/J03-1-s2.wav": {
+      "bytes": 304702,
+      "sha256": "978bf70975321d2315b16a62c6d598a930f9742cf7c44bb33e7fd6d30944e911",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-support/20261029/student/final-v021-r3-student-v3/report-20261029T111247584176Z/audio/5e0d33924a47cb57709a72cd78a941d6c035075d50b6381f8b43a059cfb8dad2.wav",
+          "sha256": "978bf70975321d2315b16a62c6d598a930f9742cf7c44bb33e7fd6d30944e911"
+        }
+      ]
+    },
+    "gallery/audio/J03-1-s3.wav": {
+      "bytes": 409192,
+      "sha256": "c848eb89355011b5fdb0e8f2820941a1506c322e7d16ed6c103bc576a4967872",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-support/20261029/student/final-v021-r3-student-v3/report-20261029T111247584176Z/audio/5ab9b18cbd5e37386df5a43b02c3e9e0d9b780271c08bee83d86dedf34d9a04b.wav",
+          "sha256": "c848eb89355011b5fdb0e8f2820941a1506c322e7d16ed6c103bc576a4967872"
+        }
+      ]
+    },
+    "gallery/audio/J03-1-s4.wav": {
+      "bytes": 410524,
+      "sha256": "37a0fba7c907579e14dc5fc2defc072e5585f8f83d80f1f675ac629ef4750b03",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-support/20261029/student/final-v021-r3-student-v3/report-20261029T111247584176Z/audio/7ba7e4a8d052cd08499f80529b6b44e6a6750d814e718622b12789cde33ed1bf.wav",
+          "sha256": "37a0fba7c907579e14dc5fc2defc072e5585f8f83d80f1f675ac629ef4750b03"
+        }
+      ]
+    },
+    "gallery/audio/J03-1-s5.wav": {
+      "bytes": 896438,
+      "sha256": "b0e69f30f86c981492361fa6a5f8d9fb519c85ad1b5c2dd86c29f4cfcfa30fe7",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-support/20261029/student/final-v021-r3-student-v3/report-20261029T111247584176Z/audio/919fc7d7ad628cafd2c3f50a5e8f3f7ac795b058695ff40c16a42928208953eb.wav",
+          "sha256": "b0e69f30f86c981492361fa6a5f8d9fb519c85ad1b5c2dd86c29f4cfcfa30fe7"
+        }
+      ]
+    },
+    "gallery/J03.json": {
+      "bytes": 11760,
+      "sha256": "c98847c81522512d5dd533daae59be47f827a6cff439a8a93e594e9409109163",
+      "mode": "publishable field selection",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/human-review-queue.json",
+          "sha256": "479ba2a3b6f3fad790b83d7a7af27f8eb6f57d60d4b4ba62e92a2e27e4b76972"
+        },
+        {
+          "path": "runs/v021-support/20261029/student/final-v021-r3-student-v3/report-20261029T111247584176Z/J03.json",
+          "sha256": "efccafc304d0603eb90549a7641bd5c97be2dca8d9970856322abd5b0a510875"
+        }
+      ]
+    },
+    "gallery/audio/J05-1-s1.wav": {
+      "bytes": 477104,
+      "sha256": "d51e6dd91be6cca4cb5d040df39730d05e942d63f4f10978dc2dff55c5c9eef8",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-support/20261029/student/final-v021-r3-student-v3/report-20261029T111247584176Z/audio/91b90a767bbdf1f3f80bc3e0a71f93a6f1789b5e3d6dec2182c812b404baa94c.wav",
+          "sha256": "d51e6dd91be6cca4cb5d040df39730d05e942d63f4f10978dc2dff55c5c9eef8"
+        }
+      ]
+    },
+    "gallery/audio/J05-1-s2.wav": {
+      "bytes": 835364,
+      "sha256": "a77e6be4a8a547219fb040b4b7b64aaab846aeeed2cf9be1c513e43b2674c6dc",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-support/20261029/student/final-v021-r3-student-v3/report-20261029T111247584176Z/audio/d966629e5cac0596b2cfeb9ca1a04833ec3c01ae6248759fe5516d55f3056baa.wav",
+          "sha256": "a77e6be4a8a547219fb040b4b7b64aaab846aeeed2cf9be1c513e43b2674c6dc"
+        }
+      ]
+    },
+    "gallery/audio/J05-1-s3.wav": {
+      "bytes": 536410,
+      "sha256": "29ccc885f838eab8df717ecd0e71d886124d64d59232bc80134d586d69ee2659",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-support/20261029/student/final-v021-r3-student-v3/report-20261029T111247584176Z/audio/6af85c0062cba75474cae8f998b7dceeff6faf5fb991db6b5661483932acb4c2.wav",
+          "sha256": "29ccc885f838eab8df717ecd0e71d886124d64d59232bc80134d586d69ee2659"
+        }
+      ]
+    },
+    "gallery/J05.json": {
+      "bytes": 7215,
+      "sha256": "16e3a770c205f29ea7dceb6c0abf7c96adb44c16b05c4f06443ce779914c5ad3",
+      "mode": "publishable field selection",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/human-review-queue.json",
+          "sha256": "479ba2a3b6f3fad790b83d7a7af27f8eb6f57d60d4b4ba62e92a2e27e4b76972"
+        },
+        {
+          "path": "runs/v021-support/20261029/student/final-v021-r3-student-v3/report-20261029T111247584176Z/J05.json",
+          "sha256": "1bba24b302fc1cdea31119591d0c146f4071f2d5633c020203d543c052768836"
+        }
+      ]
+    },
+    "gallery/audio/N01-1-s1.wav": {
+      "bytes": 475344,
+      "sha256": "692dc3f120d17772c9771d7192a78b7b9c1681eeca980d0b2ffeb6dad314cb05",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final07/report-20261030T144127911336Z/audio/9c2b448ea525a4d63cb9a1875fc0b186c63622e896d23a31ef3cfd78249eccad.wav",
+          "sha256": "692dc3f120d17772c9771d7192a78b7b9c1681eeca980d0b2ffeb6dad314cb05"
+        }
+      ]
+    },
+    "gallery/audio/N01-1-s2.wav": {
+      "bytes": 1032678,
+      "sha256": "883c6cd8010bc060d014c5eb5a4ed6b492acc56358f1d740ffc192419c8cdcf9",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final07/report-20261030T144127911336Z/audio/4facf77ace786c218ceef6de92fb6daed98815f4926e38c3f7d1f53873a4423d.wav",
+          "sha256": "883c6cd8010bc060d014c5eb5a4ed6b492acc56358f1d740ffc192419c8cdcf9"
+        }
+      ]
+    },
+    "gallery/audio/N01-1-s3.wav": {
+      "bytes": 572572,
+      "sha256": "2b4a6802e9399e9f59127de20c93fc4578cd8114627b4cc38a8456a8ec70951c",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final07/report-20261030T144127911336Z/audio/4c986943c4d9df08b588e8af6459cf552866b0678080216d4644ef0a4f5d7c13.wav",
+          "sha256": "2b4a6802e9399e9f59127de20c93fc4578cd8114627b4cc38a8456a8ec70951c"
+        }
+      ]
+    },
+    "gallery/audio/N01-2-s1.wav": {
+      "bytes": 916042,
+      "sha256": "8db8521064d962eb711df48e87999fbfa98cd75232c351c7aa5ccbc832bd0e2c",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final07/report-20261030T144127911336Z/audio/1c3fb35a528d5658f81e4022529828f1bed57d4b534d46521a4275d01b0b300d.wav",
+          "sha256": "8db8521064d962eb711df48e87999fbfa98cd75232c351c7aa5ccbc832bd0e2c"
+        }
+      ]
+    },
+    "gallery/audio/N01-2-s2.wav": {
+      "bytes": 487680,
+      "sha256": "41186b419754cbb19c0f353459aa709debb44db47c92566a56072963cd42f62d",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final07/report-20261030T144127911336Z/audio/41104e5450ccded8d7aa62c42482e52ff11fe09d2a4cbd37506485107b9d09a8.wav",
+          "sha256": "41186b419754cbb19c0f353459aa709debb44db47c92566a56072963cd42f62d"
+        }
+      ]
+    },
+    "gallery/audio/N01-2-s3.wav": {
+      "bytes": 1020762,
+      "sha256": "3c6acb0cb2cd276cdc6e5635964288c0cd8ed33f03be9ac2aa8183d39e3734f4",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final07/report-20261030T144127911336Z/audio/35efc5d013f5bd77fe9f2cdad138e51030b672d7ced8b8667bf70a1890df827b.wav",
+          "sha256": "3c6acb0cb2cd276cdc6e5635964288c0cd8ed33f03be9ac2aa8183d39e3734f4"
+        }
+      ]
+    },
+    "gallery/audio/N01-2-s4.wav": {
+      "bytes": 1046994,
+      "sha256": "c4b6822a87301ad833d375038b833d2efa716fe998b55c49c96354ef7b73cd06",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final07/report-20261030T144127911336Z/audio/6fa59eb2baa3ce47efd7fa2fbdef3fa83a57968ca5e79357f8d98d435e799ab2.wav",
+          "sha256": "c4b6822a87301ad833d375038b833d2efa716fe998b55c49c96354ef7b73cd06"
+        }
+      ]
+    },
+    "gallery/audio/N01-2-s5.wav": {
+      "bytes": 1034432,
+      "sha256": "53808d45fd0daa8a73c8e1ea2f91acb36b8cc4cd574ee06aa52371d14ce8d74b",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final07/report-20261030T144127911336Z/audio/4ef28eb32f248f4d8d0d40b12d472958687354f1ae92c8b876901070a9511b39.wav",
+          "sha256": "53808d45fd0daa8a73c8e1ea2f91acb36b8cc4cd574ee06aa52371d14ce8d74b"
+        }
+      ]
+    },
+    "gallery/audio/N01-2-s6.wav": {
+      "bytes": 881004,
+      "sha256": "1fc401d4d3af7c200e6ae382a64ca91c5f5de44c44f5927abdec26caec7b4235",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final07/report-20261030T144127911336Z/audio/6d30f9ca4727f8deb30983c0d90694913461e5660612293627b9f432770c3d08.wav",
+          "sha256": "1fc401d4d3af7c200e6ae382a64ca91c5f5de44c44f5927abdec26caec7b4235"
+        }
+      ]
+    },
+    "gallery/audio/N01-2-s7.wav": {
+      "bytes": 1043058,
+      "sha256": "dfbaa159a6d3d3add82e4d69faca4ca99d9b57cbee5b08b316912b579255f8e2",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final07/report-20261030T144127911336Z/audio/4f2eb1bb24a23ff9ee8779e07b3d12929f22a101c5d2311c11542515400234bf.wav",
+          "sha256": "dfbaa159a6d3d3add82e4d69faca4ca99d9b57cbee5b08b316912b579255f8e2"
+        }
+      ]
+    },
+    "gallery/audio/N01-2-s8.wav": {
+      "bytes": 1346656,
+      "sha256": "08a40fd7e2731177b261b3d18dc1f995167edd8b4ec3d3287f113b1cdbebd2aa",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final07/report-20261030T144127911336Z/audio/9926f08d8c49905d9254fac9332658248cf578acc206ad9ebb3df8a78df0dbd5.wav",
+          "sha256": "08a40fd7e2731177b261b3d18dc1f995167edd8b4ec3d3287f113b1cdbebd2aa"
+        }
+      ]
+    },
+    "gallery/audio/N01-2-s9.wav": {
+      "bytes": 1185470,
+      "sha256": "edf587fb17cdff5efc96f50c0045aab17f5104699ccc6b880c6a4c63ab619c16",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final07/report-20261030T144127911336Z/audio/9152bb9731cd9d1cf65cba3ef47419ddce8cbf2aa10dbc4d2319abaf32b33c45.wav",
+          "sha256": "edf587fb17cdff5efc96f50c0045aab17f5104699ccc6b880c6a4c63ab619c16"
+        }
+      ]
+    },
+    "gallery/N01.json": {
+      "bytes": 44928,
+      "sha256": "3e3d110fffb22a743eda1425f9d367379a88cdaa1f3f84c8c4a69aa9df208548",
+      "mode": "publishable field selection",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/human-review-queue.json",
+          "sha256": "479ba2a3b6f3fad790b83d7a7af27f8eb6f57d60d4b4ba62e92a2e27e4b76972"
+        },
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final07/report-20261030T144127911336Z/N01.json",
+          "sha256": "11493eb89f5e56f5073efa05fead2f50a65cf5593cc9dbbda7ff6fd0f54d0847"
+        }
+      ]
+    },
+    "gallery/screens/interruption-before.png": {
+      "bytes": 213157,
+      "sha256": "d3cd2e07ed62a5989e7444755c2639e090544d96b133646ff41cf8d6efb29fe5",
+      "mode": "visually inspected unaltered developer scenario screenshot",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final07/N01/interruption-before.png",
+          "sha256": "d3cd2e07ed62a5989e7444755c2639e090544d96b133646ff41cf8d6efb29fe5"
+        }
+      ]
+    },
+    "gallery/screens/supplement-playing.png": {
+      "bytes": 220306,
+      "sha256": "50119f44acf84d12c84e9a5e6ccd538d9a3feaf90ae37c7ce5ea953e3251a7f2",
+      "mode": "visually inspected unaltered developer scenario screenshot",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final07/N01/supplement-playing.png",
+          "sha256": "50119f44acf84d12c84e9a5e6ccd538d9a3feaf90ae37c7ce5ea953e3251a7f2"
+        }
+      ]
+    },
+    "gallery/screens/original-resumed.png": {
+      "bytes": 206038,
+      "sha256": "9f41ed0fd1c1768c2f6a9570076e115ef0e1043be39d6c8076872b9037324cb1",
+      "mode": "visually inspected unaltered developer scenario screenshot",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final07/N01/original-resumed.png",
+          "sha256": "9f41ed0fd1c1768c2f6a9570076e115ef0e1043be39d6c8076872b9037324cb1"
+        }
+      ]
+    },
+    "gallery/audio/N02-1-s1.wav": {
+      "bytes": 476222,
+      "sha256": "e0f618da7b0e72ab08b849d2a617441ccdaa66c72aafe01bcbf0ad6742bf882f",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final06/report-20261030T140514309064Z/audio/d1b24e0661c55596310c0b6461e13d0d8a1d02893f75ddf3456dfad46763764a.wav",
+          "sha256": "e0f618da7b0e72ab08b849d2a617441ccdaa66c72aafe01bcbf0ad6742bf882f"
+        }
+      ]
+    },
+    "gallery/audio/N02-1-s2.wav": {
+      "bytes": 1049426,
+      "sha256": "0e45dca922d1f9dd199f93f09dd8793d015bf44e58650449a0f4c2393403c8cb",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final06/report-20261030T140514309064Z/audio/416582f46583ccb47d33692b55f97327f9174d002717b38a846bb7ff99ce81fb.wav",
+          "sha256": "0e45dca922d1f9dd199f93f09dd8793d015bf44e58650449a0f4c2393403c8cb"
+        }
+      ]
+    },
+    "gallery/audio/N02-1-s3.wav": {
+      "bytes": 593960,
+      "sha256": "dbfe5e3ffbe5df5c64acda721c62fae8829f3630ca6b87283497455845ad8125",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final06/report-20261030T140514309064Z/audio/c2f94cf000262f62942ab18f829ace8978eae314ffbbe1ce52d406b94e4203e0.wav",
+          "sha256": "dbfe5e3ffbe5df5c64acda721c62fae8829f3630ca6b87283497455845ad8125"
+        }
+      ]
+    },
+    "gallery/audio/N02-2-s1.wav": {
+      "bytes": 1295694,
+      "sha256": "35b9cdebfca7049ce06156b17b005ede9dbd574f0574c7d25f3005145d9b326e",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final06/report-20261030T140514309064Z/audio/b5b44d6ac0e65ce24a0a6166977d262abce97517444380168b3b496d550139be.wav",
+          "sha256": "35b9cdebfca7049ce06156b17b005ede9dbd574f0574c7d25f3005145d9b326e"
+        }
+      ]
+    },
+    "gallery/audio/N02-2-s2.wav": {
+      "bytes": 517674,
+      "sha256": "5c7013856ec678e7594b0ddefe3ab668a1bb1714b2290d587cae0ebf8f11e1d5",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final06/report-20261030T140514309064Z/audio/9d8fe96e302adc40773e26c672094242ea26bcdff2d4d6c452c2897fea028a7d.wav",
+          "sha256": "5c7013856ec678e7594b0ddefe3ab668a1bb1714b2290d587cae0ebf8f11e1d5"
+        }
+      ]
+    },
+    "gallery/audio/N02-2-s3.wav": {
+      "bytes": 497160,
+      "sha256": "425a52041287461f5595608d050ffad5a6e28951e43a9a356fefae412940075f",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final06/report-20261030T140514309064Z/audio/c310428c85112131235367bd2041885289eda5655d66b188778b03dd886e380c.wav",
+          "sha256": "425a52041287461f5595608d050ffad5a6e28951e43a9a356fefae412940075f"
+        }
+      ]
+    },
+    "gallery/audio/N02-2-s4.wav": {
+      "bytes": 1211924,
+      "sha256": "1d379fe078b9de117de2f1aa5b2820f640a365347a1997782cefca356e315263",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final06/report-20261030T140514309064Z/audio/e03015855bcc4e3d33c47e45cf1974005cb842f6a0bdd6366b50569bec9daac1.wav",
+          "sha256": "1d379fe078b9de117de2f1aa5b2820f640a365347a1997782cefca356e315263"
+        }
+      ]
+    },
+    "gallery/audio/N02-2-s5.wav": {
+      "bytes": 765472,
+      "sha256": "8df97768da8b6252dd2eebcd17ca4bda1cbffec0c0b9ecf71800dd8d492be5e9",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final06/report-20261030T140514309064Z/audio/7802a37a6a4c72e1148dd715dc600399346ae7de7adcc03a9dd201e79914c6e7.wav",
+          "sha256": "8df97768da8b6252dd2eebcd17ca4bda1cbffec0c0b9ecf71800dd8d492be5e9"
+        }
+      ]
+    },
+    "gallery/audio/N02-2-s6.wav": {
+      "bytes": 1220966,
+      "sha256": "2d9da37d5ed89d2f36956fda3144cb16bbd2b8fd8e758b01b43f0adbfe6c1d8f",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final06/report-20261030T140514309064Z/audio/6ecf7e5337bcda0b0d8aa94a54aac388f8758de6c8f9cf028378c53a9574ef5f.wav",
+          "sha256": "2d9da37d5ed89d2f36956fda3144cb16bbd2b8fd8e758b01b43f0adbfe6c1d8f"
+        }
+      ]
+    },
+    "gallery/audio/N02-2-s7.wav": {
+      "bytes": 769880,
+      "sha256": "7634203ab98991b097aac100cceea4dac4922af95be4bed9ae9f7fce7d10286d",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final06/report-20261030T140514309064Z/audio/77f48d35dbe2dd7c1d90d382084cdc0795bac82cef1089598a7715a468540273.wav",
+          "sha256": "7634203ab98991b097aac100cceea4dac4922af95be4bed9ae9f7fce7d10286d"
+        }
+      ]
+    },
+    "gallery/audio/N02-2-s8.wav": {
+      "bytes": 885420,
+      "sha256": "d5f131d19df416b839265ee3435439fb6347e22ae4fa06c6b5f5d980beebcb9d",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final06/report-20261030T140514309064Z/audio/f78e9e51ad6542d11f4ae51e19668f83c09def41269a9b546403a3e6a85f019e.wav",
+          "sha256": "d5f131d19df416b839265ee3435439fb6347e22ae4fa06c6b5f5d980beebcb9d"
+        }
+      ]
+    },
+    "gallery/audio/N02-2-s9.wav": {
+      "bytes": 1468998,
+      "sha256": "299b97f337af1a3014b9c9ae30dd2676bfa953eb744e1d5a92b236ede6f02099",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final06/report-20261030T140514309064Z/audio/5ceef262b88ceefe124af92e279c333672a1b833e1246e417ba5b5a581b0b6b1.wav",
+          "sha256": "299b97f337af1a3014b9c9ae30dd2676bfa953eb744e1d5a92b236ede6f02099"
+        }
+      ]
+    },
+    "gallery/audio/N02-2-s10.wav": {
+      "bytes": 1256682,
+      "sha256": "b6ab39ca154c04fc71d54e9c36403a21b13eae357f033df7644b55f2ea392b49",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final06/report-20261030T140514309064Z/audio/efeae7a46933df7919dbf1374878c0ab23a187c019a5cf538b72bf30ecdad984.wav",
+          "sha256": "b6ab39ca154c04fc71d54e9c36403a21b13eae357f033df7644b55f2ea392b49"
+        }
+      ]
+    },
+    "gallery/audio/N02-2-s11.wav": {
+      "bytes": 872866,
+      "sha256": "ddae763768b9910a0350756e34db5003f246d8f94671d1854c546402de7a4d44",
+      "mode": "verbatim generated local test audio; PCM-only RIFF",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final06/report-20261030T140514309064Z/audio/f10d9cc8960e44d3f82e76a4b548efdcd78a2e0a7c6f0792ce571c792c4063f9.wav",
+          "sha256": "ddae763768b9910a0350756e34db5003f246d8f94671d1854c546402de7a4d44"
+        }
+      ]
+    },
+    "gallery/N02.json": {
+      "bytes": 49470,
+      "sha256": "8aec89843584e078725c3b8bd54900b9cd44f0e373c2a8ed66d5b7369298eff1",
+      "mode": "publishable field selection",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/human-review-queue.json",
+          "sha256": "479ba2a3b6f3fad790b83d7a7af27f8eb6f57d60d4b4ba62e92a2e27e4b76972"
+        },
+        {
+          "path": "runs/v021-r3-repair/20261030/student/repair-development-final06/report-20261030T140514309064Z/N02.json",
+          "sha256": "513a18f6ccce0b39fcbec08f84b0ab224a49a057411e346e236b7c4ef217b558"
+        }
+      ]
+    },
+    "gallery/index.html": {
+      "bytes": 18856,
+      "sha256": "6c7bafb5fa43bb4d1416b11900bc6aae923ff6710801e3520b883307d19e379c",
+      "mode": "static gallery from explicitly selected developer scenarios",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/human-review-queue.json",
+          "sha256": "479ba2a3b6f3fad790b83d7a7af27f8eb6f57d60d4b4ba62e92a2e27e4b76972"
+        }
+      ]
+    },
+    "README.md": {
+      "bytes": 2303,
+      "sha256": "15ceef55dacf5234087db3dd8a2d0106932c16f2997858459933119780b2b539",
+      "mode": "public index",
+      "source": [
+        {
+          "path": "runs/v021-r3-repair/20261030/human-review-queue.json",
+          "sha256": "479ba2a3b6f3fad790b83d7a7af27f8eb6f57d60d4b4ba62e92a2e27e4b76972"
+        }
+      ]
+    }
+  },
+  "checks": {
+    "known_local_token_bytes_detected": 0,
+    "generic_secret_patterns_detected": 0,
+    "home_paths_private_network_detected": 0,
+    "riff_chunks_checked": [
+      "fmt ",
+      "data"
+    ],
+    "test_screenshots_visually_reviewed": 3,
+    "all_local_gallery_links_resolve": true,
+    "human_education_listening_reviewed": 0
+  }
+}

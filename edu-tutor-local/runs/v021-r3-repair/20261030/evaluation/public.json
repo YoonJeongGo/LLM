@@ -1,0 +1,206 @@
+{
+  "provenance": {
+    "purpose": "New frozen independent execution questions, 2 initial + 2 followups; not training data or historical regression",
+    "authoring": "Authored by a separate runtime/test agent; no product explanation parser imported; no parser feasibility filtering or weakening",
+    "authored_development_source": true,
+    "human_review": "H_PENDING",
+    "model_calls": 0,
+    "tts_calls": 0,
+    "ocr_calls": 0,
+    "expected_answers_sent_to_model": false,
+    "planned_journeys": 2,
+    "planned_question_events": 4,
+    "timing_targets_seconds": {
+      "first_valid_warm": 10,
+      "supplement_warm": 10,
+      "step_gap": 2,
+      "local_stop": 0.5
+    }
+  },
+  "journeys": [
+    {
+      "id": "N01",
+      "kind": "table",
+      "task_kind": "write_sql",
+      "tables": [
+        {
+          "name": "parcel_watch",
+          "columns": [
+            {
+              "name": "parcel",
+              "type": "TEXT"
+            },
+            {
+              "name": "delta",
+              "type": "INTEGER"
+            },
+            {
+              "name": "rush",
+              "type": "INTEGER"
+            },
+            {
+              "name": "zone",
+              "type": "INTEGER"
+            }
+          ],
+          "rows": [
+            [
+              "P1",
+              null,
+              1,
+              1
+            ],
+            [
+              "P2",
+              0,
+              0,
+              2
+            ],
+            [
+              "P3",
+              -4,
+              0,
+              2
+            ],
+            [
+              "P4",
+              3,
+              1,
+              1
+            ],
+            [
+              "P5",
+              -4,
+              1,
+              1
+            ],
+            [
+              "P6",
+              0,
+              1,
+              2
+            ],
+            [
+              "P7",
+              2,
+              0,
+              1
+            ],
+            [
+              "P8",
+              null,
+              0,
+              2
+            ]
+          ]
+        }
+      ],
+      "question": "SQLite에서 parcel_watch를 조회해 줘. delta가 0보다 작거나 rush가 1인 행을 고르고, parcel, delta, zone 열을 이 순서로 보여 줘. zone은 오름차순, 같은 zone에서는 delta 내림차순, 둘 다 같으면 parcel 내림차순으로 정렬해 줘. 원본 행이 조건을 통과하는 과정과 최종 순서를 설명해 줘.",
+      "followup": {
+        "question": "선택한 P3은 왜 포함되고 P2는 왜 제외돼? 원본에서 delta가 NULL인 P1, delta가 0인 P6과도 같은 행 조건으로 비교해 줘. 지금 정렬의 우선순위와 동점 처리까지 설명하고 원래 수업으로 돌아가 줘.",
+        "column": "delta",
+        "row_index": 2,
+        "value": -4,
+        "source_row": [
+          "P3",
+          -4,
+          0,
+          2
+        ]
+      },
+      "authored_development_source": true
+    },
+    {
+      "id": "N02",
+      "kind": "table",
+      "task_kind": "write_sql",
+      "tables": [
+        {
+          "name": "dispatch_stock",
+          "columns": [
+            {
+              "name": "item",
+              "type": "TEXT"
+            },
+            {
+              "name": "qty",
+              "type": "INTEGER"
+            },
+            {
+              "name": "batch",
+              "type": "INTEGER"
+            },
+            {
+              "name": "status",
+              "type": "TEXT"
+            }
+          ],
+          "rows": [
+            [
+              "M1",
+              0,
+              2,
+              "ready"
+            ],
+            [
+              "M2",
+              null,
+              2,
+              "ready"
+            ],
+            [
+              "M3",
+              5,
+              3,
+              "ready"
+            ],
+            [
+              "M4",
+              5,
+              3,
+              "ready"
+            ],
+            [
+              "M5",
+              -1,
+              4,
+              "ready"
+            ],
+            [
+              "M6",
+              2,
+              3,
+              "ready"
+            ],
+            [
+              "M7",
+              0,
+              2,
+              "hold"
+            ],
+            [
+              "M8",
+              0,
+              2,
+              "ready"
+            ]
+          ]
+        }
+      ],
+      "question": "dispatch_stock에서 status가 ready이고 qty가 NULL이 아닌 행 중, qty가 0이거나 5 이상인 행을 찾아 줘. 출력 열은 item, qty, batch야. batch 내림차순, 그 안에서는 qty 오름차순, 두 값이 같으면 item 오름차순으로 정렬하는 SQLite SQL과 원본에서 결과까지의 과정을 설명해 줘.",
+      "followup": {
+        "question": "선택한 M1은 왜 포함돼? qty가 NULL인 원본 M2와, qty가 똑같이 0인데 빠진 M7을 비교해 줘. 현재 정렬에서 값이 같은 행들의 순서도 설명해 줘. 추가로, 별도의 빈 입력 상황이라면 SUM(qty), COUNT(qty), COUNT(*)가 각각 무엇을 반환하는지 구분하고 원래 수업으로 돌아가 줘.",
+        "column": "qty",
+        "row_index": 0,
+        "value": 0,
+        "source_row": [
+          "M1",
+          0,
+          2,
+          "ready"
+        ]
+      },
+      "authored_development_source": true
+    }
+  ]
+}

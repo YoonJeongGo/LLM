@@ -1,0 +1,257 @@
+{
+  "provenance": {
+    "purpose": "New original development journeys, separate from independent final80",
+    "source": "Original procedural development questions; J01-J05 newly worded, J03-J05 new numeric inputs; unchanged unexecuted original images J06-J08",
+    "data_rights": "Project-authored synthetic data; no third-party course content",
+    "human_review": "H_PENDING",
+    "model_calls": 0,
+    "tts_calls": 0,
+    "ocr_calls": 0,
+    "expected_answers_sent_to_model": false,
+    "planned_question_events": 10,
+    "planned_journeys": 8,
+    "latency_note": "Missing-condition failure/safe-stop remains in denominator; not averaged as successful explanation",
+    "timing_targets_seconds": {
+      "first_valid_warm": 10,
+      "supplement_warm": 10,
+      "step_gap": 2,
+      "local_stop": 0.5
+    },
+    "development_version": "final03_proposal_not_applied",
+    "authored_at": "2026-10-29T05:07:48.697228+00:00",
+    "comparison_boundary": "Different questions and numeric inputs from final01/final02. Not a controlled before/after accuracy or speed comparison. No final80 access."
+  },
+  "journeys": [
+    {
+      "id": "J01",
+      "kind": "concept",
+      "question": "DDL과 DML의 차이가 헷갈려. SQLite에서 club_member 표를 만들고 가입자 한 명을 등록하는 새 예시로 설명해 줘. 각 명령이 어느 분류인지와 열·행이 어떻게 달라지는지 함께 알려 줘.",
+      "expected_scope": "Executed model-authored CREATE/INSERT example; raw concept prose remains separately reviewable"
+    },
+    {
+      "id": "J02",
+      "kind": "concept",
+      "question": "SQLite의 도서 대여 예시에서 새 열을 추가하는 작업과 이미 있는 행의 값을 수정하는 작업을 비교해 줘. 표 생성과 예시 행 입력부터 두 작업까지, 앞에서 만든 표에 순서대로 실행할 수 있는 전체 SQLite SQL 예시를 코드 블록으로 보여 주고 실행 전후 표로 설명해 줘. 변경한 열과 행이 무엇인지도 알려 줘.",
+      "expected_scope": "Executed model-authored structure/value change; no invented student source table"
+    },
+    {
+      "id": "J03",
+      "kind": "table",
+      "task_kind": "query_result",
+      "tables": [
+        {
+          "name": "reading_log",
+          "columns": [
+            {
+              "name": "topic",
+              "type": "TEXT"
+            },
+            {
+              "name": "minutes",
+              "type": "INTEGER"
+            }
+          ],
+          "rows": [
+            [
+              "정규화",
+              16
+            ],
+            [
+              "조인",
+              null
+            ],
+            [
+              "키",
+              0
+            ],
+            [
+              "정렬",
+              9
+            ]
+          ]
+        }
+      ],
+      "query": "SELECT COUNT(*) AS entries, COUNT(minutes) AS recorded, SUM(minutes) AS total FROM reading_log;",
+      "question": "새로 작성한 개발 검증 표야. 전체 기록 수와 시간이 들어 있는 기록 수, 시간의 합을 원본 행에서 따라가며 설명해 줘. NULL과 숫자 0이 각 계산에 어떻게 들어가는지도 구분해 줘."
+    },
+    {
+      "id": "J04",
+      "kind": "table",
+      "task_kind": "query_result",
+      "tables": [
+        {
+          "name": "visits",
+          "columns": [
+            {
+              "name": "branch",
+              "type": "TEXT"
+            },
+            {
+              "name": "tickets",
+              "type": "INTEGER"
+            },
+            {
+              "name": "open",
+              "type": "INTEGER"
+            }
+          ],
+          "rows": [
+            [
+              "동",
+              6,
+              1
+            ],
+            [
+              "동",
+              8,
+              1
+            ],
+            [
+              "동",
+              25,
+              0
+            ],
+            [
+              "서",
+              4,
+              1
+            ],
+            [
+              "서",
+              null,
+              1
+            ],
+            [
+              "남",
+              12,
+              1
+            ]
+          ]
+        }
+      ],
+      "query": "SELECT branch, COUNT(*) AS visits, SUM(tickets) AS tickets FROM visits WHERE open = 1 GROUP BY branch HAVING SUM(tickets) >= 9 ORDER BY branch;",
+      "question": "새로 만든 개발 검증 표야. 문을 연 기록을 먼저 고르고 지점별로 묶은 다음, 합계가 9 이상인 지점만 남겨 줘. 원본 표와 계산 중간 표, 마지막 표를 순서대로 보며 이유를 설명해 줘.",
+      "followup": {
+        "question": "선택한 이 행은 왜 조건을 통과해서 포함되는 거야?",
+        "column": "open",
+        "row_index": 0,
+        "value": 1
+      }
+    },
+    {
+      "id": "J05",
+      "kind": "group_diagram",
+      "task_kind": "query_result",
+      "tables": [
+        {
+          "name": "delivery",
+          "columns": [
+            {
+              "name": "zone",
+              "type": "TEXT"
+            },
+            {
+              "name": "boxes",
+              "type": "INTEGER"
+            },
+            {
+              "name": "paid",
+              "type": "INTEGER"
+            }
+          ],
+          "rows": [
+            [
+              "A",
+              4,
+              1
+            ],
+            [
+              "A",
+              9,
+              1
+            ],
+            [
+              "B",
+              3,
+              1
+            ],
+            [
+              "B",
+              18,
+              0
+            ],
+            [
+              "C",
+              14,
+              1
+            ]
+          ]
+        }
+      ],
+      "query": "SELECT zone, SUM(boxes) AS boxes FROM delivery WHERE paid = 1 GROUP BY zone HAVING SUM(boxes) >= 10 ORDER BY zone;",
+      "question": "직접 작성한 새 배송 예시야. 결제가 끝난 행을 구역별로 합친 뒤 합계가 10 이상인 구역만 남기는 과정을 설명해 줘. WHERE가 고르는 행과 HAVING이 고르는 그룹의 차이, 원본에서 그룹과 결과로 이어지는 화살표를 함께 보여 줘.",
+      "followup": {
+        "question": "이 행이 결과를 만드는 데 남아 있는 이유를 다시 알려 줘.",
+        "column": "paid",
+        "row_index": 1,
+        "value": 1
+      },
+      "requires_simple_diagram": true
+    },
+    {
+      "id": "J06",
+      "kind": "photo",
+      "photo": {
+        "path": "runs\\finish-v2\\20261029\\student\\images\\normal-stock.png",
+        "sha256": "11f034df8805a1c2981f610e727546cc9a8db4fb4966a88831feca1c75ec93f1",
+        "width": 1240,
+        "height": 730,
+        "authoring": "Procedural PIL text/table drawing",
+        "font": "C:\\Windows\\Fonts\\malgun.ttf",
+        "rights": "Original development question and data authored for this project; no textbook/student data",
+        "human_review": "H_PENDING",
+        "rotated_degrees": 0,
+        "blur_radius": 0,
+        "critical_condition_cropped": false
+      },
+      "expected_condition": "normal"
+    },
+    {
+      "id": "J07",
+      "kind": "photo",
+      "photo": {
+        "path": "runs\\finish-v2\\20261029\\student\\images\\rotated-bills.png",
+        "sha256": "1fc16bf29af65119264adf6d2350ccff7683c6ec3f06783985bb69f3e3a43793",
+        "width": 1266,
+        "height": 774,
+        "authoring": "Procedural PIL text/table drawing",
+        "font": "C:\\Windows\\Fonts\\malgun.ttf",
+        "rights": "Original development question and data authored for this project; no textbook/student data",
+        "human_review": "H_PENDING",
+        "rotated_degrees": 2,
+        "blur_radius": 0.35,
+        "critical_condition_cropped": false
+      },
+      "expected_condition": "complete_slight_rotation_and_blur"
+    },
+    {
+      "id": "J08",
+      "kind": "photo",
+      "photo": {
+        "path": "runs\\finish-v2\\20261029\\student\\images\\cropped-condition.png",
+        "sha256": "4d2c62688be65e14482c968a57ec0ccc5b56be60ecbf06250f89eb7a36f650fe",
+        "width": 1240,
+        "height": 538,
+        "authoring": "Procedural PIL text/table drawing",
+        "font": "C:\\Windows\\Fonts\\malgun.ttf",
+        "rights": "Original development question and data authored for this project; no textbook/student data",
+        "human_review": "H_PENDING",
+        "rotated_degrees": 0,
+        "blur_radius": 0,
+        "critical_condition_cropped": true
+      },
+      "expected_condition": "missing_critical_threshold",
+      "must_not_invent": true
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "provider": "windows_sapi_local",
+  "windows_sapi": {
+    "voice_id": "COPY_EXACT_KOREAN_SAPI_VOICE_ID_FROM_LOCAL_INVENTORY",
+    "voice_name": "COPY_LOCAL_VOICE_NAME",
+    "language": "ko-KR",
+    "engine_version": "COPY_LOCAL_ENGINE_VERSION",
+    "os_build": "COPY_LOCAL_OS_BUILD",
+    "sapi_binary_sha256": "COPY_LOCAL_SAPI_SHA256",
+    "powershell_executable": "COPY_ABSOLUTE_LOCAL_PWSH_EXE_PATH",
+    "powershell_sha256": "COPY_LOCAL_PWSH_SHA256"
+  },
+  "selection_status": "example_only_requires_local_inventory_and_actual_validation"
+}

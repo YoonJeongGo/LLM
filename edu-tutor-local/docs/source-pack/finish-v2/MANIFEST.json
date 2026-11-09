@@ -1,0 +1,47 @@
+{
+  "artifact_kind": "codex_instructions_not_application",
+  "version": "v2",
+  "created_date": "2026-10-28",
+  "directive_revision": "finish-local-tutor-20261028-v2",
+  "authorization_id": "finish-local-tutor-20261028-v1",
+  "standalone_txt": "EDU_TUTOR_FINISH_MASTER_V2_KO.txt",
+  "files": [
+    {
+      "path": "MASTER_KO.txt",
+      "bytes": 27805,
+      "sha256": "7821885b3819413d73a0b1c43420246ebbd3322c490fa21306e8b03ecc544640"
+    },
+    {
+      "path": "POLICY_REFERENCE.json",
+      "bytes": 1532,
+      "sha256": "cc8fdd37af7fac3e57be3568b03e391dadc13b5c530b3cfeb490f59fbceb73b2"
+    },
+    {
+      "path": "README_KO.txt",
+      "bytes": 2279,
+      "sha256": "b50052bdd2c657ba178360c6036d60577cd2e22cb12992d89ad82b68671d1d42"
+    },
+    {
+      "path": "REPORT_COMPARISON.json",
+      "bytes": 570,
+      "sha256": "ef9982bdc744df80ce95cfffbd56b9185bf1f45c1b2cd73cca1a199c80e04c53"
+    },
+    {
+      "path": "SOURCES_AND_SCOPE.txt",
+      "bytes": 1347,
+      "sha256": "88fa2f60537d668bfe7958f4a29855429e6dc4970cd843201b8d997763e301cc"
+    },
+    {
+      "path": "START_HERE_KO.txt",
+      "bytes": 2779,
+      "sha256": "8ea5b62c106b0c3b2718d0b5725a7865148d3c258b0aec25d87a5306f78fc271"
+    }
+  ],
+  "validation": {
+    "utf8": true,
+    "json_parse": true,
+    "standalone_master_identical": true,
+    "app_tests_run": false,
+    "user_gpu_access": false
+  }
+}

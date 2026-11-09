@@ -1,0 +1,114 @@
+{
+  "_export": {
+    "type": "project-authored development regression extract",
+    "case": "N01",
+    "source_sha256": "0ca82bc6363098a829ac7a0fd413894ae65d6af55953af6d6d2c38bf8841995f",
+    "detail": "Only the original test question, table, model answer and subsequent question needed by the CPU regression are reproduced. Full private runtime record is stored locally."
+  },
+  "actual_messages": [
+    {
+      "role": "assistant",
+      "id": "development-example-N01",
+      "problem": {
+        "task_kind": "write_sql",
+        "dialect": "sqlite",
+        "raw_text": "SQLite에서 parcel_watch를 조회해 줘. delta가 0보다 작거나 rush가 1인 행을 고르고, parcel, delta, zone 열을 이 순서로 보여 줘. zone은 오름차순, 같은 zone에서는 delta 내림차순, 둘 다 같으면 parcel 내림차순으로 정렬해 줘. 원본 행이 조건을 통과하는 과정과 최종 순서를 설명해 줘.",
+        "source": {
+          "kind": "typed"
+        },
+        "revision": 5,
+        "confirmed": true,
+        "tables": [
+          {
+            "name": "parcel_watch",
+            "columns": [
+              {
+                "name": "parcel",
+                "type": "TEXT"
+              },
+              {
+                "name": "delta",
+                "type": "INTEGER"
+              },
+              {
+                "name": "rush",
+                "type": "INTEGER"
+              },
+              {
+                "name": "zone",
+                "type": "INTEGER"
+              }
+            ],
+            "rows": [
+              [
+                "P1",
+                null,
+                1,
+                1
+              ],
+              [
+                "P2",
+                0,
+                0,
+                2
+              ],
+              [
+                "P3",
+                -4,
+                0,
+                2
+              ],
+              [
+                "P4",
+                3,
+                1,
+                1
+              ],
+              [
+                "P5",
+                -4,
+                1,
+                1
+              ],
+              [
+                "P6",
+                0,
+                1,
+                2
+              ],
+              [
+                "P7",
+                2,
+                0,
+                1
+              ],
+              [
+                "P8",
+                null,
+                0,
+                2
+              ]
+            ]
+          }
+        ],
+        "missing_conditions": [],
+        "id": "problem-302be84abb98a2db"
+      },
+      "raw_model_response": "{\"sql\":\"SELECT parcel, delta, zone FROM parcel_watch WHERE delta < 0 OR rush = 1 ORDER BY zone, delta DESC, parcel DESC\",\"explanation\":\"WHERE 조건은 delta가 0보다 작거나 rush가 1인 행만 필터링하고, ORDER BY는 zone를 오름차순으로 정렬 후, 같은 zone 내에서 delta를 내림차순으로, delta와 같으면 parcel을 내림차순으로 정렬합니다. 원본 행은 조건을 통과하는 과정에서 delta와 rush의 값이 0보다 작거나 1인 행만 선택되고, 최종 순서는 zone, delta, parcel에 따라 정렬됩니다.\"}"
+    }
+  ],
+  "spec": {
+    "followup": {
+      "question": "선택한 P3은 왜 포함되고 P2는 왜 제외돼? 원본에서 delta가 NULL인 P1, delta가 0인 P6과도 같은 행 조건으로 비교해 줘. 지금 정렬의 우선순위와 동점 처리까지 설명하고 원래 수업으로 돌아가 줘.",
+      "column": "delta",
+      "row_index": 2,
+      "value": -4,
+      "source_row": [
+        "P3",
+        -4,
+        0,
+        2
+      ]
+    }
+  }
+}

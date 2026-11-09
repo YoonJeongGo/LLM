@@ -1,0 +1,74 @@
+[
+  {
+    "package": "react",
+    "version": "19.3.1",
+    "declared_license": "MIT",
+    "source": "web/node_modules/react/LICENSE",
+    "included": "docs/licenses/react-LICENSE.txt",
+    "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+    "byte_identical": true
+  },
+  {
+    "package": "react-dom",
+    "version": "19.3.1",
+    "declared_license": "MIT",
+    "source": "web/node_modules/react-dom/LICENSE",
+    "included": "docs/licenses/react-dom-LICENSE.txt",
+    "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+    "byte_identical": true
+  },
+  {
+    "package": "scheduler",
+    "version": "0.28.0",
+    "declared_license": "MIT",
+    "source": "web/node_modules/scheduler/LICENSE",
+    "included": "docs/licenses/scheduler-LICENSE.txt",
+    "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+    "byte_identical": true
+  },
+  {
+    "package": "lucide-react",
+    "version": "0.468.0",
+    "declared_license": "ISC",
+    "source": "web/node_modules/lucide-react/LICENSE",
+    "included": "docs/licenses/lucide-react-LICENSE.txt",
+    "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+    "byte_identical": true
+  },
+  {
+    "package": "katex",
+    "version": "0.16.47",
+    "declared_license": "MIT",
+    "source": "web/node_modules/katex/LICENSE",
+    "included": "docs/licenses/katex-LICENSE.txt",
+    "sha256": "766ccc1f306c885aa45542a9846bbd0a505b27a0374f146778171c2254ce18e3",
+    "byte_identical": true
+  },
+  {
+    "package": "ajv",
+    "version": "8.20.0",
+    "declared_license": "MIT",
+    "source": "web/node_modules/ajv/LICENSE",
+    "included": "docs/licenses/ajv-LICENSE.txt",
+    "sha256": "a05350a88e318e4f5f2c2a1ff1e2e88daa4dd38e6e78b71cccae422bdc762cc3",
+    "byte_identical": true
+  },
+  {
+    "package": "vite",
+    "version": "6.4.5",
+    "declared_license": "MIT",
+    "source": "web/node_modules/vite/LICENSE.md",
+    "included": "docs/licenses/vite-LICENSE.txt",
+    "sha256": "008938a3441801ca3960f8e3ccb4c0738e7996442a53063141d57d3769a7344d",
+    "byte_identical": true
+  },
+  {
+    "package": "sqlglot",
+    "version": "30.12.0",
+    "declared_license": "MIT",
+    "source": "D:\\LLM\\edu-tutor-local\\.venv\\Lib\\site-packages\\sqlglot-30.12.0.dist-info\\licenses\\LICENSE",
+    "included": "docs/licenses/sqlglot-LICENSE.txt",
+    "sha256": "b0bf909b472ddf9bd4eab30f6e6fd8b33bf3997ce038b882fe0663f291958d2d",
+    "byte_identical": true
+  }
+]

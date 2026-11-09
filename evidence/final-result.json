@@ -1,0 +1,121 @@
+{
+  "at": "2026-10-30T14:53:17.066794+00:00",
+  "version": "0.2.1",
+  "build": "r3-repair-final07",
+  "status": "BOUNDED_REPAIR_AND_VERIFICATION_COMPLETE_WITH_REMAINING_FAILURES",
+  "overall_completion": "PARTIAL",
+  "educational_readiness": "NOT_READY",
+  "human_review": "H_PENDING",
+  "student_ready": false,
+  "model": {
+    "name": "Qwen3-1.7B",
+    "adapter": null,
+    "precision": "BF16",
+    "speech": "Microsoft Heami Desktop / Windows SAPI",
+    "neural_observation": "OFF"
+  },
+  "metric": {
+    "name": "요구사항 검증 통과율",
+    "passed": 10,
+    "denominator": 16,
+    "percent": 62.5,
+    "partial_unverified_excluded": true,
+    "not_product_completion_percent": true,
+    "not_education_accuracy": true
+  },
+  "quality": {
+    "final06_development": {
+      "questions": 4,
+      "raw_sql_correct": 2,
+      "app_sql_correct": 4,
+      "substantive_answers": 4,
+      "content_passed": 16,
+      "content_total": 16,
+      "restore": 2,
+      "restore_total": 2,
+      "repeat_excluded": true
+    },
+    "final07_N01_development": {
+      "questions": 2,
+      "raw_sql_correct": 2,
+      "app_sql_correct": 2,
+      "substantive_answers": 2,
+      "content_passed": 8,
+      "content_total": 8,
+      "restore": 1,
+      "raw_explanation_error_persists": true,
+      "new_audio": 0
+    },
+    "latest_independent_N03": {
+      "build": "final04",
+      "submitted_questions": 1,
+      "substantive_answers": 0,
+      "model_attempts": 2,
+      "planned_followup_not_reached": 1,
+      "frozen_requirements_passed": 0,
+      "frozen_requirements_total": 9,
+      "not_rerun_after_failure": true
+    }
+  },
+  "timing_final07_seconds": {
+    "control_cold_cached_first": 35.2515,
+    "control_warm_cached_first": 17.8266,
+    "N01_cold_cached_first": 34.7406,
+    "N01_warm_cached_supplement_from_button": 17.8638,
+    "N01_native_stop": 0.0134,
+    "N01_return_audio_gap": 2.0881,
+    "N01_internal_step_gap_max": 1.362,
+    "J08_new_lesson_cold_cached_first": 30.9126,
+    "J08_server_cancel_terminal": 4.4055,
+    "first_valid_UI_text": "NOT_MEASURED",
+    "limits": "Native playing of linked explanation clip; no human listening judgment. Recorder changed, so no cross-version causal speedup percentage."
+  },
+  "remaining_problems": [
+    "New independent model response still malformed/semantically wrong; safe hold is not a correct answer.",
+    "Warm explanation and supplement exceed10s; return gap2.0881s exceeds2s. Load/storage variation cause not fully isolated.",
+    "Long-term stability and historical unexplained API/native I/O failures not resolved by controlled restart.",
+    "Human education/listening review0/5. Basic2D only; speech chunk streaming before full synthesis not implemented."
+  ],
+  "new_calls": {
+    "text": 31,
+    "new_audio_attempts": 29,
+    "vision": 0,
+    "model_work_seconds": 941.158,
+    "training": 0,
+    "download": 0,
+    "paid": 0,
+    "external_upload": 0
+  },
+  "tests": {
+    "current_runtime_related": 103,
+    "ordering_related": 162,
+    "web_unit": 73,
+    "web_browser": 56,
+    "web_build": "PASS",
+    "prior_broad_python": {
+      "passed": 816,
+      "skipped": 1,
+      "scope": "Earlier final02 source; not a whole-suite rerun of final07"
+    },
+    "logger": "See logger-repair/RESULT_KO.md; original payload equivalence and commit failure gates passed",
+    "overlapping_suites_not_summed": true
+  },
+  "resources_at_measurement": {
+    "text": 276,
+    "audio_attempts": 42,
+    "vision": 22,
+    "model_seconds": 14335.068,
+    "training": 0
+  },
+  "preservation": {
+    "passed": true,
+    "old_db_rows": 1347,
+    "old_audio_files": 138,
+    "old_ledger_requests": 412,
+    "old_student_caps": 14,
+    "new_student_caps_closed": 21,
+    "training2_reserved_seconds_preserved": 7200,
+    "source_configuration_files": 207,
+    "active_jobs": 0
+  }
+}

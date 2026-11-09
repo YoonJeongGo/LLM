@@ -1,0 +1,199 @@
+{
+  "schema_version": "1.0",
+  "lesson_id": "fixture_group_null_lesson",
+  "title": "NULL이 있는 급여의 부서별 평균",
+  "goal": "부서별로 행을 묶고 COUNT(*)와 COUNT(salary)의 차이를 설명한다.",
+  "question_text": "설명용 employees 표는 [[101, \"박강열\", \"개발\", 600], [102, \"유성재\", \"개발\", null], [103, \"양지훈\", \"운영\", 400], [104, \"박보성\", \"운영\", 800], [105, \"이승현\", \"개발\", 900], [106, \"김현수\", \"운영\", null]]입니다. 열 순서는 employee_id, name, dept, salary입니다. 부서별 전체 인원, 급여가 입력된 인원, 급여 합계와 평균을 구하고 NULL이 평균에 미치는 영향을 설명해 주세요. SQLite 기준입니다.",
+  "problem_source": "self_authored_example",
+  "provenance": "demo_fixture",
+  "source_refs": [],
+  "verification": {
+    "status": "fixture_sql_checked",
+    "scope": "이 지시서의 기대 결과와 SQLite 실행 결과의 대조만 수행.",
+    "limitations": [
+      "실제 LLM이 생성한 결과가 아니다.",
+      "앱·음성·GPU·학습이 검증된 것이 아니다.",
+      "소규모 설명용 예시이며 교육 전문성을 보장하지 않는다."
+    ]
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "title": "먼저 원본 행을 확인",
+      "speech": "지금 구할 것은 부서별 전체 인원과 급여의 개수, 합계, 평균입니다. 원본 표를 먼저 보겠습니다. NULL은 아직 입력되지 않은 값으로 표시되어 있습니다.",
+      "board_actions": [
+        {
+          "type": "table",
+          "element_id": "original",
+          "slot": "main",
+          "columns": [
+            "사번",
+            "이름",
+            "부서",
+            "급여"
+          ],
+          "rows": [
+            [
+              101,
+              "박강열",
+              "개발",
+              600
+            ],
+            [
+              102,
+              "유성재",
+              "개발",
+              null
+            ],
+            [
+              103,
+              "양지훈",
+              "운영",
+              400
+            ],
+            [
+              104,
+              "박보성",
+              "운영",
+              800
+            ],
+            [
+              105,
+              "이승현",
+              "개발",
+              900
+            ],
+            [
+              106,
+              "김현수",
+              "운영",
+              null
+            ]
+          ],
+          "caption": "설명용 원본 employees"
+        }
+      ],
+      "gesture": {
+        "kind": "look_board",
+        "target_element_id": "original"
+      }
+    },
+    {
+      "id": "s2",
+      "title": "SQL이 요구하는 작업",
+      "speech": "이 SQL은 부서별로 묶으라고 요구합니다. 카운트 별표는 행 수를 세고, 카운트 급여는 NULL이 아닌 급여를 셉니다. 합계와 평균도 급여가 있는 값으로 계산합니다.",
+      "board_actions": [
+        {
+          "type": "code",
+          "element_id": "query",
+          "slot": "bottom",
+          "language": "sql",
+          "code": "SELECT dept, COUNT(*) AS people, COUNT(salary) AS salary_count, SUM(salary) AS salary_sum, AVG(salary) AS salary_avg FROM employees GROUP BY dept ORDER BY dept;"
+        }
+      ],
+      "gesture": {
+        "kind": "point",
+        "target_element_id": "query"
+      }
+    },
+    {
+      "id": "s3",
+      "title": "개발 부서 계산",
+      "speech": "개발 부서의 급여는 600, NULL, 900입니다. 행은 세 개지만 급여가 있는 값은 두 개입니다. 합계 1500을 두 개로 나누므로 평균은 750입니다. 세 명으로 나누는 것이 아닙니다.",
+      "board_actions": [
+        {
+          "type": "highlight",
+          "target_element_id": "original",
+          "row_indices": [
+            0,
+            1,
+            4
+          ],
+          "style": "background"
+        },
+        {
+          "type": "equation",
+          "element_id": "dev_avg",
+          "slot": "right",
+          "latex": "(600+900)/2=750"
+        }
+      ],
+      "gesture": {
+        "kind": "write",
+        "target_element_id": "dev_avg"
+      }
+    },
+    {
+      "id": "s4",
+      "title": "운영 부서 계산",
+      "speech": "운영 부서도 세 행 중 급여가 있는 값은 두 개입니다. 400 더하기 800은 1200이고, 이를 두 개로 나누면 평균은 600입니다.",
+      "board_actions": [
+        {
+          "type": "highlight",
+          "target_element_id": "original",
+          "row_indices": [
+            2,
+            3,
+            5
+          ],
+          "style": "background"
+        },
+        {
+          "type": "equation",
+          "element_id": "ops_avg",
+          "slot": "right",
+          "latex": "(400+800)/2=600"
+        }
+      ],
+      "gesture": {
+        "kind": "write",
+        "target_element_id": "ops_avg"
+      }
+    },
+    {
+      "id": "s5",
+      "title": "최종 결과 비교",
+      "speech": "최종 결과입니다. 두 부서 모두 전체 인원은 세 명, 급여가 있는 인원은 두 명입니다. 개발 부서 평균은 750, 운영 부서 평균은 600입니다. 전체 행 수와 평균의 분모를 구분하는 것이 핵심입니다.",
+      "board_actions": [
+        {
+          "type": "clear",
+          "target": "all"
+        },
+        {
+          "type": "table",
+          "element_id": "result",
+          "slot": "main",
+          "columns": [
+            "부서",
+            "전체 인원",
+            "입력 급여 수",
+            "급여 합계",
+            "급여 평균"
+          ],
+          "rows": [
+            [
+              "개발",
+              3,
+              2,
+              1500,
+              750.0
+            ],
+            [
+              "운영",
+              3,
+              2,
+              1200,
+              600.0
+            ]
+          ],
+          "caption": "SQLite로 확인한 예제 기대 결과"
+        }
+      ],
+      "gesture": {
+        "kind": "point",
+        "target_element_id": "result"
+      }
+    }
+  ],
+  "final_summary": "COUNT(*)는 행 수를 세고, COUNT(salary)와 AVG(salary)는 salary가 NULL인 행을 계산 대상에서 제외한다. 개발 평균 1500÷2=750, 운영 평균 1200÷2=600."
+}

@@ -1,0 +1,36 @@
+{
+  "name": "edu-tutor-local-web",
+  "version": "0.2.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "test": "vitest run src",
+    "test:ui": "playwright test",
+    "test:live": "playwright test -c playwright.live.config.ts",
+    "test:t3": "playwright test -c playwright.t3.config.ts",
+    "test:admin": "node scripts/capture-admin.mjs",
+    "prebuild": "node scripts/compile-schema.mjs",
+    "pretest": "node scripts/compile-schema.mjs"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "katex": "^0.16.22",
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/katex": "^0.16.7",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "prettier": "^3.9.10",
+    "typescript": "^5.7.3",
+    "vite": "^6.4.1",
+    "vitest": "^3.2.4"
+  }
+}

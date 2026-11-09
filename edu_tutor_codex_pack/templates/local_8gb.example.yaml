@@ -1,0 +1,69 @@
+# 설정 초안. 실제 구현 config parser와 맞춰 완성할 것. 학습 완료 결과가 아님.
+project:
+  name: edu-tutor-local
+  locale: ko-KR
+  timezone: Asia/Seoul
+runtime:
+  host: 127.0.0.1
+  gpu_concurrency: 1
+  seed: 42
+  data_root: .local
+  runs_root: runs
+  context_tokens: 2048
+budgets:
+  new_model_download_gib: 20
+  disk_free_floor_gib: 20
+  smoke_optimizer_steps: 5
+  smoke_wall_seconds: 600
+  demo_optimizer_steps: 50
+  demo_wall_seconds: 900
+  integration_request_seconds: 300
+  bounded_error_attempts: 3
+models:
+  text:
+    id: Qwen/Qwen3-1.7B
+    revision: null # 실행 시 정확한 commit SHA 기록
+    quantization: nf4
+    enable_thinking: false
+  tts:
+    id: Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice
+    revision: null
+    language: Korean
+  vision:
+    id: Qwen/Qwen3-VL-2B-Instruct
+    revision: null
+training:
+  profile: demo
+  load_in_4bit: true
+  bnb_4bit_quant_type: nf4
+  bnb_4bit_use_double_quant: true
+  compute_dtype: auto_verified
+  lora_r: 8
+  lora_alpha: 16
+  lora_dropout: 0.05
+  target_modules: [q_proj, v_proj]
+  batch_size: 1
+  gradient_accumulation_steps: 8
+  learning_rate: 0.0001
+  max_sequence_length: 512
+  gradient_checkpointing: true
+  use_cache: false
+  packing: false
+  train_last_assistant_only: true
+  auto_promote_adapter: false
+retrieval:
+  provider: char_ngram_tfidf
+  ngram_range: [2, 4]
+  max_chunks: 3
+speech:
+  provider: qwen3_tts_local
+  sequential_gpu: true
+  browser_fallback_enabled: false
+vision:
+  max_file_mib: 10
+  max_image_megapixels: 20
+  require_confirmation_before_solve: true
+privacy:
+  cloud_provider_enabled: false
+  external_telemetry_enabled: false
+  auto_training_from_chat: false

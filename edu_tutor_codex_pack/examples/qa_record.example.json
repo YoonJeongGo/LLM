@@ -1,0 +1,122 @@
+{
+  "id": "fixture_group_null_001",
+  "subject": "SQLD 기초 실습",
+  "concept": "GROUP BY·COUNT·AVG와 NULL",
+  "difficulty": 2,
+  "problem_family_id": "fixture_group_null",
+  "split": "fixture",
+  "messages": [
+    {
+      "role": "user",
+      "content": "설명용 employees 표는 [[101, \"박강열\", \"개발\", 600], [102, \"유성재\", \"개발\", null], [103, \"양지훈\", \"운영\", 400], [104, \"박보성\", \"운영\", 800], [105, \"이승현\", \"개발\", 900], [106, \"김현수\", \"운영\", null]]입니다. 열 순서는 employee_id, name, dept, salary입니다. 부서별 전체 인원, 급여가 입력된 인원, 급여 합계와 평균을 구하고 NULL이 평균에 미치는 영향을 설명해 주세요. SQLite 기준입니다."
+    },
+    {
+      "role": "assistant",
+      "content": "구할 값은 부서별 전체 인원, 입력된 급여 수, 급여 합계와 평균입니다. GROUP BY dept는 개발과 운영으로 행을 묶습니다. 개발은 600, NULL, 900이므로 COUNT(*)=3, COUNT(salary)=2, SUM(salary)=1500, AVG(salary)=1500/2=750입니다. 운영은 400, 800, NULL이므로 각각 3, 2, 1200, 1200/2=600입니다. COUNT(*)는 행을 세지만 COUNT(salary)와 AVG(salary)는 NULL 급여를 제외합니다. 실제 문제와 별개로 만든 설명용 예시입니다."
+    }
+  ],
+  "source": {
+    "kind": "self_authored_demo",
+    "title": "이 지시서용 새 SQL 예제",
+    "rights_note": "교재나 기출을 복사하지 않은 작성 예시. 실제 앱의 성능 검증 자료가 아님.",
+    "created_by": "assistant_generated_fixture"
+  },
+  "review_status": "generated_unreviewed",
+  "demo_only": true,
+  "sql_dialect": "sqlite",
+  "fixture": {
+    "tables": [
+      {
+        "name": "employees",
+        "columns": [
+          {
+            "name": "employee_id",
+            "type": "INTEGER"
+          },
+          {
+            "name": "name",
+            "type": "TEXT"
+          },
+          {
+            "name": "dept",
+            "type": "TEXT"
+          },
+          {
+            "name": "salary",
+            "type": "REAL"
+          }
+        ],
+        "rows": [
+          [
+            101,
+            "박강열",
+            "개발",
+            600
+          ],
+          [
+            102,
+            "유성재",
+            "개발",
+            null
+          ],
+          [
+            103,
+            "양지훈",
+            "운영",
+            400
+          ],
+          [
+            104,
+            "박보성",
+            "운영",
+            800
+          ],
+          [
+            105,
+            "이승현",
+            "개발",
+            900
+          ],
+          [
+            106,
+            "김현수",
+            "운영",
+            null
+          ]
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "sql": "SELECT dept, COUNT(*) AS people, COUNT(salary) AS salary_count, SUM(salary) AS salary_sum, AVG(salary) AS salary_avg FROM employees GROUP BY dept ORDER BY dept;",
+    "columns": [
+      "dept",
+      "people",
+      "salary_count",
+      "salary_sum",
+      "salary_avg"
+    ],
+    "rows": [
+      [
+        "개발",
+        3,
+        2,
+        1500,
+        750.0
+      ],
+      [
+        "운영",
+        3,
+        2,
+        1200,
+        600.0
+      ]
+    ],
+    "row_order": "ordered",
+    "numeric_abs_tolerance": 1e-09
+  },
+  "verification_notes": [
+    "이 팩 작성 시 예제 SQL의 기대 결과만 SQLite로 대조한다. 실제 LLM 실행·추가 학습·교육 성능 검증을 뜻하지 않는다.",
+    "fixture를 train과 test 양쪽에 중복 포함하지 않는다."
+  ]
+}

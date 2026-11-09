@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "id": "local-tutor-default-v1",
+  "name": "기본 아바타",
+  "type": "self_authored_svg_component",
+  "source": "src/Classroom.tsx#Avatar",
+  "license": "CC0-1.0",
+  "rights_note": "이 프로젝트에서 직접 코드로 제작한 벡터 캐릭터입니다. 특정 실존 인물을 표현하지 않습니다.",
+  "canvas": {
+    "width": 160,
+    "height": 220
+  },
+  "origin": {
+    "x": 0.5,
+    "y": 1
+  },
+  "anchors": {
+    "mouth": [0.506, 0.386],
+    "eyes": [0.5, 0.3],
+    "pointer_hand": [0.0875, 0.6090909090909091],
+    "pointer_shoulder": [0.375, 0.5318181818181819]
+  },
+  "states": ["idle", "look_board", "point", "write", "explain"],
+  "mouth_driver": "decoded_audio_50ms_RMS_not_phoneme_lipsync",
+  "pointer": "single_shoulder_rotation_toward_actual_DOM_target_plus_hand_to_target_guide",
+  "replacement": {
+    "type": "static_png",
+    "max_bytes": 5242880,
+    "max_pixels": 16000000,
+    "full_rigging": false
+  },
+  "limitations": [
+    "어깨 한 관절을 회전하는 단순 2D 동작이며 실제 필기 획순이나 완전 리깅이 아닙니다.",
+    "사용자 PNG는 정적 이미지이며 포인터 안내만 제공합니다."
+  ]
+}

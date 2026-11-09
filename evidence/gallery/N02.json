@@ -1,0 +1,1635 @@
+{
+  "id": "N02",
+  "title": "숫자 조건·NULL/0 비교·다중 정렬 및 보충",
+  "human_status": "H_PENDING",
+  "source_classification": "final06 개발 회귀 실제 수업; 새 독립 평가 아님",
+  "source_collector_status": "COMPLETED_ACTUAL_JOURNEY_H_PENDING",
+  "question": "dispatch_stock에서 status가 ready이고 qty가 NULL이 아닌 행 중, qty가 0이거나 5 이상인 행을 찾아 줘. 출력 열은 item, qty, batch야. batch 내림차순, 그 안에서는 qty 오름차순, 두 값이 같으면 item 오름차순으로 정렬하는 SQLite SQL과 원본에서 결과까지의 과정을 설명해 줘.",
+  "followup_question": "선택한 M1은 왜 포함돼? qty가 NULL인 원본 M2와, qty가 똑같이 0인데 빠진 M7을 비교해 줘. 현재 정렬에서 값이 같은 행들의 순서도 설명해 줘. 추가로, 별도의 빈 입력 상황이라면 SUM(qty), COUNT(qty), COUNT(*)가 각각 무엇을 반환하는지 구분하고 원래 수업으로 돌아가 줘.",
+  "original_test_tables": [
+    {
+      "name": "dispatch_stock",
+      "columns": [
+        {
+          "name": "item",
+          "type": "TEXT"
+        },
+        {
+          "name": "qty",
+          "type": "INTEGER"
+        },
+        {
+          "name": "batch",
+          "type": "INTEGER"
+        },
+        {
+          "name": "status",
+          "type": "TEXT"
+        }
+      ],
+      "rows": [
+        [
+          "M1",
+          0,
+          2,
+          "ready"
+        ],
+        [
+          "M2",
+          null,
+          2,
+          "ready"
+        ],
+        [
+          "M3",
+          5,
+          3,
+          "ready"
+        ],
+        [
+          "M4",
+          5,
+          3,
+          "ready"
+        ],
+        [
+          "M5",
+          -1,
+          4,
+          "ready"
+        ],
+        [
+          "M6",
+          2,
+          3,
+          "ready"
+        ],
+        [
+          "M7",
+          0,
+          2,
+          "hold"
+        ],
+        [
+          "M8",
+          0,
+          2,
+          "ready"
+        ]
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "role": "원래 수업",
+      "raw_model_response": "{\"sql\":\"SELECT item, qty, batch FROM dispatch_stock WHERE status = 'ready' AND qty IS NOT NULL AND qty IN (0, 5) ORDER BY batch DESC, qty ASC, item ASC\",\"explanation\":\"status가 'ready'이고 qty가 NULL이 아닌 행만 선택합니다. qty가 0 또는 5 이상인 행만 필터링하고, batch 내림차순, qty 오름차순, item 오름차순으로 정렬합니다.\"}",
+      "app_display_response": "확정한 원본 문제를 기준으로 도구가 계산한 결과입니다. 모델 초안과 구분합니다.\n모델 SQL에 질문 의도와 다른 부분이 있어 앱이 확인된 연산으로 다시 구성했습니다. 원시 답변과 오류 기록은 보존했습니다.\n```sql\nSELECT \"item\", \"qty\", \"batch\" FROM \"dispatch_stock\" WHERE (status = 'ready' AND NOT qty IS NULL) AND ((qty = 0 OR qty >= 5)) ORDER BY \"batch\" DESC, \"qty\" ASC, \"item\" ASC\n```\nitem | qty | batch\nM3 | 5 | 3\nM4 | 5 | 3\nM1 | 0 | 2\nM8 | 0 | 2",
+      "steps": [
+        {
+          "id": "s1",
+          "title": "원본 행과 조건값",
+          "speech": "SQLite에서 각 행의 WHERE 조건을 계산합니다. 원본 8행 중 TRUE인 4행만 남습니다. FALSE와 UNKNOWN은 제외합니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "table",
+              "caption": "확정한 원본 표",
+              "table_name": "dispatch_stock",
+              "columns": [
+                "item",
+                "qty",
+                "batch",
+                "status"
+              ],
+              "rows": [
+                [
+                  "M1",
+                  0,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M2",
+                  null,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M3",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M4",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M5",
+                  -1,
+                  4,
+                  "ready"
+                ],
+                [
+                  "M6",
+                  2,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M7",
+                  0,
+                  2,
+                  "hold"
+                ],
+                [
+                  "M8",
+                  0,
+                  2,
+                  "ready"
+                ]
+              ],
+              "slot": "main",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "code",
+              "language": "sql",
+              "code": "SELECT \"item\", \"qty\", \"batch\" FROM \"dispatch_stock\" WHERE (status = 'ready' AND NOT qty IS NULL) AND ((qty = 0 OR qty >= 5)) ORDER BY \"batch\" DESC, \"qty\" ASC, \"item\" ASC",
+              "slot": "right",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "table",
+              "caption": "WHERE (status = 'ready' AND NOT qty IS NULL) AND ((qty = 0 OR qty >= 5))",
+              "columns": [
+                "원본 행",
+                "WHERE 결과",
+                "남는가"
+              ],
+              "rows": [
+                [
+                  1,
+                  "TRUE",
+                  "유지"
+                ],
+                [
+                  2,
+                  "FALSE",
+                  "제외"
+                ],
+                [
+                  3,
+                  "TRUE",
+                  "유지"
+                ],
+                [
+                  4,
+                  "TRUE",
+                  "유지"
+                ],
+                [
+                  5,
+                  "FALSE",
+                  "제외"
+                ],
+                [
+                  6,
+                  "FALSE",
+                  "제외"
+                ],
+                [
+                  7,
+                  "FALSE",
+                  "제외"
+                ],
+                [
+                  8,
+                  "TRUE",
+                  "유지"
+                ]
+              ],
+              "slot": "bottom",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "highlight",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            }
+          ],
+          "audio": "audio/N02-1-s1.wav"
+        },
+        {
+          "id": "s2",
+          "title": "정렬 기준과 원본 행 연결",
+          "speech": "1순위는 batch의 내림차순, NULL은 뒤에 둡니다. 2순위는 qty의 오름차순, NULL은 앞에 둡니다. 3순위는 item의 오름차순, NULL은 앞에 둡니다. 앞 기준의 값이 같을 때만 다음 기준으로 비교합니다. 모든 정렬 기준이 같은 행끼리의 순서는 따로 정하지 않았습니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "clear"
+            },
+            {
+              "type": "clear"
+            },
+            {
+              "type": "table",
+              "caption": "조건을 통과한 원본 행 · 이번 실행의 정렬",
+              "columns": [
+                "item",
+                "qty",
+                "batch",
+                "status"
+              ],
+              "rows": [
+                [
+                  "M3",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M4",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M1",
+                  0,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M8",
+                  0,
+                  2,
+                  "ready"
+                ]
+              ],
+              "slot": "right",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "text",
+              "text": "1순위는 batch의 내림차순, NULL은 뒤에 둡니다. 2순위는 qty의 오름차순, NULL은 앞에 둡니다. 3순위는 item의 오름차순, NULL은 앞에 둡니다. 앞 기준의 값이 같을 때만 다음 기준으로 비교합니다. 모든 정렬 기준이 같은 행끼리의 순서는 따로 정하지 않았습니다.",
+              "slot": "bottom"
+            },
+            {
+              "type": "arrow"
+            }
+          ],
+          "audio": "audio/N02-1-s2.wav"
+        },
+        {
+          "id": "s3",
+          "title": "출력 열과 최종 결과",
+          "speech": "남은 행에서 item, qty, batch 열을 요청한 순서로 출력합니다. 최종 결과는 4행입니다. ORDER BY에서 지정한 기준의 순서입니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "clear"
+            },
+            {
+              "type": "clear"
+            },
+            {
+              "type": "table",
+              "caption": "SQLite 최종 결과 · 원본 행과 열 식별자 유지",
+              "columns": [
+                "item",
+                "qty",
+                "batch"
+              ],
+              "rows": [
+                [
+                  "M3",
+                  5,
+                  3
+                ],
+                [
+                  "M4",
+                  5,
+                  3
+                ],
+                [
+                  "M1",
+                  0,
+                  2
+                ],
+                [
+                  "M8",
+                  0,
+                  2
+                ]
+              ],
+              "slot": "bottom",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "text",
+              "text": "출력 열 순서: item → qty → batch\n1순위는 batch의 내림차순, NULL은 뒤에 둡니다. 2순위는 qty의 오름차순, NULL은 앞에 둡니다. 3순위는 item의 오름차순, NULL은 앞에 둡니다. 앞 기준의 값이 같을 때만 다음 기준으로 비교합니다. 모든 정렬 기준이 같은 행끼리의 순서는 따로 정하지 않았습니다.",
+              "slot": "right"
+            },
+            {
+              "type": "arrow"
+            }
+          ],
+          "audio": "audio/N02-1-s3.wav"
+        }
+      ]
+    },
+    {
+      "role": "첫 보충 설명",
+      "raw_model_response": "{\"sql\":\"SELECT item, qty, batch FROM dispatch_stock WHERE status = 'ready' AND qty IS NOT NULL ORDER BY batch DESC, qty ASC, item ASC\",\"explanation\":\"SELECT item, qty, batch FROM dispatch_stock WHERE status = 'ready' AND qty IS NOT NULL ORDER BY batch DESC, qty ASC, item ASC는 status가 'ready'이고 qty가 NULL이 아닌 행만 선택하고, batch 내림차순, qty 오름차순, qty가 같으면 item 오름차순으로 정렬합니다.\"}",
+      "app_display_response": "확정한 원본 문제를 기준으로 도구가 계산한 결과입니다. 모델 초안과 구분합니다.\n모델 SQL에 질문 의도와 다른 부분이 있어 앱이 확인된 연산으로 다시 구성했습니다. 원시 답변과 오류 기록은 보존했습니다.\n```sql\nSELECT \"item\", \"qty\", \"batch\" FROM \"dispatch_stock\" WHERE (status = 'ready' AND NOT qty IS NULL) AND ((qty = 0 OR qty >= 5)) ORDER BY \"batch\" DESC, \"qty\" ASC, \"item\" ASC\n```\nitem | qty | batch\nM3 | 5 | 3\nM4 | 5 | 3\nM1 | 0 | 2\nM8 | 0 | 2",
+      "steps": [
+        {
+          "id": "s1",
+          "title": "선택한 원본 행의 포함 이유",
+          "speech": "원본 1행을 확인합니다. status의 값 ready과 ready이 같다는 비교의 결과는 TRUE입니다. qty의 값은 0이고, NULL이라는 조건의 결과는 FALSE입니다. 판서의 NOT (\"qty\" IS NULL) 조건 결과는 TRUE입니다. qty의 값 0과 0이 같다는 비교의 결과는 TRUE입니다. qty의 값 0이 5보다 크거나 같다는 비교의 결과는 FALSE입니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "table",
+              "caption": "확정한 원본 표",
+              "table_name": "dispatch_stock",
+              "columns": [
+                "item",
+                "qty",
+                "batch",
+                "status"
+              ],
+              "rows": [
+                [
+                  "M1",
+                  0,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M2",
+                  null,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M3",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M4",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M5",
+                  -1,
+                  4,
+                  "ready"
+                ],
+                [
+                  "M6",
+                  2,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M7",
+                  0,
+                  2,
+                  "hold"
+                ],
+                [
+                  "M8",
+                  0,
+                  2,
+                  "ready"
+                ]
+              ],
+              "slot": "main",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "code",
+              "language": "sql",
+              "code": "SELECT \"item\", \"qty\", \"batch\" FROM \"dispatch_stock\" WHERE (status = 'ready' AND NOT qty IS NULL) AND ((qty = 0 OR qty >= 5)) ORDER BY \"batch\" DESC, \"qty\" ASC, \"item\" ASC",
+              "slot": "right",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "highlight",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "table",
+              "caption": "검증한 SELECT 결과",
+              "columns": [
+                "item",
+                "qty",
+                "batch"
+              ],
+              "rows": [
+                [
+                  "M3",
+                  5,
+                  3
+                ],
+                [
+                  "M4",
+                  5,
+                  3
+                ],
+                [
+                  "M1",
+                  0,
+                  2
+                ],
+                [
+                  "M8",
+                  0,
+                  2
+                ]
+              ],
+              "slot": "bottom",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "text",
+              "text": "원본 1행을 확인합니다. status의 값 ready과 ready이 같다는 비교의 결과는 TRUE입니다. qty의 값은 0이고, NULL이라는 조건의 결과는 FALSE입니다. 판서의 NOT (\"qty\" IS NULL) 조건 결과는 TRUE입니다. qty의 값 0과 0이 같다는 비교의 결과는 TRUE입니다. qty의 값 0이 5보다 크거나 같다는 비교의 결과는 FALSE입니다.",
+              "slot": "right"
+            }
+          ],
+          "audio": "audio/N02-2-s1.wav"
+        },
+        {
+          "id": "s2",
+          "title": "선택한 원본 행의 포함 이유",
+          "speech": "AND는 조건이 모두 TRUE여야 TRUE입니다. OR는 조건 중 하나라도 TRUE이면 TRUE입니다. 전체 WHERE 결과는 TRUE이므로 이 행은 남습니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "clear"
+            },
+            {
+              "type": "table",
+              "caption": "확정한 원본 표",
+              "table_name": "dispatch_stock",
+              "columns": [
+                "item",
+                "qty",
+                "batch",
+                "status"
+              ],
+              "rows": [
+                [
+                  "M1",
+                  0,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M2",
+                  null,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M3",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M4",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M5",
+                  -1,
+                  4,
+                  "ready"
+                ],
+                [
+                  "M6",
+                  2,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M7",
+                  0,
+                  2,
+                  "hold"
+                ],
+                [
+                  "M8",
+                  0,
+                  2,
+                  "ready"
+                ]
+              ],
+              "slot": "main",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "code",
+              "language": "sql",
+              "code": "SELECT \"item\", \"qty\", \"batch\" FROM \"dispatch_stock\" WHERE (status = 'ready' AND NOT qty IS NULL) AND ((qty = 0 OR qty >= 5)) ORDER BY \"batch\" DESC, \"qty\" ASC, \"item\" ASC",
+              "slot": "right",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "highlight",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "table",
+              "caption": "검증한 SELECT 결과",
+              "columns": [
+                "item",
+                "qty",
+                "batch"
+              ],
+              "rows": [
+                [
+                  "M3",
+                  5,
+                  3
+                ],
+                [
+                  "M4",
+                  5,
+                  3
+                ],
+                [
+                  "M1",
+                  0,
+                  2
+                ],
+                [
+                  "M8",
+                  0,
+                  2
+                ]
+              ],
+              "slot": "bottom",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "text",
+              "text": "AND는 조건이 모두 TRUE여야 TRUE입니다. OR는 조건 중 하나라도 TRUE이면 TRUE입니다. 전체 WHERE 결과는 TRUE이므로 이 행은 남습니다.",
+              "slot": "right"
+            }
+          ],
+          "audio": "audio/N02-2-s2.wav"
+        },
+        {
+          "id": "s3",
+          "title": "같은 원본의 NULL·0 비교",
+          "speech": "같은 원본에서 지정한 행의 qty 값과 조건 결과를 비교합니다. NULL은 값이 없음을 나타내고, 숫자 0은 실제 값입니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "clear"
+            },
+            {
+              "type": "table",
+              "caption": "확정한 원본 표",
+              "table_name": "dispatch_stock",
+              "columns": [
+                "item",
+                "qty",
+                "batch",
+                "status"
+              ],
+              "rows": [
+                [
+                  "M1",
+                  0,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M2",
+                  null,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M3",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M4",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M5",
+                  -1,
+                  4,
+                  "ready"
+                ],
+                [
+                  "M6",
+                  2,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M7",
+                  0,
+                  2,
+                  "hold"
+                ],
+                [
+                  "M8",
+                  0,
+                  2,
+                  "ready"
+                ]
+              ],
+              "slot": "main",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "table",
+              "caption": "비교하는 원본 행 번호: 1, 2, 7",
+              "columns": [
+                "item",
+                "qty",
+                "batch",
+                "status"
+              ],
+              "rows": [
+                [
+                  "M1",
+                  0,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M2",
+                  null,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M7",
+                  0,
+                  2,
+                  "hold"
+                ]
+              ],
+              "slot": "bottom",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "highlight"
+            },
+            {
+              "type": "text",
+              "text": "같은 원본에서 지정한 행의 qty 값과 조건 결과를 비교합니다. NULL은 값이 없음을 나타내고, 숫자 0은 실제 값입니다.",
+              "slot": "right"
+            }
+          ],
+          "audio": "audio/N02-2-s3.wav"
+        },
+        {
+          "id": "s4",
+          "title": "원본 행별 조건과 계산 입력",
+          "speech": "원본 2행의 qty 값은 NULL입니다. 원본 2행을 확인합니다. status의 값 ready과 ready이 같다는 비교의 결과는 TRUE입니다. qty의 값은 NULL이고, NULL이라는 조건의 결과는 TRUE입니다. 판서의 NOT (\"qty\" IS NULL) 조건 결과는 FALSE입니다. qty의 값 NULL과 0이 같다는 비교의 결과는 UNKNOWN입니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "clear"
+            },
+            {
+              "type": "table",
+              "caption": "확정한 원본 표",
+              "table_name": "dispatch_stock",
+              "columns": [
+                "item",
+                "qty",
+                "batch",
+                "status"
+              ],
+              "rows": [
+                [
+                  "M1",
+                  0,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M2",
+                  null,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M3",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M4",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M5",
+                  -1,
+                  4,
+                  "ready"
+                ],
+                [
+                  "M6",
+                  2,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M7",
+                  0,
+                  2,
+                  "hold"
+                ],
+                [
+                  "M8",
+                  0,
+                  2,
+                  "ready"
+                ]
+              ],
+              "slot": "main",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "table",
+              "caption": "비교하는 원본 행 번호: 1, 2, 7",
+              "columns": [
+                "item",
+                "qty",
+                "batch",
+                "status"
+              ],
+              "rows": [
+                [
+                  "M1",
+                  0,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M2",
+                  null,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M7",
+                  0,
+                  2,
+                  "hold"
+                ]
+              ],
+              "slot": "bottom",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "highlight"
+            },
+            {
+              "type": "text",
+              "text": "원본 2행의 qty 값은 NULL입니다. 원본 2행을 확인합니다. status의 값 ready과 ready이 같다는 비교의 결과는 TRUE입니다. qty의 값은 NULL이고, NULL이라는 조건의 결과는 TRUE입니다. 판서의 NOT (\"qty\" IS NULL) 조건 결과는 FALSE입니다. qty의 값 NULL과 0이 같다는 비교의 결과는 UNKNOWN입니다.",
+              "slot": "right"
+            }
+          ],
+          "audio": "audio/N02-2-s4.wav"
+        },
+        {
+          "id": "s5",
+          "title": "원본 행별 조건과 계산 입력",
+          "speech": "qty의 값 NULL이 5보다 크거나 같다는 비교의 결과는 UNKNOWN입니다. AND는 조건이 모두 TRUE여야 TRUE입니다. OR는 조건 중 하나라도 TRUE이면 TRUE입니다. 전체 WHERE 결과는 FALSE이므로 이 행은 제외됩니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "clear"
+            },
+            {
+              "type": "table",
+              "caption": "확정한 원본 표",
+              "table_name": "dispatch_stock",
+              "columns": [
+                "item",
+                "qty",
+                "batch",
+                "status"
+              ],
+              "rows": [
+                [
+                  "M1",
+                  0,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M2",
+                  null,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M3",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M4",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M5",
+                  -1,
+                  4,
+                  "ready"
+                ],
+                [
+                  "M6",
+                  2,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M7",
+                  0,
+                  2,
+                  "hold"
+                ],
+                [
+                  "M8",
+                  0,
+                  2,
+                  "ready"
+                ]
+              ],
+              "slot": "main",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "table",
+              "caption": "비교하는 원본 행 번호: 1, 2, 7",
+              "columns": [
+                "item",
+                "qty",
+                "batch",
+                "status"
+              ],
+              "rows": [
+                [
+                  "M1",
+                  0,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M2",
+                  null,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M7",
+                  0,
+                  2,
+                  "hold"
+                ]
+              ],
+              "slot": "bottom",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "highlight"
+            },
+            {
+              "type": "text",
+              "text": "qty의 값 NULL이 5보다 크거나 같다는 비교의 결과는 UNKNOWN입니다. AND는 조건이 모두 TRUE여야 TRUE입니다. OR는 조건 중 하나라도 TRUE이면 TRUE입니다. 전체 WHERE 결과는 FALSE이므로 이 행은 제외됩니다.",
+              "slot": "right"
+            }
+          ],
+          "audio": "audio/N02-2-s5.wav"
+        },
+        {
+          "id": "s6",
+          "title": "원본 행별 조건과 계산 입력",
+          "speech": "원본 7행의 qty 값은 0입니다. 원본 7행을 확인합니다. status의 값 hold과 ready이 같다는 비교의 결과는 FALSE입니다. qty의 값은 0이고, NULL이라는 조건의 결과는 FALSE입니다. 판서의 NOT (\"qty\" IS NULL) 조건 결과는 TRUE입니다. qty의 값 0과 0이 같다는 비교의 결과는 TRUE입니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "clear"
+            },
+            {
+              "type": "table",
+              "caption": "확정한 원본 표",
+              "table_name": "dispatch_stock",
+              "columns": [
+                "item",
+                "qty",
+                "batch",
+                "status"
+              ],
+              "rows": [
+                [
+                  "M1",
+                  0,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M2",
+                  null,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M3",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M4",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M5",
+                  -1,
+                  4,
+                  "ready"
+                ],
+                [
+                  "M6",
+                  2,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M7",
+                  0,
+                  2,
+                  "hold"
+                ],
+                [
+                  "M8",
+                  0,
+                  2,
+                  "ready"
+                ]
+              ],
+              "slot": "main",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "table",
+              "caption": "비교하는 원본 행 번호: 1, 2, 7",
+              "columns": [
+                "item",
+                "qty",
+                "batch",
+                "status"
+              ],
+              "rows": [
+                [
+                  "M1",
+                  0,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M2",
+                  null,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M7",
+                  0,
+                  2,
+                  "hold"
+                ]
+              ],
+              "slot": "bottom",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "highlight"
+            },
+            {
+              "type": "text",
+              "text": "원본 7행의 qty 값은 0입니다. 원본 7행을 확인합니다. status의 값 hold과 ready이 같다는 비교의 결과는 FALSE입니다. qty의 값은 0이고, NULL이라는 조건의 결과는 FALSE입니다. 판서의 NOT (\"qty\" IS NULL) 조건 결과는 TRUE입니다. qty의 값 0과 0이 같다는 비교의 결과는 TRUE입니다.",
+              "slot": "right"
+            }
+          ],
+          "audio": "audio/N02-2-s6.wav"
+        },
+        {
+          "id": "s7",
+          "title": "원본 행별 조건과 계산 입력",
+          "speech": "qty의 값 0이 5보다 크거나 같다는 비교의 결과는 FALSE입니다. AND는 조건이 모두 TRUE여야 TRUE입니다. OR는 조건 중 하나라도 TRUE이면 TRUE입니다. 전체 WHERE 결과는 FALSE이므로 이 행은 제외됩니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "clear"
+            },
+            {
+              "type": "table",
+              "caption": "확정한 원본 표",
+              "table_name": "dispatch_stock",
+              "columns": [
+                "item",
+                "qty",
+                "batch",
+                "status"
+              ],
+              "rows": [
+                [
+                  "M1",
+                  0,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M2",
+                  null,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M3",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M4",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M5",
+                  -1,
+                  4,
+                  "ready"
+                ],
+                [
+                  "M6",
+                  2,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M7",
+                  0,
+                  2,
+                  "hold"
+                ],
+                [
+                  "M8",
+                  0,
+                  2,
+                  "ready"
+                ]
+              ],
+              "slot": "main",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "table",
+              "caption": "비교하는 원본 행 번호: 1, 2, 7",
+              "columns": [
+                "item",
+                "qty",
+                "batch",
+                "status"
+              ],
+              "rows": [
+                [
+                  "M1",
+                  0,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M2",
+                  null,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M7",
+                  0,
+                  2,
+                  "hold"
+                ]
+              ],
+              "slot": "bottom",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "highlight"
+            },
+            {
+              "type": "text",
+              "text": "qty의 값 0이 5보다 크거나 같다는 비교의 결과는 FALSE입니다. AND는 조건이 모두 TRUE여야 TRUE입니다. OR는 조건 중 하나라도 TRUE이면 TRUE입니다. 전체 WHERE 결과는 FALSE이므로 이 행은 제외됩니다.",
+              "slot": "right"
+            }
+          ],
+          "audio": "audio/N02-2-s7.wav"
+        },
+        {
+          "id": "s8",
+          "title": "현재 결과의 정렬 근거",
+          "speech": "현재 단계 이후의 정렬 기준도 확인합니다. 정렬 우선순위는 batch의 내림차순, qty의 오름차순, item의 오름차순입니다. 앞 값이 같을 때만 다음 기준을 봅니다. 이번 실행에서 선택한 원본 1행은 3번째입니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "clear"
+            },
+            {
+              "type": "table",
+              "caption": "확정한 원본 표",
+              "table_name": "dispatch_stock",
+              "columns": [
+                "item",
+                "qty",
+                "batch",
+                "status"
+              ],
+              "rows": [
+                [
+                  "M1",
+                  0,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M2",
+                  null,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M3",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M4",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M5",
+                  -1,
+                  4,
+                  "ready"
+                ],
+                [
+                  "M6",
+                  2,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M7",
+                  0,
+                  2,
+                  "hold"
+                ],
+                [
+                  "M8",
+                  0,
+                  2,
+                  "ready"
+                ]
+              ],
+              "slot": "main",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "text",
+              "text": "현재 단계 이후의 정렬 기준도 확인합니다. 정렬 우선순위는 batch의 내림차순, qty의 오름차순, item의 오름차순입니다. 앞 값이 같을 때만 다음 기준을 봅니다. 이번 실행에서 선택한 원본 1행은 3번째입니다.",
+              "slot": "right"
+            }
+          ],
+          "audio": "audio/N02-2-s8.wav"
+        },
+        {
+          "id": "s9",
+          "title": "원본 값으로 확인하는 정렬과 동점",
+          "speech": "원본 3행(item=M3)과 원본 4행(item=M4)은 batch=3, qty=5까지 같고, 처음 다른 기준이 item입니다. M3과 M4을 오름차순으로 비교해 원본 3행이 앞섭니다. 원본 4행(item=M4)과 원본 1행(item=M1)은 처음 다른 기준이 batch입니다. 3과 2을 내림차순으로 비교해 원본 4행이 앞섭니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "clear"
+            },
+            {
+              "type": "table",
+              "caption": "확정한 원본 표",
+              "table_name": "dispatch_stock",
+              "columns": [
+                "item",
+                "qty",
+                "batch",
+                "status"
+              ],
+              "rows": [
+                [
+                  "M1",
+                  0,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M2",
+                  null,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M3",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M4",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M5",
+                  -1,
+                  4,
+                  "ready"
+                ],
+                [
+                  "M6",
+                  2,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M7",
+                  0,
+                  2,
+                  "hold"
+                ],
+                [
+                  "M8",
+                  0,
+                  2,
+                  "ready"
+                ]
+              ],
+              "slot": "main",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "table",
+              "caption": "원본 행으로 확인한 정렬 비교 · 완전 동점은 순서 미지정",
+              "columns": [
+                "앞에 표시된 행",
+                "뒤에 표시된 행",
+                "같은 앞 기준",
+                "처음 다른 기준",
+                "앞 / 뒤 값",
+                "정렬 근거"
+              ],
+              "rows": [
+                [
+                  "원본 3행(item=M3)",
+                  "원본 4행(item=M4)",
+                  "batch=3, qty=5",
+                  "item",
+                  "M3 / M4",
+                  "item ASC · 원본 3행 먼저"
+                ],
+                [
+                  "원본 4행(item=M4)",
+                  "원본 1행(item=M1)",
+                  "없음",
+                  "batch",
+                  "3 / 2",
+                  "batch DESC · 원본 4행 먼저"
+                ],
+                [
+                  "원본 1행(item=M1)",
+                  "원본 8행(item=M8)",
+                  "batch=2, qty=0",
+                  "item",
+                  "M1 / M8",
+                  "item ASC · 원본 1행 먼저"
+                ]
+              ],
+              "slot": "bottom"
+            },
+            {
+              "type": "text",
+              "text": "원본 3행(item=M3)과 원본 4행(item=M4)은 batch=3, qty=5까지 같고, 처음 다른 기준이 item입니다. M3과 M4을 오름차순으로 비교해 원본 3행이 앞섭니다. 원본 4행(item=M4)과 원본 1행(item=M1)은 처음 다른 기준이 batch입니다. 3과 2을 내림차순으로 비교해 원본 4행이 앞섭니다.",
+              "slot": "right"
+            }
+          ],
+          "audio": "audio/N02-2-s9.wav"
+        },
+        {
+          "id": "s10",
+          "title": "원본 값으로 확인하는 정렬과 동점",
+          "speech": "원본 1행(item=M1)과 원본 8행(item=M8)은 batch=2, qty=0까지 같고, 처음 다른 기준이 item입니다. M1과 M8을 오름차순으로 비교해 원본 1행이 앞섭니다. 현재 결과에는 모든 정렬 키가 같은 행이 없습니다. 모든 키가 같다면 그 행들 사이 순서는 보장되지 않습니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "clear"
+            },
+            {
+              "type": "table",
+              "caption": "확정한 원본 표",
+              "table_name": "dispatch_stock",
+              "columns": [
+                "item",
+                "qty",
+                "batch",
+                "status"
+              ],
+              "rows": [
+                [
+                  "M1",
+                  0,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M2",
+                  null,
+                  2,
+                  "ready"
+                ],
+                [
+                  "M3",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M4",
+                  5,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M5",
+                  -1,
+                  4,
+                  "ready"
+                ],
+                [
+                  "M6",
+                  2,
+                  3,
+                  "ready"
+                ],
+                [
+                  "M7",
+                  0,
+                  2,
+                  "hold"
+                ],
+                [
+                  "M8",
+                  0,
+                  2,
+                  "ready"
+                ]
+              ],
+              "slot": "main",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "table",
+              "caption": "원본 행으로 확인한 정렬 비교 · 완전 동점은 순서 미지정",
+              "columns": [
+                "앞에 표시된 행",
+                "뒤에 표시된 행",
+                "같은 앞 기준",
+                "처음 다른 기준",
+                "앞 / 뒤 값",
+                "정렬 근거"
+              ],
+              "rows": [
+                [
+                  "원본 3행(item=M3)",
+                  "원본 4행(item=M4)",
+                  "batch=3, qty=5",
+                  "item",
+                  "M3 / M4",
+                  "item ASC · 원본 3행 먼저"
+                ],
+                [
+                  "원본 4행(item=M4)",
+                  "원본 1행(item=M1)",
+                  "없음",
+                  "batch",
+                  "3 / 2",
+                  "batch DESC · 원본 4행 먼저"
+                ],
+                [
+                  "원본 1행(item=M1)",
+                  "원본 8행(item=M8)",
+                  "batch=2, qty=0",
+                  "item",
+                  "M1 / M8",
+                  "item ASC · 원본 1행 먼저"
+                ]
+              ],
+              "slot": "bottom"
+            },
+            {
+              "type": "text",
+              "text": "원본 1행(item=M1)과 원본 8행(item=M8)은 batch=2, qty=0까지 같고, 처음 다른 기준이 item입니다. M1과 M8을 오름차순으로 비교해 원본 1행이 앞섭니다. 현재 결과에는 모든 정렬 키가 같은 행이 없습니다. 모든 키가 같다면 그 행들 사이 순서는 보장되지 않습니다.",
+              "slot": "right"
+            }
+          ],
+          "audio": "audio/N02-2-s10.wav"
+        },
+        {
+          "id": "s11",
+          "title": "원본과 분리한 빈 입력 비교",
+          "speech": "설명용 새 예시입니다. 원본 표와 SQL은 보존하고, 별도의 빈 표에서 요청한 집계를 계산했습니다. 결과는 SUM(qty)은 NULL, COUNT(qty)은 0, COUNT(*)은 0입니다.",
+          "source_collector_automatic_linkage": true,
+          "human_listening_review": "H_PENDING",
+          "board_actions": [
+            {
+              "type": "clear"
+            },
+            {
+              "type": "table",
+              "caption": "설명용 새 예시 · 원본과 분리한 빈 입력",
+              "table_name": "dispatch_stock",
+              "columns": [
+                "item",
+                "qty",
+                "batch",
+                "status"
+              ],
+              "rows": [],
+              "slot": "main",
+              "timing": {
+                "start": 0,
+                "end": 0
+              }
+            },
+            {
+              "type": "table",
+              "caption": "요청한 집계를 별도 빈 입력에 실행한 결과",
+              "columns": [
+                "SUM(qty)",
+                "COUNT(qty)",
+                "COUNT(*)"
+              ],
+              "rows": [
+                [
+                  null,
+                  0,
+                  0
+                ]
+              ],
+              "slot": "bottom"
+            },
+            {
+              "type": "text",
+              "text": "설명용 새 예시입니다. 원본 표와 SQL은 보존하고, 별도의 빈 표에서 요청한 집계를 계산했습니다. 결과는 SUM(qty)은 NULL, COUNT(qty)은 0, COUNT(*)은 0입니다.",
+              "slot": "right"
+            }
+          ],
+          "audio": "audio/N02-2-s11.wav"
+        }
+      ]
+    }
+  ]
+}

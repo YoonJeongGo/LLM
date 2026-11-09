@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "run_id": null,
+  "created_at_utc": null,
+  "job_type": null,
+  "status": "not_run",
+  "actual_device": null,
+  "environment": {},
+  "package_versions": {},
+  "model": {
+    "id": null,
+    "revision": null,
+    "quantization": null
+  },
+  "adapter": {
+    "id": null,
+    "path": null,
+    "base_revision": null
+  },
+  "dataset": {
+    "version": null,
+    "sha256": null,
+    "demo_only": true
+  },
+  "seed": 42,
+  "requested_optimizer_steps": null,
+  "actual_optimizer_steps": 0,
+  "wall_seconds": null,
+  "peak_gpu_allocated_bytes": null,
+  "generation": {},
+  "artifacts": [],
+  "errors": [],
+  "disclaimer": "템플릿. 측정하지 않은 값은 null. 0을 성공이나 측정값으로 해석하지 않음."
+}
