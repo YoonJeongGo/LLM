@@ -15,4 +15,18 @@
 
 실제 강의실은 로컬 Python 환경, 설치한 모델, Windows Heami 음성을 사용합니다. 검증용 대사·WAV·화면은 저장소를 내려받아 [수업 갤러리](evidence/gallery/index.html)를 로컬 브라우저로 열어 확인할 수 있습니다.
 
+## 저장된 수업 확인하기
+
+Windows PowerShell에서 다음과 같이 저장소를 내려받고 갤러리를 엽니다.
+
+```powershell
+git clone https://github.com/YoonJeongGo/LLM.git
+Set-Location LLM
+Start-Process .\evidence\gallery\index.html
+```
+
+갤러리에서 대표 수업의 질문·판서와 저장 음성을 확인할 수 있습니다. 음성 파일과 화면이 연결되도록 `evidence` 폴더 전체를 함께 보관하세요. 기존 복제본에서는 변경 사항을 확인한 뒤 `git pull --ff-only`로 최신 자료를 받습니다.
+
+개발 검사를 재현할 때 필요한 자작 입력과 생성 명령은 [실행 코드·회귀 입력 안내](edu-tutor-local/runs/PUBLISHED_RUN_SOURCES.md)에 있습니다. 사람의 교육·청취 검토 결과는 수업 이름, 단계, 음성 시점과 함께 기록합니다.
+
 운영 문서에 있는 절대경로·로컬 수업 URL·프로세스 번호·예산은 당시 검증 PC의 기록입니다. GitHub용 사본에는 앱 소스와 테스트, 실행 도구, 사전 빌드 웹 UI, 선별한 검증 자료를 담았습니다. 개인 업로드, 인증 정보, 운영 DB·장부, 모델 가중치·어댑터 및 가상환경은 원래 PC에서 관리합니다.
