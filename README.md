@@ -17,6 +17,16 @@
 
 ## 저장된 수업 확인하기
 
+확인하려는 내용에 따라 다음 자료부터 열어보세요. 아래 보고서의 측정 시점은 2026년 10월 30일입니다.
+
+| 확인할 내용 | 자료 |
+|---|---|
+| 첫 설명·보충 설명의 대기 시간, 모델 재사용과 취소 | [최종 실행 시간 보고서](evidence/reports/final07-timing.md) |
+| NULL·0행 비교와 다중 정렬 설명, 원래 수업 복귀 | [N01 설명 충족 결과](evidence/reports/final07-content.md) |
+| 새로운 질문에 답하지 못한 실제 사례 | [독립 N03 실패 원인](evidence/reports/final04-independent-failure.md) |
+| 텍스트 부분 저장 비용과 수정 범위 | [저장 처리 측정](evidence/reports/storage.md) |
+| 측정 도구가 지연에 미친 영향 | [기록기 수정과 측정 한계](evidence/reports/recording.md) |
+
 Windows PowerShell에서 다음과 같이 저장소를 내려받고 갤러리를 엽니다.
 
 ```powershell
